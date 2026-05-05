@@ -1,1 +1,82 @@
-<h1>Coming soon</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erik Reiner</title>
+<meta name="description" content="Erik Reiner — maker, cosplayer, builder, and game developer.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Erik Reiner</a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Maker · Cosplayer · Builder · Dev</p>
+  <h1>Erik Reiner</h1>
+  <p>Building things at the intersection of fabrication, design, and technology.</p>
+</div>
+
+<div class="home-intro">
+  <div class="home-intro-text">
+    <h2>About Me</h2>
+    <p>I'm a hands-on maker specializing in cosplay, prop fabrication, and game development. I combine 3D printing, traditional fabrication, and digital design tools to bring detailed projects to life — from screen-accurate costumes to interactive game worlds.</p>
+    <p>Whether I'm hammering steel for a suit of armor, modeling parts in Fusion 360, or scripting enemy AI in Godot, the throughline is always the same: I love making things.</p>
+    <div class="home-tags">
+      <span class="home-tag tb">Cosplay</span>
+      <span class="home-tag tbl">3D Printing</span>
+      <span class="home-tag tg">Prop Making</span>
+      <span class="home-tag tw">Game Dev</span>
+      <span class="home-tag tg">Mechanical</span>
+    </div>
+  </div>
+</div>
+
+<div class="home-featured">
+  <div class="home-featured-inner">
+    <p class="section-label">Featured Project</p>
+    <a href="projects/metrocop.html" class="project-card" style="max-width: 520px; text-decoration: none;">
+      <div class="card-img">
+        <!-- Add image later: <img src="assets/images/metrocop.jpg" alt="Metrocop costume"> -->
+        <span class="card-img-placeholder">Photo coming soon</span>
+      </div>
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="cat-badge">Costumes</span>
+          <span class="status-badge in-progress">In Progress</span>
+        </div>
+        <h3 class="card-title">Half-Life 2: Metrocop</h3>
+        <p class="card-desc">Screen-accurate Civil Protection unit. Full wearable costume with 3D-printed armor, fabricated components, and hand-finished detailing throughout.</p>
+        <p class="card-arrow">View project →</p>
+      </div>
+    </a>
+    <a href="projects.html" class="cta-link">See all projects →</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Erik Reiner · <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
+</footer>
+
+<script>
+const toggle = document.querySelector('.nav-toggle');
+const links = document.querySelector('.nav-links');
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('open');
+  links.classList.toggle('open');
+});
+</script>
+</body>
+</html>

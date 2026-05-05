@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Erik Reiner</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Erik Reiner</a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <h1>Contact</h1>
+  <p>Open to commissions, collaborations, and cool projects.</p>
+</div>
+
+<div class="container">
+  <div class="section">
+    <div class="contact-links">
+
+      <a class="contact-link" href="mailto:erik@erikreiner.com">
+        <div class="contact-icon">✉</div>
+        <div>
+          <div class="contact-name">Email</div>
+          <div class="contact-handle">erik@erikreiner.com</div>
+        </div>
+        <span class="contact-arrow">→</span>
+      </a>
+
+      <a class="contact-link" href="https://instagram.com/megasupercritic" target="_blank">
+        <div class="contact-icon">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1E40AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#1E40AF" stroke="none"/></svg>
+        </div>
+        <div>
+          <div class="contact-name">Instagram</div>
+          <div class="contact-handle">@megasupercritic</div>
+        </div>
+        <span class="contact-arrow">→</span>
+      </a>
+
+      <a class="contact-link" href="https://tiktok.com/@utrisworkshop" target="_blank">
+        <div class="contact-icon grey">
+          <svg width="15" height="17" viewBox="0 0 24 24" fill="#64748B"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.95a8.27 8.27 0 004.84 1.55V7.06a4.85 4.85 0 01-1.07-.37z"/></svg>
+        </div>
+        <div>
+          <div class="contact-name">TikTok</div>
+          <div class="contact-handle">@utrisworkshop</div>
+        </div>
+        <span class="contact-arrow">→</span>
+      </a>
+
+      <a class="contact-link" href="https://www.therpf.com/members/utri" target="_blank">
+        <div class="contact-icon grey">RPF</div>
+        <div>
+          <div class="contact-name">The RPF</div>
+          <div class="contact-handle">Utri</div>
+        </div>
+        <span class="contact-arrow">→</span>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Erik Reiner · <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
+</footer>
+
+<script>
+const toggle = document.querySelector('.nav-toggle');
+const links = document.querySelector('.nav-links');
+toggle.addEventListener('click', () => { toggle.classList.toggle('open'); links.classList.toggle('open'); });
+</script>
+</body>
+</html>
