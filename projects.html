@@ -43,7 +43,7 @@
     <div class="cards-grid" id="cards-grid">
 
       <!-- METROCOP -->
-      <a href="projects/metrocop.html" class="project-card" data-category="costumes">
+      <a href="projects/metrocop.html" class="project-card" data-category="costumes" data-id="metrocop">
         <div class="card-img">
           <!-- <img src="assets/images/metrocop.jpg" alt="Metrocop costume"> -->
           <span class="card-img-placeholder">Photo coming soon</span>
@@ -60,7 +60,7 @@
       </a>
 
       <!-- HELLDIVERS -->
-      <a href="projects/helldivers.html" class="project-card" data-category="costumes">
+      <a href="projects/helldivers.html" class="project-card" data-category="costumes" data-id="helldivers">
         <div class="card-img">
           <!-- <img src="assets/images/helldivers.jpg" alt="Helldivers 2 B-01 armor"> -->
           <span class="card-img-placeholder">Photo coming soon</span>
@@ -77,7 +77,7 @@
       </a>
 
       <!-- KNIGHT -->
-      <a href="projects/knight.html" class="project-card" data-category="costumes">
+      <a href="projects/knight.html" class="project-card" data-category="costumes" data-id="knight">
         <div class="card-img">
           <!-- <img src="assets/images/knight.jpg" alt="15th century Milanese armor"> -->
           <span class="card-img-placeholder">Photo coming soon</span>
@@ -94,7 +94,7 @@
       </a>
 
       <!-- CANNON -->
-      <a href="projects/cannon.html" class="project-card" data-category="props">
+      <a href="projects/cannon.html" class="project-card" data-category="props" data-id="cannon">
         <div class="card-img">
           <!-- <img src="assets/images/cannon.jpg" alt="24 Pounder Cannon CAD model"> -->
           <span class="card-img-placeholder">Photo coming soon</span>
@@ -111,7 +111,7 @@
       </a>
 
       <!-- REVOLVER -->
-      <a href="projects/revolver.html" class="project-card" data-category="props">
+      <a href="projects/revolver.html" class="project-card" data-category="props" data-id="revolver">
         <div class="card-img">
           <!-- <img src="assets/images/revolver.jpg" alt="Colt Walker revolver CAD model"> -->
           <span class="card-img-placeholder">Photo coming soon</span>
@@ -128,7 +128,7 @@
       </a>
 
       <!-- MISSILE -->
-      <a href="projects/missile.html" class="project-card" data-category="props">
+      <a href="projects/missile.html" class="project-card" data-category="props" data-id="missile">
         <div class="card-img">
           <!-- <img src="assets/images/missile.jpg" alt="AIM-9 Sidewinder missile model"> -->
           <span class="card-img-placeholder">Photo coming soon</span>
@@ -145,7 +145,7 @@
       </a>
 
       <!-- BASTION -->
-      <a href="projects/bastion.html" class="project-card" data-category="software">
+      <a href="projects/bastion.html" class="project-card" data-category="software" data-id="bastion">
         <div class="card-img">
           <!-- <img src="assets/images/bastion.jpg" alt="Bastion game screenshot"> -->
           <span class="card-img-placeholder">Screenshot coming soon</span>
@@ -175,19 +175,18 @@ const links = document.querySelector('.nav-links');
 toggle.addEventListener('click', () => { toggle.classList.toggle('open'); links.classList.toggle('open'); });
 
 const filterBtns = document.querySelectorAll('.filter-btn');
-const cards = document.querySelectorAll('.project-card');
+const grid = document.getElementById('cards-grid');
+let filtering = false;
 
 // ── TILT EFFECT ──
 function handleTilt(e) {
   const rect = this.getBoundingClientRect();
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-  const rx = ((y - rect.height / 2) / (rect.height / 2)) * -9;
-  const ry = ((x - rect.width  / 2) / (rect.width  / 2)) *  9;
-  this.style.transition = 'box-shadow .15s ease';
+  const rx = ((e.clientY - rect.top  - rect.height/2) / (rect.height/2)) * -9;
+  const ry = ((e.clientX - rect.left - rect.width /2) / (rect.width /2)) *  9;
+  this.style.transition = 'box-shadow .1s ease';
   this.style.transform  = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-8px) scale(1.03)`;
-  this.style.boxShadow  = `${-ry * 1.5}px 18px 36px rgba(37,99,235,0.28)`;
-  this.style.zIndex     = '2';
+  this.style.boxShadow  = `${-ry*1.5}px 18px 36px rgba(37,99,235,0.28)`;
+  this.style.zIndex     = '10';
 }
 function resetTilt() {
   this.style.transition = 'transform .35s ease, box-shadow .35s ease';
@@ -195,14 +194,13 @@ function resetTilt() {
   this.style.boxShadow  = '';
   this.style.zIndex     = '';
 }
-cards.forEach(card => {
+function attachTilt(card) {
   card.addEventListener('mousemove', handleTilt);
   card.addEventListener('mouseleave', resetTilt);
-});
+}
+document.querySelectorAll('.project-card').forEach(attachTilt);
 
-// ── FILTER WITH FALL-AWAY ──
-let filtering = false;
-
+// ── FLIP FILTER ──
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     if (filtering) return;
@@ -212,54 +210,70 @@ filterBtns.forEach(btn => {
     btn.classList.add('active');
     const filter = btn.dataset.filter;
 
-    const leaving  = [...cards].filter(c => filter !== 'all' && c.dataset.category !== filter && c.style.display !== 'none');
-    const arriving = [...cards].filter(c => (filter === 'all' || c.dataset.category === filter) && c.style.display === 'none');
-    const staying  = [...cards].filter(c => (filter === 'all' || c.dataset.category === filter) && c.style.display !== 'none');
+    const allCards = [...grid.querySelectorAll('.project-card')];
 
-    // Bounce staying cards gently
-    staying.forEach((card, i) => {
-      setTimeout(() => {
-        card.style.transition = 'transform .2s ease';
-        card.style.transform  = 'scale(1.03)';
-        setTimeout(() => { card.style.transform = ''; }, 200);
-      }, i * 40);
+    // FIRST: record every card's current position
+    const first = {};
+    allCards.forEach(card => {
+      const r = card.getBoundingClientRect();
+      first[card.dataset.id] = { x: r.left, y: r.top };
     });
 
-    // Fall away departing cards
-    leaving.forEach((card, i) => {
-      setTimeout(() => {
-        card.style.transition = 'transform .3s ease, opacity .3s ease';
-        card.style.transform  = `translateY(40px) rotate(${(Math.random() - 0.5) * 8}deg) scale(0.88)`;
-        card.style.opacity    = '0';
-        card.style.pointerEvents = 'none';
-        setTimeout(() => { card.style.display = 'none'; }, 320);
-      }, i * 60);
+    // Sort: matching cards first, non-matching last
+    const matching    = allCards.filter(c => filter === 'all' || c.dataset.category === filter);
+    const notMatching = allCards.filter(c => filter !== 'all' && c.dataset.category !== filter);
+
+    // Re-append in new order (matching first)
+    [...matching, ...notMatching].forEach(card => grid.appendChild(card));
+
+    // Mark non-matching
+    notMatching.forEach(card => card.classList.add('will-hide'));
+
+    // LAST: record new positions
+    const last = {};
+    allCards.forEach(card => {
+      const r = card.getBoundingClientRect();
+      last[card.dataset.id] = { x: r.left, y: r.top };
     });
 
-    const delay = leaving.length > 0 ? leaving.length * 60 + 340 : 0;
+    // INVERT: snap cards back to where they were
+    allCards.forEach(card => {
+      const f = first[card.dataset.id];
+      const l = last[card.dataset.id];
+      const dx = f.x - l.x;
+      const dy = f.y - l.y;
+      card.style.transition = 'none';
+      card.style.transform  = `translate(${dx}px, ${dy}px)`;
+    });
 
-    // Arrive new cards with stagger
+    // Force reflow
+    grid.offsetHeight;
+
+    // PLAY: animate to final positions
+    allCards.forEach((card, i) => {
+      const isLeaving = card.classList.contains('will-hide');
+      setTimeout(() => {
+        card.style.transition = `transform .45s cubic-bezier(.4,0,.2,1), opacity .35s ease`;
+        card.style.transform  = isLeaving ? 'translateY(60px) scale(0.85)' : '';
+        if (isLeaving) card.style.opacity = '0';
+      }, i * 30);
+    });
+
+    // After animation: hide departed cards, clean up
+    const totalTime = allCards.length * 30 + 500;
     setTimeout(() => {
-      arriving.forEach((card, i) => {
-        card.style.display        = 'flex';
-        card.style.flexDirection  = 'column';
-        card.style.opacity        = '0';
-        card.style.transform      = 'translateY(-24px) scale(0.92)';
-        card.style.pointerEvents  = '';
-        setTimeout(() => {
-          card.style.transition = 'transform .35s ease, opacity .35s ease';
-          card.style.transform  = '';
-          card.style.opacity    = '1';
-        }, i * 80 + 20);
+      notMatching.forEach(card => {
+        card.style.display     = 'none';
+        card.style.opacity     = '';
+        card.style.transform   = '';
+        card.style.transition  = '';
+        card.classList.remove('will-hide');
       });
-
-      const totalArrive = arriving.length * 80 + 400;
-      setTimeout(() => {
-        cards.forEach(card => { card.style.transition = ''; });
-        filtering = false;
-      }, totalArrive);
-
-    }, delay);
+      matching.forEach(card => {
+        card.style.transition = '';
+      });
+      filtering = false;
+    }, totalTime);
   });
 });
 </script>
