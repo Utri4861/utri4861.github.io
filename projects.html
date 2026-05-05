@@ -171,12 +171,12 @@
 
 <script>
 const toggle = document.querySelector('.nav-toggle');
-const links = document.querySelector('.nav-links');
+const links  = document.querySelector('.nav-links');
 toggle.addEventListener('click', () => { toggle.classList.toggle('open'); links.classList.toggle('open'); });
 
 const filterBtns = document.querySelectorAll('.filter-btn');
-const grid = document.getElementById('cards-grid');
-let filtering = false;
+const grid       = document.getElementById('cards-grid');
+let   filtering  = false;
 
 // ── TILT EFFECT ──
 function handleTilt(e) {
@@ -198,9 +198,12 @@ function attachTilt(card) {
   card.addEventListener('mousemove', handleTilt);
   card.addEventListener('mouseleave', resetTilt);
 }
-document.querySelectorAll('.project-card').forEach(attachTilt);
+document.querySelectorAll('.project-card').forEach(c => {
+  c.dataset.visible = 'true';
+  attachTilt(c);
+});
 
-// ── FLIP FILTER ──
+// ── FILTER ──
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     if (filtering) return;
@@ -210,70 +213,99 @@ filterBtns.forEach(btn => {
     btn.classList.add('active');
     const filter = btn.dataset.filter;
 
-    const allCards = [...grid.querySelectorAll('.project-card')];
+    const allCards  = [...grid.querySelectorAll('.project-card')];
+    const toShow    = allCards.filter(c => filter === 'all' || c.dataset.category === filter);
+    const toHide    = allCards.filter(c => filter !== 'all' && c.dataset.category !== filter);
+    const alreadyVisible = allCards.filter(c => c.dataset.visible === 'true');
 
-    // FIRST: record every card's current position
-    const first = {};
-    allCards.forEach(card => {
-      const r = card.getBoundingClientRect();
-      first[card.dataset.id] = { x: r.left, y: r.top };
+    // ── PHASE 1: departing cards fall away ──
+    toHide.forEach((c, i) => {
+      if (c.dataset.visible === 'false') return;
+      const dir = (Math.random() > 0.5 ? 1 : -1) * (6 + Math.random() * 6);
+      c.style.transition = 'transform .25s ease, opacity .25s ease';
+      c.style.transform  = `translateY(40px) rotate(${dir}deg) scale(0.85)`;
+      c.style.opacity    = '0';
     });
 
-    // Sort: matching cards first, non-matching last
-    const matching    = allCards.filter(c => filter === 'all' || c.dataset.category === filter);
-    const notMatching = allCards.filter(c => filter !== 'all' && c.dataset.category !== filter);
-
-    // Re-append in new order (matching first)
-    [...matching, ...notMatching].forEach(card => grid.appendChild(card));
-
-    // Mark non-matching
-    notMatching.forEach(card => card.classList.add('will-hide'));
-
-    // LAST: record new positions
-    const last = {};
-    allCards.forEach(card => {
-      const r = card.getBoundingClientRect();
-      last[card.dataset.id] = { x: r.left, y: r.top };
-    });
-
-    // INVERT: snap cards back to where they were
-    allCards.forEach(card => {
-      const f = first[card.dataset.id];
-      const l = last[card.dataset.id];
-      const dx = f.x - l.x;
-      const dy = f.y - l.y;
-      card.style.transition = 'none';
-      card.style.transform  = `translate(${dx}px, ${dy}px)`;
-    });
-
-    // Force reflow
-    grid.offsetHeight;
-
-    // PLAY: animate to final positions
-    allCards.forEach((card, i) => {
-      const isLeaving = card.classList.contains('will-hide');
-      setTimeout(() => {
-        card.style.transition = `transform .45s cubic-bezier(.4,0,.2,1), opacity .35s ease`;
-        card.style.transform  = isLeaving ? 'translateY(60px) scale(0.85)' : '';
-        if (isLeaving) card.style.opacity = '0';
-      }, i * 30);
-    });
-
-    // After animation: hide departed cards, clean up
-    const totalTime = allCards.length * 30 + 500;
     setTimeout(() => {
-      notMatching.forEach(card => {
-        card.style.display     = 'none';
-        card.style.opacity     = '';
-        card.style.transform   = '';
-        card.style.transition  = '';
-        card.classList.remove('will-hide');
+      // remove from layout
+      toHide.forEach(c => {
+        c.style.display     = 'none';
+        c.style.transition  = '';
+        c.style.transform   = '';
+        c.style.opacity     = '';
+        c.dataset.visible   = 'false';
       });
-      matching.forEach(card => {
-        card.style.transition = '';
+
+      // ── PHASE 2: FLIP remaining + arriving cards ──
+
+      // FIRST: snapshot current positions of cards that will be visible
+      const firstPos = {};
+      toShow.forEach(c => {
+        if (c.dataset.visible === 'true') {
+          const r = c.getBoundingClientRect();
+          firstPos[c.dataset.id] = { x: r.left, y: r.top };
+        }
       });
-      filtering = false;
-    }, totalTime);
+
+      // Reveal arriving cards (invisible for now)
+      toShow.forEach(c => {
+        if (c.dataset.visible === 'false') {
+          c.style.display       = 'flex';
+          c.style.flexDirection = 'column';
+          c.style.opacity       = '0';
+          c.dataset.visible     = 'true';
+        }
+      });
+
+      // Reorder DOM: toShow first
+      [...toShow, ...toHide].forEach(c => grid.appendChild(c));
+
+      // Force reflow
+      grid.offsetHeight;
+
+      // LAST: record new positions
+      const lastPos = {};
+      toShow.forEach(c => {
+        const r = c.getBoundingClientRect();
+        lastPos[c.dataset.id] = { x: r.left, y: r.top };
+      });
+
+      // INVERT: snap each card back to where it was
+      toShow.forEach(c => {
+        const f = firstPos[c.dataset.id];
+        const l = lastPos[c.dataset.id];
+        c.style.transition = 'none';
+        if (f) {
+          c.style.transform = `translate(${f.x - l.x}px, ${f.y - l.y}px)`;
+          c.style.opacity   = '1';
+        } else {
+          // newly arriving — come in from below
+          c.style.transform = 'translateY(30px) scale(0.92)';
+          c.style.opacity   = '0';
+        }
+      });
+
+      // Force reflow
+      grid.offsetHeight;
+
+      // PLAY: slide to final positions
+      toShow.forEach((c, i) => {
+        const isNew = !firstPos[c.dataset.id];
+        setTimeout(() => {
+          c.style.transition = 'transform .42s cubic-bezier(.4,0,.2,1), opacity .35s ease';
+          c.style.transform  = '';
+          c.style.opacity    = '1';
+        }, isNew ? 60 + i * 55 : 0);
+      });
+
+      // Cleanup
+      setTimeout(() => {
+        toShow.forEach(c => { c.style.transition = ''; });
+        filtering = false;
+      }, 520);
+
+    }, 280);
   });
 });
 </script>
