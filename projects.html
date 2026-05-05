@@ -31,26 +31,29 @@
 <div class="container">
   <div class="section">
 
-    <div class="filter-bar" role="group" aria-label="Filter projects">
+    <div class="filter-bar" role="group" aria-label="Filter by tool">
       <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="costumes">Costumes</button>
-      <button class="filter-btn" data-filter="props">Props & Models</button>
-      <button class="filter-btn" data-filter="software">Software & Dev</button>
-      <button class="filter-btn" data-filter="electronics">Electronics</button>
+      <button class="filter-btn" data-filter="3d-printing">3D Printing</button>
+      <button class="filter-btn" data-filter="fusion360">Fusion 360</button>
+      <button class="filter-btn" data-filter="sewing">Sewing</button>
+      <button class="filter-btn" data-filter="airbrush">Airbrush</button>
+      <button class="filter-btn" data-filter="metalworking">Metalworking</button>
       <button class="filter-btn" data-filter="leatherworking">Leatherworking</button>
+      <button class="filter-btn" data-filter="electronics">Electronics</button>
+      <button class="filter-btn" data-filter="gamedev">Game Dev</button>
     </div>
 
     <div class="cards-grid" id="cards-grid">
 
       <!-- METROCOP -->
-      <a href="projects/metrocop.html" class="project-card" data-category="costumes" data-id="metrocop">
+      <a href="projects/metrocop.html" class="project-card" data-tools="3d-printing,fusion360,sewing,airbrush,electronics" data-id="metrocop">
         <div class="card-img">
           <!-- <img src="assets/images/metrocop.jpg" alt="Metrocop costume"> -->
           <span class="card-img-placeholder">Photo coming soon</span>
         </div>
         <div class="card-body">
           <div class="card-meta">
-            <span class="cat-badge">Costumes</span>
+            <span class="cat-badge">3D Printing</span><span class="cat-badge" style="background:#D1FAE5;color:#065F46;border-color:#6EE7B7">Fusion 360</span>
             <span class="status-badge in-progress">In Progress</span>
           </div>
           <h3 class="card-title">Half-Life 2: Metrocop</h3>
@@ -60,14 +63,14 @@
       </a>
 
       <!-- HELLDIVERS -->
-      <a href="projects/helldivers.html" class="project-card" data-category="costumes" data-id="helldivers">
+      <a href="projects/helldivers.html" class="project-card" data-tools="3d-printing,sewing,airbrush,metalworking" data-id="helldivers">
         <div class="card-img">
           <!-- <img src="assets/images/helldivers.jpg" alt="Helldivers 2 B-01 armor"> -->
           <span class="card-img-placeholder">Photo coming soon</span>
         </div>
         <div class="card-body">
           <div class="card-meta">
-            <span class="cat-badge">Costumes</span>
+            <span class="cat-badge">3D Printing</span><span class="cat-badge props">Metalworking</span>
             <span class="status-badge in-progress">In Progress</span>
           </div>
           <h3 class="card-title">Helldivers 2: B-01 Armor</h3>
@@ -77,14 +80,14 @@
       </a>
 
       <!-- KNIGHT -->
-      <a href="projects/knight.html" class="project-card" data-category="costumes" data-id="knight">
+      <a href="projects/knight.html" class="project-card" data-tools="sewing,leatherworking,metalworking" data-id="knight">
         <div class="card-img">
           <!-- <img src="assets/images/knight.jpg" alt="15th century Milanese armor"> -->
           <span class="card-img-placeholder">Photo coming soon</span>
         </div>
         <div class="card-body">
           <div class="card-meta">
-            <span class="cat-badge">Costumes</span>
+            <span class="cat-badge props">Metalworking</span><span class="cat-badge leatherworking">Leatherworking</span>
             <span class="status-badge in-progress">In Progress</span>
           </div>
           <h3 class="card-title">15th C. Milanese Armor</h3>
@@ -94,48 +97,48 @@
       </a>
 
       <!-- CANNON -->
-      <a href="projects/cannon.html" class="project-card" data-category="props" data-id="cannon">
+      <a href="projects/cannon.html" class="project-card" data-tools="3d-printing,fusion360" data-id="cannon">
         <div class="card-img">
           <!-- <img src="assets/images/cannon.jpg" alt="24 Pounder Cannon CAD model"> -->
           <span class="card-img-placeholder">Photo coming soon</span>
         </div>
         <div class="card-body">
           <div class="card-meta">
-            <span class="cat-badge props">Props & Models</span>
+            <span class="cat-badge">3D Printing</span><span class="cat-badge" style="background:#D1FAE5;color:#065F46;border-color:#6EE7B7">Fusion 360</span>
             <span class="status-badge complete">Complete</span>
           </div>
           <h3 class="card-title">Pop Mechanics: 24-Pounder Cannon</h3>
-          <p class="card-desc">Plans from a 25¢ thrift store Popular Mechanics book became a detailed Fusion 360 modeling exercise.</p>
+          <p class="card-desc">Fully modeled in Fusion 360 and 3D printed, based on plans from a 25¢ thrift store Popular Mechanics book.</p>
           <p class="card-arrow">View project →</p>
         </div>
       </a>
 
       <!-- REVOLVER -->
-      <a href="projects/revolver.html" class="project-card" data-category="props" data-id="revolver">
+      <a href="projects/revolver.html" class="project-card" data-tools="3d-printing,fusion360" data-id="revolver">
         <div class="card-img">
           <!-- <img src="assets/images/revolver.jpg" alt="Colt Walker revolver CAD model"> -->
           <span class="card-img-placeholder">Photo coming soon</span>
         </div>
         <div class="card-body">
           <div class="card-meta">
-            <span class="cat-badge props">Props & Models</span>
+            <span class="cat-badge">3D Printing</span><span class="cat-badge" style="background:#D1FAE5;color:#065F46;border-color:#6EE7B7">Fusion 360</span>
             <span class="status-badge complete">Complete</span>
           </div>
           <h3 class="card-title">Plans: Colt Walker Revolver</h3>
-          <p class="card-desc">A challenging Fusion 360 project with multiple barrel and cylinder variations — including an animated breakdown.</p>
+          <p class="card-desc">Fully modeled in Fusion 360 and 3D printed. Multiple barrel and cylinder variations with an animated Fusion 360 breakdown.</p>
           <p class="card-arrow">View project →</p>
         </div>
       </a>
 
       <!-- MISSILE -->
-      <a href="projects/missile.html" class="project-card" data-category="props" data-id="missile">
+      <a href="projects/missile.html" class="project-card" data-tools="3d-printing,fusion360" data-id="missile">
         <div class="card-img">
           <!-- <img src="assets/images/missile.jpg" alt="AIM-9 Sidewinder missile model"> -->
           <span class="card-img-placeholder">Photo coming soon</span>
         </div>
         <div class="card-body">
           <div class="card-meta">
-            <span class="cat-badge props">Props & Models</span>
+            <span class="cat-badge">3D Printing</span><span class="cat-badge" style="background:#D1FAE5;color:#065F46;border-color:#6EE7B7">Fusion 360</span>
             <span class="status-badge complete">Complete</span>
           </div>
           <h3 class="card-title">Design: AIM-9 Sidewinder</h3>
@@ -145,14 +148,14 @@
       </a>
 
       <!-- BASTION -->
-      <a href="projects/bastion.html" class="project-card" data-category="software" data-id="bastion">
+      <a href="projects/bastion.html" class="project-card" data-tools="gamedev" data-id="bastion">
         <div class="card-img">
           <!-- <img src="assets/images/bastion.jpg" alt="Bastion game screenshot"> -->
           <span class="card-img-placeholder">Screenshot coming soon</span>
         </div>
         <div class="card-body">
           <div class="card-meta">
-            <span class="cat-badge software">Software & Dev</span>
+            <span class="cat-badge software">Game Dev</span>
             <span class="status-badge in-progress">In Progress</span>
           </div>
           <h3 class="card-title">Bastion</h3>
