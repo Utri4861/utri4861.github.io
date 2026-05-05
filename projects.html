@@ -218,35 +218,37 @@ filterBtns.forEach(btn => {
     const toHide    = allCards.filter(c => filter !== 'all' && c.dataset.category !== filter);
     const alreadyVisible = allCards.filter(c => c.dataset.visible === 'true');
 
-    // ── PHASE 1: departing cards fall away ──
-    toHide.forEach((c, i) => {
+    // FIRST: snapshot positions NOW before anything changes
+    const firstPos = {};
+    toShow.forEach(c => {
+      if (c.dataset.visible === 'true') {
+        const r = c.getBoundingClientRect();
+        firstPos[c.dataset.id] = { x: r.left, y: r.top };
+      }
+    });
+
+    // Animate departing cards away (still in layout during this)
+    toHide.forEach(c => {
       if (c.dataset.visible === 'false') return;
-      const dir = (Math.random() > 0.5 ? 1 : -1) * (6 + Math.random() * 6);
-      c.style.transition = 'transform .25s ease, opacity .25s ease';
-      c.style.transform  = `translateY(40px) rotate(${dir}deg) scale(0.85)`;
-      c.style.opacity    = '0';
+      const rot = (Math.random() - 0.5) * 14;
+      c.style.transition    = 'transform .24s ease, opacity .24s ease';
+      c.style.transform     = `translateY(40px) rotate(${rot}deg) scale(0.84)`;
+      c.style.opacity       = '0';
+      c.style.pointerEvents = 'none';
     });
 
     setTimeout(() => {
-      // remove from layout
+      // Remove departed from layout
       toHide.forEach(c => {
-        c.style.display     = 'none';
-        c.style.transition  = '';
-        c.style.transform   = '';
-        c.style.opacity     = '';
-        c.dataset.visible   = 'false';
+        c.style.display       = 'none';
+        c.style.transition    = '';
+        c.style.transform     = '';
+        c.style.opacity       = '';
+        c.style.pointerEvents = '';
+        c.dataset.visible     = 'false';
       });
 
       // ── PHASE 2: FLIP remaining + arriving cards ──
-
-      // FIRST: snapshot current positions of cards that will be visible
-      const firstPos = {};
-      toShow.forEach(c => {
-        if (c.dataset.visible === 'true') {
-          const r = c.getBoundingClientRect();
-          firstPos[c.dataset.id] = { x: r.left, y: r.top };
-        }
-      });
 
       // Reveal arriving cards (invisible for now)
       toShow.forEach(c => {
