@@ -217,9 +217,9 @@ filterBtns.forEach(btn => {
     const filter = btn.dataset.filter;
 
     const allCards  = [...grid.querySelectorAll('.project-card')];
-    const toShow    = allCards.filter(c => filter === 'all' || c.dataset.category === filter);
-    const toHide    = allCards.filter(c => filter !== 'all' && c.dataset.category !== filter);
-    const alreadyVisible = allCards.filter(c => c.dataset.visible === 'true');
+    const matches   = c => filter === 'all' || (c.dataset.tools || '').split(',').includes(filter);
+    const toShow    = allCards.filter(c => matches(c));
+    const toHide    = allCards.filter(c => !matches(c));
 
     // FIRST: snapshot positions NOW before anything changes
     const firstPos = {};
