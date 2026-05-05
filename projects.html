@@ -170,47 +170,96 @@
 </footer>
 
 <script>
-// Nav toggle
 const toggle = document.querySelector('.nav-toggle');
 const links = document.querySelector('.nav-links');
-toggle.addEventListener('click', () => {
-  toggle.classList.toggle('open');
-  links.classList.toggle('open');
-});
+toggle.addEventListener('click', () => { toggle.classList.toggle('open'); links.classList.toggle('open'); });
 
-// Filter with smooth animation
 const filterBtns = document.querySelectorAll('.filter-btn');
 const cards = document.querySelectorAll('.project-card');
 
+// ── TILT EFFECT ──
+function handleTilt(e) {
+  const rect = this.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  const rx = ((y - rect.height / 2) / (rect.height / 2)) * -9;
+  const ry = ((x - rect.width  / 2) / (rect.width  / 2)) *  9;
+  this.style.transition = 'box-shadow .15s ease';
+  this.style.transform  = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-8px) scale(1.03)`;
+  this.style.boxShadow  = `${-ry * 1.5}px 18px 36px rgba(37,99,235,0.28)`;
+  this.style.zIndex     = '2';
+}
+function resetTilt() {
+  this.style.transition = 'transform .35s ease, box-shadow .35s ease';
+  this.style.transform  = '';
+  this.style.boxShadow  = '';
+  this.style.zIndex     = '';
+}
+cards.forEach(card => {
+  card.addEventListener('mousemove', handleTilt);
+  card.addEventListener('mouseleave', resetTilt);
+});
+
+// ── FILTER WITH FALL-AWAY ──
+let filtering = false;
+
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
+    if (filtering) return;
+    filtering = true;
+
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     const filter = btn.dataset.filter;
 
-    // Phase 1: fade everything out
-    cards.forEach(card => {
-      card.style.opacity = '0';
-      card.style.scale = '0.93';
+    const leaving  = [...cards].filter(c => filter !== 'all' && c.dataset.category !== filter && c.style.display !== 'none');
+    const arriving = [...cards].filter(c => (filter === 'all' || c.dataset.category === filter) && c.style.display === 'none');
+    const staying  = [...cards].filter(c => (filter === 'all' || c.dataset.category === filter) && c.style.display !== 'none');
+
+    // Bounce staying cards gently
+    staying.forEach((card, i) => {
+      setTimeout(() => {
+        card.style.transition = 'transform .2s ease';
+        card.style.transform  = 'scale(1.03)';
+        setTimeout(() => { card.style.transform = ''; }, 200);
+      }, i * 40);
     });
 
+    // Fall away departing cards
+    leaving.forEach((card, i) => {
+      setTimeout(() => {
+        card.style.transition = 'transform .3s ease, opacity .3s ease';
+        card.style.transform  = `translateY(40px) rotate(${(Math.random() - 0.5) * 8}deg) scale(0.88)`;
+        card.style.opacity    = '0';
+        card.style.pointerEvents = 'none';
+        setTimeout(() => { card.style.display = 'none'; }, 320);
+      }, i * 60);
+    });
+
+    const delay = leaving.length > 0 ? leaving.length * 60 + 340 : 0;
+
+    // Arrive new cards with stagger
     setTimeout(() => {
-      // Phase 2: hide non-matching, show matching
-      cards.forEach(card => {
-        const match = filter === 'all' || card.dataset.category === filter;
-        card.style.display = match ? 'flex' : 'none';
-        card.style.flexDirection = match ? 'column' : '';
+      arriving.forEach((card, i) => {
+        card.style.display        = 'flex';
+        card.style.flexDirection  = 'column';
+        card.style.opacity        = '0';
+        card.style.transform      = 'translateY(-24px) scale(0.92)';
+        card.style.pointerEvents  = '';
+        setTimeout(() => {
+          card.style.transition = 'transform .35s ease, opacity .35s ease';
+          card.style.transform  = '';
+          card.style.opacity    = '1';
+        }, i * 80 + 20);
       });
 
-      // Phase 3: staggered fade-in for visible cards
-      const visible = [...cards].filter(c => c.style.display !== 'none');
-      visible.forEach((card, i) => {
-        setTimeout(() => {
-          card.style.opacity = '1';
-          card.style.scale = '1';
-        }, i * 80);
-      });
-    }, 200);
+      const totalArrive = arriving.length * 80 + 400;
+      setTimeout(() => {
+        cards.forEach(card => { card.style.transition = ''; });
+        filtering = false;
+      }, totalArrive);
+
+    }, delay);
   });
 });
 </script>
