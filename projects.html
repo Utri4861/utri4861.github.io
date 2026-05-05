@@ -1,270 +1,218 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700;12..96,800&family=JetBrains+Mono:wght@500&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Erik Reiner</title>
+<meta name="description" content="All projects by Erik Reiner — costumes, props, software, and more.">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
 
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">Erik Reiner</a>
+    <button class="nav-toggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-:root {
-  --blue: #2563EB;
-  --blue-dk: #1E40AF;
-  --blue-lt: #DBEAFE;
-  --blue-pale: #EFF6FF;
-  --grey: #64748B;
-  --grey-lt: #F1F5F9;
-  --grey-bd: #CBD5E1;
-  --dark: #0F172A;
-  --white: #FFFFFF;
-  --nav-h: 64px;
-  --max: 1100px;
-  --radius: 14px;
-  --shadow: 5px 5px 0 var(--blue);
-  --shadow-sm: 3px 3px 0 var(--blue);
-}
+<div class="hero">
+  <h1>Projects</h1>
+  <p>Costumes, props, CAD, game dev, and everything in between.</p>
+</div>
 
-html { scroll-behavior: smooth; }
-body { font-family: 'Bricolage Grotesque', sans-serif; color: var(--dark); background: var(--white); line-height: 1.65; -webkit-font-smoothing: antialiased; }
-img { max-width: 100%; display: block; }
-a { color: var(--blue); }
+<div class="container">
+  <div class="section">
 
-/* ── NAV ── */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: var(--white);
-  border-bottom: 2px solid var(--dark);
-  height: var(--nav-h);
-  display: flex; align-items: center;
-}
-.nav-inner {
-  width: 100%; max-width: var(--max);
-  margin: 0 auto; padding: 0 24px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav-brand {
-  font-size: 1.15rem; font-weight: 800; letter-spacing: .04em;
-  color: var(--dark); text-decoration: none;
-  text-transform: uppercase;
-}
-.nav-links { display: flex; gap: 32px; list-style: none; }
-.nav-links a {
-  font-size: .9rem; font-weight: 600; color: var(--grey);
-  text-decoration: none; transition: color .15s;
-}
-.nav-links a:hover, .nav-links a.active { color: var(--blue); }
+    <div class="filter-bar" role="group" aria-label="Filter projects">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="costumes">Costumes</button>
+      <button class="filter-btn" data-filter="props">Props & Models</button>
+      <button class="filter-btn" data-filter="software">Software & Dev</button>
+      <button class="filter-btn" data-filter="electronics">Electronics</button>
+      <button class="filter-btn" data-filter="leatherworking">Leatherworking</button>
+    </div>
 
-/* hamburger */
-.nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
-.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--dark); transition: all .25s; border-radius: 2px; }
-.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle.open span:nth-child(2) { opacity: 0; }
-.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    <div class="cards-grid" id="cards-grid">
 
-@media (max-width: 600px) {
-  .nav-toggle { display: flex; }
-  .nav-links {
-    display: none; position: absolute; top: var(--nav-h); left: 0; right: 0;
-    background: var(--white); border-bottom: 2px solid var(--dark);
-    flex-direction: column; gap: 0; padding: 8px 0;
-  }
-  .nav-links.open { display: flex; }
-  .nav-links a { display: block; padding: 12px 24px; font-size: 1rem; }
-}
+      <!-- METROCOP -->
+      <a href="projects/metrocop.html" class="project-card" data-category="costumes">
+        <div class="card-img">
+          <!-- <img src="assets/images/metrocop.jpg" alt="Metrocop costume"> -->
+          <span class="card-img-placeholder">Photo coming soon</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="cat-badge">Costumes</span>
+            <span class="status-badge in-progress">In Progress</span>
+          </div>
+          <h3 class="card-title">Half-Life 2: Metrocop</h3>
+          <p class="card-desc">Screen-accurate Civil Protection unit with 3D-printed armor, fabricated components, and hand-finished detailing.</p>
+          <p class="card-arrow">View project →</p>
+        </div>
+      </a>
 
-/* ── PAGE HERO ── */
-.hero {
-  background: var(--blue); color: var(--white);
-  padding: 56px 24px 48px;
-  text-align: center;
-}
-.hero-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .78rem; letter-spacing: .12em;
-  color: var(--blue-lt); margin-bottom: 10px;
-  text-transform: uppercase;
-}
-.hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.1; text-transform: uppercase; }
-.hero p { font-size: 1rem; color: var(--blue-lt); margin-top: 12px; max-width: 540px; margin-inline: auto; }
+      <!-- HELLDIVERS -->
+      <a href="projects/helldivers.html" class="project-card" data-category="costumes">
+        <div class="card-img">
+          <!-- <img src="assets/images/helldivers.jpg" alt="Helldivers 2 B-01 armor"> -->
+          <span class="card-img-placeholder">Photo coming soon</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="cat-badge">Costumes</span>
+            <span class="status-badge in-progress">In Progress</span>
+          </div>
+          <h3 class="card-title">Helldivers 2: B-01 Armor</h3>
+          <p class="card-desc">Full wearable B-01 Tactical armor. Printed panels, sewn underlayer, vinyl cutting, and airbrushed finish.</p>
+          <p class="card-arrow">View project →</p>
+        </div>
+      </a>
 
-/* ── MAIN WRAPPER ── */
-.container { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
-.section { padding: 56px 0; }
+      <!-- KNIGHT -->
+      <a href="projects/knight.html" class="project-card" data-category="costumes">
+        <div class="card-img">
+          <!-- <img src="assets/images/knight.jpg" alt="15th century Milanese armor"> -->
+          <span class="card-img-placeholder">Photo coming soon</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="cat-badge">Costumes</span>
+            <span class="status-badge in-progress">In Progress</span>
+          </div>
+          <h3 class="card-title">15th C. Milanese Armor</h3>
+          <p class="card-desc">Steel plate armor built from Craig Nadler patterns. Years in the making and still evolving — a labor of love.</p>
+          <p class="card-arrow">View project →</p>
+        </div>
+      </a>
 
-/* ── FILTER BAR ── */
-.filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
-.filter-btn {
-  padding: 7px 18px; border-radius: 100px; font-size: .83rem; font-weight: 700;
-  border: 2px solid var(--dark); background: var(--white); color: var(--dark);
-  cursor: pointer; transition: all .2s; font-family: inherit; white-space: nowrap;
-}
-.filter-btn:hover { background: var(--blue-pale); border-color: var(--blue); color: var(--blue); }
-.filter-btn.active { background: var(--blue); border-color: var(--blue-dk); color: var(--white); box-shadow: var(--shadow-sm); }
+      <!-- CANNON -->
+      <a href="projects/cannon.html" class="project-card" data-category="props">
+        <div class="card-img">
+          <!-- <img src="assets/images/cannon.jpg" alt="24 Pounder Cannon CAD model"> -->
+          <span class="card-img-placeholder">Photo coming soon</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="cat-badge props">Props & Models</span>
+            <span class="status-badge complete">Complete</span>
+          </div>
+          <h3 class="card-title">Pop Mechanics: 24-Pounder Cannon</h3>
+          <p class="card-desc">Plans from a 25¢ thrift store Popular Mechanics book became a detailed Fusion 360 modeling exercise.</p>
+          <p class="card-arrow">View project →</p>
+        </div>
+      </a>
 
-/* ── PROJECT CARD GRID ── */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
-}
-.project-card {
-  border: 2px solid var(--dark); border-radius: var(--radius);
-  background: var(--white); box-shadow: var(--shadow);
-  overflow: hidden; display: flex; flex-direction: column;
-  text-decoration: none; color: var(--dark);
-  transition: transform .18s, box-shadow .18s, opacity .2s ease, scale .2s ease;
-  animation: fadeUp .4s ease both;
-}
-.project-card:hover { transform: translate(-3px, -3px); box-shadow: 8px 8px 0 var(--blue); }
-.project-card.hidden { display: none; }
+      <!-- REVOLVER -->
+      <a href="projects/revolver.html" class="project-card" data-category="props">
+        <div class="card-img">
+          <!-- <img src="assets/images/revolver.jpg" alt="Colt Walker revolver CAD model"> -->
+          <span class="card-img-placeholder">Photo coming soon</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="cat-badge props">Props & Models</span>
+            <span class="status-badge complete">Complete</span>
+          </div>
+          <h3 class="card-title">Plans: Colt Walker Revolver</h3>
+          <p class="card-desc">A challenging Fusion 360 project with multiple barrel and cylinder variations — including an animated breakdown.</p>
+          <p class="card-arrow">View project →</p>
+        </div>
+      </a>
 
-.card-img {
-  width: 100%; aspect-ratio: 16/9; overflow: hidden;
-  background: var(--blue-pale);
-  display: flex; align-items: center; justify-content: center;
-}
-.card-img img { width: 100%; height: 100%; object-fit: cover; }
-.card-img-placeholder {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: .75rem; color: var(--blue); letter-spacing: .08em;
-}
-.card-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; }
-.card-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; flex-wrap: wrap; }
+      <!-- MISSILE -->
+      <a href="projects/missile.html" class="project-card" data-category="props">
+        <div class="card-img">
+          <!-- <img src="assets/images/missile.jpg" alt="AIM-9 Sidewinder missile model"> -->
+          <span class="card-img-placeholder">Photo coming soon</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="cat-badge props">Props & Models</span>
+            <span class="status-badge complete">Complete</span>
+          </div>
+          <h3 class="card-title">Design: AIM-9 Sidewinder</h3>
+          <p class="card-desc">A missile-inspired side project that nailed tolerances on the first print. A satisfying one-and-done.</p>
+          <p class="card-arrow">View project →</p>
+        </div>
+      </a>
 
-.cat-badge {
-  font-family: 'JetBrains Mono', monospace; font-size: .68rem; font-weight: 500;
-  padding: 3px 9px; border-radius: 5px; letter-spacing: .04em;
-  background: var(--blue-lt); color: var(--blue-dk); border: 1.5px solid var(--blue);
-}
-.cat-badge.props { background: #FEF3C7; color: #92400E; border-color: #FCD34D; }
-.cat-badge.software { background: #D1FAE5; color: #065F46; border-color: #6EE7B7; }
-.cat-badge.electronics { background: #FCE7F3; color: #831843; border-color: #F9A8D4; }
-.cat-badge.leatherworking { background: #FEE2E2; color: #7F1D1D; border-color: #FCA5A5; }
+      <!-- BASTION -->
+      <a href="projects/bastion.html" class="project-card" data-category="software">
+        <div class="card-img">
+          <!-- <img src="assets/images/bastion.jpg" alt="Bastion game screenshot"> -->
+          <span class="card-img-placeholder">Screenshot coming soon</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="cat-badge software">Software & Dev</span>
+            <span class="status-badge in-progress">In Progress</span>
+          </div>
+          <h3 class="card-title">Bastion</h3>
+          <p class="card-desc">A roguelite tower defense game built in Godot 4. Procedural levels, strategic unit placement, and escalating enemy waves.</p>
+          <p class="card-arrow">View project →</p>
+        </div>
+      </a>
 
-.status-badge {
-  font-family: 'JetBrains Mono', monospace; font-size: .68rem; font-weight: 500;
-  padding: 3px 9px; border-radius: 5px;
-}
-.status-badge.complete { background: var(--grey-lt); color: var(--grey); border: 1.5px solid var(--grey-bd); }
-.status-badge.in-progress { background: var(--blue-pale); color: var(--blue); border: 1.5px solid var(--blue-lt); }
+    </div><!-- /cards-grid -->
+  </div>
+</div>
 
-.card-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; }
-.card-desc { font-size: .87rem; color: var(--grey); line-height: 1.55; flex: 1; }
-.card-arrow { margin-top: 16px; font-size: .85rem; font-weight: 700; color: var(--blue); }
+<footer>
+  <p>© 2025 Erik Reiner · <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
+</footer>
 
-/* ── PROJECT PAGE ── */
-.project-hero {
-  border-bottom: 2px solid var(--dark);
-  padding: 48px 24px 40px;
-  background: var(--blue-pale);
-}
-.project-hero-inner { max-width: var(--max); margin: 0 auto; }
-.back-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: .83rem; font-weight: 700; color: var(--blue);
-  text-decoration: none; margin-bottom: 20px;
-  font-family: 'JetBrains Mono', monospace;
-}
-.back-link:hover { text-decoration: underline; }
-.project-hero h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; line-height: 1.1; }
-.project-hero-sub {
-  font-family: 'JetBrains Mono', monospace; font-size: .8rem;
-  color: var(--grey); margin-top: 8px; letter-spacing: .06em;
-}
-.project-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; align-items: center; }
+<script>
+// Nav toggle
+const toggle = document.querySelector('.nav-toggle');
+const links = document.querySelector('.nav-links');
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('open');
+  links.classList.toggle('open');
+});
 
-.project-body { max-width: 780px; margin: 0 auto; padding: 48px 24px 80px; }
-.project-body h2 { font-size: 1.4rem; font-weight: 800; margin: 40px 0 14px; padding-bottom: 8px; border-bottom: 2px solid var(--grey-lt); }
-.project-body h2:first-child { margin-top: 0; }
-.project-body p { font-size: .97rem; color: #334155; line-height: 1.75; margin-bottom: 16px; }
-.project-body p:last-child { margin-bottom: 0; }
+// Filter with smooth animation
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.project-card');
 
-/* YouTube embed */
-.video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; border: 2px solid var(--dark); box-shadow: var(--shadow); margin: 24px 0; }
-.video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
 
-/* Project image */
-.project-img { border-radius: 10px; border: 2px solid var(--dark); box-shadow: var(--shadow); margin: 24px 0; width: 100%; }
+    // Phase 1: fade everything out
+    cards.forEach(card => {
+      card.style.opacity = '0';
+      card.style.scale = '0.93';
+    });
 
-/* Tech tags */
-.tech-list { display: flex; flex-wrap: wrap; gap: 7px; margin: 16px 0 32px; }
-.tech-tag {
-  font-family: 'JetBrains Mono', monospace; font-size: .72rem; font-weight: 500;
-  padding: 4px 10px; border-radius: 6px;
-  background: var(--blue-pale); color: var(--blue-dk);
-  border: 1.5px solid var(--blue-lt);
-}
+    setTimeout(() => {
+      // Phase 2: hide non-matching, show matching
+      cards.forEach(card => {
+        const match = filter === 'all' || card.dataset.category === filter;
+        card.style.display = match ? 'flex' : 'none';
+        card.style.flexDirection = match ? 'column' : '';
+      });
 
-/* Under construction notice */
-.wip-notice {
-  border: 2px solid var(--blue); border-radius: var(--radius);
-  background: var(--blue-pale); padding: 20px 24px;
-  margin: 24px 0;
-  display: flex; align-items: flex-start; gap: 12px;
-}
-.wip-notice-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
-.wip-notice p { font-size: .9rem; color: var(--blue-dk); margin: 0; font-weight: 500; }
-
-/* ── HOME PAGE ── */
-.home-intro { padding: 72px 24px; max-width: var(--max); margin: 0 auto; display: flex; gap: 48px; align-items: flex-start; flex-wrap: wrap; }
-.home-intro-text { flex: 1; min-width: 280px; }
-.home-intro-text h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; margin-bottom: 16px; }
-.home-intro-text p { font-size: 1rem; color: var(--grey); line-height: 1.75; margin-bottom: 14px; }
-.home-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 20px; }
-.home-tag {
-  padding: 5px 13px; border-radius: 8px; font-size: .78rem; font-weight: 700;
-  border: 2px solid var(--dark); cursor: default;
-  transition: transform .15s;
-}
-.home-tag:hover { transform: translate(-2px, -2px); }
-.home-tag.tb { background: var(--blue); color: var(--white); }
-.home-tag.tbl { background: var(--blue-lt); color: var(--blue-dk); }
-.home-tag.tg { background: var(--grey-lt); color: var(--grey); border-color: var(--grey-bd); }
-.home-tag.tw { background: var(--white); color: var(--dark); }
-
-.home-featured { padding: 0 24px 72px; }
-.home-featured-inner { max-width: var(--max); margin: 0 auto; }
-.section-label {
-  font-family: 'JetBrains Mono', monospace; font-size: .75rem;
-  letter-spacing: .1em; color: var(--grey); text-transform: uppercase;
-  margin-bottom: 20px;
-}
-.cta-link {
-  display: inline-flex; align-items: center; gap: 8px;
-  margin-top: 28px; padding: 10px 20px;
-  background: var(--blue); color: var(--white);
-  border: 2px solid var(--blue-dk); border-radius: 10px;
-  font-size: .88rem; font-weight: 700; text-decoration: none;
-  box-shadow: var(--shadow-sm); transition: transform .15s, box-shadow .15s;
-}
-.cta-link:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--blue-dk); color: var(--white); }
-
-/* ── CONTACT PAGE ── */
-.contact-links { display: flex; flex-direction: column; gap: 12px; max-width: 560px; }
-.contact-link {
-  display: flex; align-items: center; gap: 14px;
-  padding: 14px 18px; border: 2px solid var(--dark);
-  border-radius: 12px; background: var(--white);
-  box-shadow: var(--shadow); text-decoration: none; color: var(--dark);
-  transition: transform .15s, box-shadow .15s;
-}
-.contact-link:hover { transform: translate(-3px, -3px); box-shadow: 8px 8px 0 var(--blue); }
-.contact-icon {
-  width: 38px; height: 38px; border-radius: 8px; border: 2px solid var(--dark);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; font-family: 'JetBrains Mono', monospace;
-  font-weight: 700; font-size: .8rem; background: var(--blue-lt); color: var(--blue-dk);
-}
-.contact-icon.grey { background: var(--grey-lt); color: var(--grey); }
-.contact-name { font-weight: 700; font-size: .93rem; }
-.contact-handle { font-family: 'JetBrains Mono', monospace; font-size: .75rem; color: var(--grey); margin-top: 1px; }
-.contact-arrow { margin-left: auto; color: var(--blue); opacity: .45; font-size: 1.1rem; transition: opacity .15s; }
-.contact-link:hover .contact-arrow { opacity: 1; }
-
-/* ── FOOTER ── */
-footer {
-  border-top: 2px solid var(--dark); padding: 24px;
-  text-align: center; font-family: 'JetBrains Mono', monospace;
-  font-size: .75rem; color: var(--grey);
-}
-
-/* ── ANIMATIONS ── */
-@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
-
-/* ── UTILITIES ── */
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+      // Phase 3: staggered fade-in for visible cards
+      const visible = [...cards].filter(c => c.style.display !== 'none');
+      visible.forEach((card, i) => {
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.scale = '1';
+        }, i * 80);
+      });
+    }, 200);
+  });
+});
+</script>
+</body>
+</html>
