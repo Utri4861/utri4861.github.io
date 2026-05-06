@@ -3,15 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Metrocop — Erik Reiner</title>
+<title>Half-Life 2: Metrocop | Erik Reiner</title>
+<meta name="description" content="Half-Life 2 Metrocop costume project by Erik Reiner.">
 <link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/site.js" defer></script>
 </head>
-<body>
+<body data-page="project">
 
 <nav>
-  <div class="nav-inner">
+  <div class="shell nav-inner">
     <a href="../index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
@@ -22,53 +24,45 @@
   </div>
 </nav>
 
-<div class="project-hero">
-  <div class="project-hero-inner">
-    <a href="../projects.html" class="back-link">← All Projects</a>
-    <h1>Half-Life 2: Metrocop</h1>
-    <p class="project-hero-sub">Video Game Costume</p>
-    <div class="project-meta">
-      <span class="cat-badge">Costumes</span>
-      <span class="status-badge in-progress">In Progress</span>
-    </div>
+<header class="project-hero shell">
+  <a href="../projects.html" class="back-link">&larr; Back to projects</a>
+  <h1>Half-Life 2: Metrocop</h1>
+  <p class="project-hero-sub">Video game costume</p>
+  <div class="project-meta">
+    <span class="cat-badge">3D Printing</span>
+    <span class="cat-badge alt">Fusion 360</span>
+    <span class="status-badge in-progress">In Progress</span>
   </div>
-</div>
+</header>
 
-<div class="project-body">
-
-  <!-- Add your hero image here when ready:
-  <img src="../assets/images/metrocop.jpg" alt="Metrocop costume" class="project-img"> -->
-
+<main class="project-body">
   <div class="wip-notice">
-    <span class="wip-notice-icon">🔧</span>
-    <p>This project is currently in progress. More photos and write-ups coming soon.</p>
+    <span class="wip-notice-icon">[+]</span>
+    <p>This build is still underway. More photos, process notes, and breakdowns will be added as the costume develops.</p>
   </div>
 
   <div class="tech-list">
     <span class="tech-tag">3D Printing</span>
     <span class="tech-tag">Sewing</span>
     <span class="tech-tag">Upholstery</span>
-    <span class="tech-tag">CAD / Fusion 360</span>
+    <span class="tech-tag">Fusion 360</span>
     <span class="tech-tag">Electronics</span>
     <span class="tech-tag">Airbrush</span>
   </div>
 
+  <div class="project-intro">
+    <p>This Metrocop build is all about screen-accurate shapes, believable materials, and a wearable final silhouette. It pulls together hard-surface printed parts, soft goods, finishing work, and lighting details into one costume system.</p>
+  </div>
+
   <h2>Stunstick</h2>
-  <p>A PVC pipe base with 3D printed components, this stun stick is cheap and easy to manufacture while offering a beautiful film-ready finish.</p>
+  <p>Built around a PVC pipe core with 3D-printed components, the stunstick became a good test of low-cost construction and high-finish presentation. The goal was something sturdy enough to handle, but polished enough to read as a convincing in-universe prop.</p>
 
-  <h2>Reverse Engineering: Belt Boxes</h2>
-  <p>The Metrocop's belt boxes, designed with printability and light effects in mind. Utilizing components from a reverse engineered puck light.</p>
-
-</div>
+  <h2>Belt Boxes</h2>
+  <p>The belt boxes were reverse engineered with both printability and lighting in mind. I designed them around readily available puck-light components so the final build could keep the right shape without overcomplicating the electronics.</p>
+</main>
 
 <footer>
-  <p>© 2025 Erik Reiner · <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
+  <p>&copy; 2025 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
-
-<script>
-const toggle = document.querySelector('.nav-toggle');
-const links = document.querySelector('.nav-links');
-toggle.addEventListener('click', () => { toggle.classList.toggle('open'); links.classList.toggle('open'); });
-</script>
 </body>
 </html>

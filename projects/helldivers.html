@@ -3,15 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Helldivers 2: B-01 Armor — Erik Reiner</title>
+<title>Helldivers 2: B-01 Armor | Erik Reiner</title>
+<meta name="description" content="Helldivers 2 B-01 armor build by Erik Reiner.">
 <link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/site.js" defer></script>
 </head>
-<body>
+<body data-page="project">
 
 <nav>
-  <div class="nav-inner">
+  <div class="shell nav-inner">
     <a href="../index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
@@ -22,26 +24,21 @@
   </div>
 </nav>
 
-<div class="project-hero">
-  <div class="project-hero-inner">
-    <a href="../projects.html" class="back-link">← All Projects</a>
-    <h1>Helldivers 2: B-01 Armor</h1>
-    <p class="project-hero-sub">Video Game Costume</p>
-    <div class="project-meta">
-      <span class="cat-badge">Costumes</span>
-      <span class="status-badge in-progress">In Progress</span>
-    </div>
+<header class="project-hero shell">
+  <a href="../projects.html" class="back-link">&larr; Back to projects</a>
+  <h1>Helldivers 2: B-01 Armor</h1>
+  <p class="project-hero-sub">Video game costume</p>
+  <div class="project-meta">
+    <span class="cat-badge">3D Printing</span>
+    <span class="cat-badge steel">Metalworking</span>
+    <span class="status-badge in-progress">In Progress</span>
   </div>
-</div>
+</header>
 
-<div class="project-body">
-
-  <!-- Add your hero image here when ready:
-  <img src="../assets/images/helldivers.jpg" alt="Helldivers 2 B-01 armor" class="project-img"> -->
-
+<main class="project-body">
   <div class="wip-notice">
-    <span class="wip-notice-icon">🔧</span>
-    <p>This project is currently in progress. More photos and write-ups coming soon.</p>
+    <span class="wip-notice-icon">[+]</span>
+    <p>This armor set is still in active development. Fit, finish, and soft-goods integration are all ongoing.</p>
   </div>
 
   <div class="tech-list">
@@ -53,16 +50,13 @@
     <span class="tech-tag">Airbrush</span>
   </div>
 
-</div>
+  <div class="project-intro">
+    <p>The B-01 armor is a full wearable costume project balancing shape accuracy, mobility, and layered materials. It combines printed plates, sewn under-structures, metal details, and paint treatment into a final suit that still needs to move like clothing.</p>
+  </div>
+</main>
 
 <footer>
-  <p>© 2025 Erik Reiner · <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
+  <p>&copy; 2025 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
-
-<script>
-const toggle = document.querySelector('.nav-toggle');
-const links = document.querySelector('.nav-links');
-toggle.addEventListener('click', () => { toggle.classList.toggle('open'); links.classList.toggle('open'); });
-</script>
 </body>
 </html>

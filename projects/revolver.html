@@ -3,15 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Colt Walker Revolver — Erik Reiner</title>
+<title>Plans: Colt Walker Revolver | Erik Reiner</title>
+<meta name="description" content="Colt Walker revolver CAD and animation project by Erik Reiner.">
 <link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/site.js" defer></script>
 </head>
-<body>
+<body data-page="project">
 
 <nav>
-  <div class="nav-inner">
+  <div class="shell nav-inner">
     <a href="../index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
@@ -22,20 +24,18 @@
   </div>
 </nav>
 
-<div class="project-hero">
-  <div class="project-hero-inner">
-    <a href="../projects.html" class="back-link">← All Projects</a>
-    <h1>Plans: Colt Walker Revolver</h1>
-    <p class="project-hero-sub">CAD / Fusion 360</p>
-    <div class="project-meta">
-      <span class="cat-badge props">Props & Models</span>
-      <span class="status-badge complete">Complete</span>
-    </div>
+<header class="project-hero shell">
+  <a href="../projects.html" class="back-link">&larr; Back to projects</a>
+  <h1>Plans: Colt Walker Revolver</h1>
+  <p class="project-hero-sub">CAD exploration | Fusion 360</p>
+  <div class="project-meta">
+    <span class="cat-badge alt">Fusion 360</span>
+    <span class="cat-badge signal">Animation</span>
+    <span class="status-badge complete">Complete</span>
   </div>
-</div>
+</header>
 
-<div class="project-body">
-
+<main class="project-body">
   <div class="tech-list">
     <span class="tech-tag">Fusion 360</span>
     <span class="tech-tag">CAD</span>
@@ -43,33 +43,31 @@
     <span class="tech-tag">3D Modeling</span>
   </div>
 
+  <div class="project-intro">
+    <p>This was one of my first chances to push beyond a single finished model and explore variants, moving parts, and presentation. It turned the Colt Walker into a playground for customization ideas and gave me a better feel for how much personality can live inside one base platform.</p>
+  </div>
+
   <h2>Animation</h2>
-  <p>My first foray into Fusion 360's animation abilities, using an early model of the Colt Walker.</p>
+  <p>The project also became my first real experiment with Fusion 360 animation tools. Using an early version of the model, I built a breakdown that let the parts feel modular and mechanically legible.</p>
+  <p>That animation pass mattered because it made the model feel less like a static object and more like a system. Pulling the revolver apart piece by piece was a good way to learn both the software and the design.</p>
 
   <div class="video-wrap">
     <iframe src="https://www.youtube.com/embed/pRz_HAo5J6s" title="Colt Walker Revolver animation" allowfullscreen loading="lazy"></iframe>
   </div>
 
   <h2>Iterations</h2>
-  <p>The sequence in The Good, the Bad, and the Ugly where one of the characters builds his gun from a bunch of components has always stuck with me. I love the idea of customization in general and always love it when video games allow you to swap out parts.</p>
-  <p>This project became an exploration of that idea — a series of different barrel and cylinder combinations, each with its own character:</p>
-  <ul style="margin: 12px 0 16px 20px; color: #334155; line-height: 2; font-size: .97rem;">
-    <li>The "skeleton" of the gun — no barrel assembly</li>
-    <li>An elegant setup — rounded, engraved body with a tapered barrel</li>
-    <li>My personal favorite: a cartridge conversion, inspired by the appearance of the Gasser M1870</li>
+  <p>The sequence in The Good, the Bad, and the Ugly where a gun is assembled from separate components always stuck with me. I liked the idea of one base object spawning multiple personalities through swapped parts and silhouette changes.</p>
+  <ul>
+    <li>A stripped-back frame with no full barrel assembly, almost a mechanical skeleton.</li>
+    <li>A more elegant engraved setup with a rounded body and tapered barrel.</li>
+    <li>A cartridge conversion version inspired in part by the Gasser M1870.</li>
   </ul>
-  <p>Homemade plans found on the web for the Colt Walker proved a challenging Fusion 360 project that taught more than a few lessons.</p>
-
-</div>
+  <p>Working from homemade plans found online made it messy in a good way. It was the kind of project that teaches because it refuses to be too straightforward.</p>
+  <p>More than anything, this one taught me that iteration is where a lot of the fun lives. Once the base model existed, it stopped being about reproducing a single revolver and started being about seeing how many different identities could branch out from the same core.</p>
+</main>
 
 <footer>
-  <p>© 2025 Erik Reiner · <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
+  <p>&copy; 2025 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
-
-<script>
-const toggle = document.querySelector('.nav-toggle');
-const links = document.querySelector('.nav-links');
-toggle.addEventListener('click', () => { toggle.classList.toggle('open'); links.classList.toggle('open'); });
-</script>
 </body>
 </html>

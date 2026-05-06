@@ -3,15 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bastion — Erik Reiner</title>
+<title>Bastion | Erik Reiner</title>
+<meta name="description" content="Bastion, a Godot 4 roguelite tower defense game by Erik Reiner.">
 <link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/site.js" defer></script>
 </head>
-<body>
+<body data-page="project">
 
 <nav>
-  <div class="nav-inner">
+  <div class="shell nav-inner">
     <a href="../index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
@@ -22,54 +24,43 @@
   </div>
 </nav>
 
-<div class="project-hero">
-  <div class="project-hero-inner">
-    <a href="../projects.html" class="back-link">← All Projects</a>
-    <h1>Bastion</h1>
-    <p class="project-hero-sub">Roguelite Tower Defense — Godot 4</p>
-    <div class="project-meta">
-      <span class="cat-badge software">Software & Dev</span>
-      <span class="status-badge in-progress">In Progress</span>
-    </div>
+<header class="project-hero shell">
+  <a href="../projects.html" class="back-link">&larr; Back to projects</a>
+  <h1>Bastion</h1>
+  <p class="project-hero-sub">Roguelite tower defense | Godot 4</p>
+  <div class="project-meta">
+    <span class="cat-badge game">Game Dev</span>
+    <span class="status-badge in-progress">In Progress</span>
   </div>
-</div>
+</header>
 
-<div class="project-body">
-
-  <!-- Add screenshot here when ready:
-  <img src="../assets/images/bastion.jpg" alt="Bastion game screenshot" class="project-img"> -->
-
+<main class="project-body">
   <div class="wip-notice">
-    <span class="wip-notice-icon">🎮</span>
-    <p>Bastion is currently in active development. Screenshots and devlog entries coming soon.</p>
+    <span class="wip-notice-icon">[+]</span>
+    <p>Bastion is in active development. Screenshots, systems write-ups, and devlog-style updates will land here over time.</p>
   </div>
 
   <div class="tech-list">
     <span class="tech-tag">Godot 4</span>
     <span class="tech-tag">GDScript</span>
-    <span class="tech-tag">Meshy AI</span>
-    <span class="tech-tag">Game Design</span>
+    <span class="tech-tag">Procedural Design</span>
     <span class="tech-tag">3D Assets</span>
+    <span class="tech-tag">Game Systems</span>
+  </div>
+
+  <div class="project-intro">
+    <p>Bastion is a roguelite tower defense project built from the ground up in Godot 4. It is both a creative project and a technical one, combining game feel, procedural structure, unit balance, and pipeline experimentation.</p>
   </div>
 
   <h2>About the Game</h2>
-  <p>Bastion is a roguelite tower defense game built from the ground up in Godot 4. Players strategically place defensive units across procedurally generated levels, managing limited resources against escalating waves of enemies.</p>
-  <p>Each run is different — level layouts shift, enemy compositions vary, and the units available to you change. The goal is a game that rewards learning and adaptation over memorization.</p>
+  <p>Players place defensive units across procedurally generated levels while managing limited resources against increasingly difficult waves. The design goal is to reward adaptation and decision-making rather than memorization.</p>
 
-  <h2>Development</h2>
-  <p>This project serves as both a creative outlet and a serious technical exercise — exploring Godot 4's capabilities, procedural generation, 3D asset pipelines via Meshy AI, and game design fundamentals all at once.</p>
-  <p>More updates, screenshots, and devlog entries will appear here as development continues.</p>
-
-</div>
+  <h2>Development Focus</h2>
+  <p>This project is where I explore systems design, procedural generation, and Godot workflow all at once. It also serves as a sandbox for figuring out how visual assets, gameplay iteration, and production scope can support each other.</p>
+</main>
 
 <footer>
-  <p>© 2025 Erik Reiner · <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
+  <p>&copy; 2025 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
-
-<script>
-const toggle = document.querySelector('.nav-toggle');
-const links = document.querySelector('.nav-links');
-toggle.addEventListener('click', () => { toggle.classList.toggle('open'); links.classList.toggle('open'); });
-</script>
 </body>
 </html>

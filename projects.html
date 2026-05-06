@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects — Erik Reiner</title>
-<meta name="description" content="All projects by Erik Reiner — costumes, props, software, and more.">
+<title>Projects | Erik Reiner</title>
+<meta name="description" content="Projects by Erik Reiner across cosplay, fabrication, CAD, and game development.">
 <link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/site.js" defer></script>
 </head>
-<body>
+<body data-page="projects">
 
 <nav>
-  <div class="nav-inner">
+  <div class="shell nav-inner">
     <a href="index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
@@ -23,13 +24,21 @@
   </div>
 </nav>
 
-<div class="hero">
-  <h1>Projects</h1>
-  <p>Costumes, props, CAD, game dev, and everything in between.</p>
-</div>
+<header class="page-hero compact shell">
+  <span class="eyebrow">Project Index</span>
+  <h1>Work that moves between physical and digital craft.</h1>
+  <p>Filter by toolset and the cards reshuffle into a new arrangement. The point is not just sorting the list, but letting the page feel active and hands-on.</p>
+</header>
 
-<div class="container">
-  <div class="section">
+<main class="shell section">
+  <section class="panel toolbar">
+    <div class="section-header" style="margin-bottom:20px;">
+      <div>
+        <p class="section-label">Browse by discipline</p>
+        <h2 class="section-title">Projects across fabrication, CAD, and game development.</h2>
+      </div>
+      <p class="filter-status" id="filter-status" aria-live="polite">Showing 7 projects</p>
+    </div>
 
     <div class="filter-bar" role="group" aria-label="Filter by tool">
       <button class="filter-btn active" data-filter="all">All</button>
@@ -42,277 +51,154 @@
       <button class="filter-btn" data-filter="electronics">Electronics</button>
       <button class="filter-btn" data-filter="gamedev">Game Dev</button>
     </div>
+  </section>
 
-    <div class="cards-grid" id="cards-grid">
+  <section class="grid-two" style="margin-top:24px; margin-bottom:28px;">
+    <article class="panel" style="padding:24px;">
+      <p class="section-label">Costumes</p>
+      <h2 class="card-title">Wearable builds with fabrication at the center.</h2>
+      <p class="card-desc">These projects usually combine 3D printing, sewing, finishing, and hardware work. They start with references and become a balancing act between silhouette, comfort, and convincing materials.</p>
+    </article>
 
-      <!-- METROCOP -->
-      <a href="projects/metrocop.html" class="project-card" data-tools="3d-printing,fusion360,sewing,airbrush,electronics" data-id="metrocop">
-        <div class="card-img">
-          <!-- <img src="assets/images/metrocop.jpg" alt="Metrocop costume"> -->
-          <span class="card-img-placeholder">Photo coming soon</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="cat-badge">3D Printing</span><span class="cat-badge" style="background:#D1FAE5;color:#065F46;border-color:#6EE7B7">Fusion 360</span>
-            <span class="status-badge in-progress">In Progress</span>
+    <article class="panel" style="padding:24px;">
+      <p class="section-label">CAD</p>
+      <h2 class="card-title">Mechanical studies, print-ready models, and design exercises.</h2>
+      <p class="card-desc">The CAD work leans into clean modeling, historical or found-plan references, and the fun of seeing a digital idea turn into something physical, animated, or ready for a first print.</p>
+    </article>
+  </section>
+
+  <section class="cards-wrap">
+    <div class="cards-stage" id="cards-stage">
+      <a href="projects/metrocop.html" class="project-card" data-id="metrocop" data-tools="3d-printing,fusion360,sewing,airbrush,electronics">
+        <article class="card-shell">
+          <div class="card-img" data-mark="Costume">
+            <span class="card-img-placeholder">Photo coming soon</span>
           </div>
-          <h3 class="card-title">Half-Life 2: Metrocop</h3>
-          <p class="card-desc">Screen-accurate Civil Protection unit with 3D-printed armor, fabricated components, and hand-finished detailing.</p>
-          <p class="card-arrow">View project →</p>
-        </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="cat-badge">3D Printing</span>
+              <span class="cat-badge alt">Fusion 360</span>
+              <span class="status-badge in-progress">In Progress</span>
+            </div>
+            <h3 class="card-title">Half-Life 2: Metrocop</h3>
+            <p class="card-desc">Screen-accurate Civil Protection unit with printed armor, fabricated parts, and detailed finishing work.</p>
+            <p class="card-arrow">View project -&gt;</p>
+          </div>
+        </article>
       </a>
 
-      <!-- HELLDIVERS -->
-      <a href="projects/helldivers.html" class="project-card" data-tools="3d-printing,sewing,airbrush,metalworking" data-id="helldivers">
-        <div class="card-img">
-          <!-- <img src="assets/images/helldivers.jpg" alt="Helldivers 2 B-01 armor"> -->
-          <span class="card-img-placeholder">Photo coming soon</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="cat-badge">3D Printing</span><span class="cat-badge props">Metalworking</span>
-            <span class="status-badge in-progress">In Progress</span>
+      <a href="projects/helldivers.html" class="project-card" data-id="helldivers" data-tools="3d-printing,sewing,airbrush,metalworking">
+        <article class="card-shell">
+          <div class="card-img" data-mark="Armor">
+            <span class="card-img-placeholder">Photo coming soon</span>
           </div>
-          <h3 class="card-title">Helldivers 2: B-01 Armor</h3>
-          <p class="card-desc">Full wearable B-01 Tactical armor. Printed panels, sewn underlayer, vinyl cutting, and airbrushed finish.</p>
-          <p class="card-arrow">View project →</p>
-        </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="cat-badge">3D Printing</span>
+              <span class="cat-badge steel">Metalworking</span>
+              <span class="status-badge in-progress">In Progress</span>
+            </div>
+            <h3 class="card-title">Helldivers 2: B-01 Armor</h3>
+            <p class="card-desc">Full wearable armor build combining printed panels, sewn soft goods, vinyl work, and airbrushed finish.</p>
+            <p class="card-arrow">View project -&gt;</p>
+          </div>
+        </article>
       </a>
 
-      <!-- KNIGHT -->
-      <a href="projects/knight.html" class="project-card" data-tools="sewing,leatherworking,metalworking" data-id="knight">
-        <div class="card-img">
-          <!-- <img src="assets/images/knight.jpg" alt="15th century Milanese armor"> -->
-          <span class="card-img-placeholder">Photo coming soon</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="cat-badge props">Metalworking</span><span class="cat-badge leatherworking">Leatherworking</span>
-            <span class="status-badge in-progress">In Progress</span>
+      <a href="projects/knight.html" class="project-card" data-id="knight" data-tools="sewing,leatherworking,metalworking">
+        <article class="card-shell">
+          <div class="card-img" data-mark="Historical">
+            <span class="card-img-placeholder">Photo coming soon</span>
           </div>
-          <h3 class="card-title">15th C. Milanese Armor</h3>
-          <p class="card-desc">Steel plate armor built from Craig Nadler patterns. Years in the making and still evolving — a labor of love.</p>
-          <p class="card-arrow">View project →</p>
-        </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="cat-badge steel">Metalworking</span>
+              <span class="cat-badge leather">Leatherworking</span>
+              <span class="status-badge evolving">Always Evolving</span>
+            </div>
+            <h3 class="card-title">15th C. Milanese Armor</h3>
+            <p class="card-desc">A long-running historical armor project built from Nadler patterns and shaped by years of iteration.</p>
+            <p class="card-arrow">View project -&gt;</p>
+          </div>
+        </article>
       </a>
 
-      <!-- CANNON -->
-      <a href="projects/cannon.html" class="project-card" data-tools="3d-printing,fusion360" data-id="cannon">
-        <div class="card-img">
-          <!-- <img src="assets/images/cannon.jpg" alt="24 Pounder Cannon CAD model"> -->
-          <span class="card-img-placeholder">Photo coming soon</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="cat-badge">3D Printing</span><span class="cat-badge" style="background:#D1FAE5;color:#065F46;border-color:#6EE7B7">Fusion 360</span>
-            <span class="status-badge complete">Complete</span>
+      <a href="projects/cannon.html" class="project-card" data-id="cannon" data-tools="3d-printing,fusion360">
+        <article class="card-shell">
+          <div class="card-img" data-mark="CAD">
+            <span class="card-img-placeholder">Photo coming soon</span>
           </div>
-          <h3 class="card-title">Pop Mechanics: 24-Pounder Cannon</h3>
-          <p class="card-desc">Fully modeled in Fusion 360 and 3D printed, based on plans from a 25¢ thrift store Popular Mechanics book.</p>
-          <p class="card-arrow">View project →</p>
-        </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="cat-badge">3D Printing</span>
+              <span class="cat-badge alt">Fusion 360</span>
+              <span class="status-badge complete">Complete</span>
+            </div>
+            <h3 class="card-title">Pop Mechanics: 24-Pounder Cannon</h3>
+            <p class="card-desc">A cannon modeled from vintage plans and turned into an early, memorable Fusion 360 exercise.</p>
+            <p class="card-arrow">View project -&gt;</p>
+          </div>
+        </article>
       </a>
 
-      <!-- REVOLVER -->
-      <a href="projects/revolver.html" class="project-card" data-tools="3d-printing,fusion360" data-id="revolver">
-        <div class="card-img">
-          <!-- <img src="assets/images/revolver.jpg" alt="Colt Walker revolver CAD model"> -->
-          <span class="card-img-placeholder">Photo coming soon</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="cat-badge">3D Printing</span><span class="cat-badge" style="background:#D1FAE5;color:#065F46;border-color:#6EE7B7">Fusion 360</span>
-            <span class="status-badge complete">Complete</span>
+      <a href="projects/revolver.html" class="project-card" data-id="revolver" data-tools="3d-printing,fusion360">
+        <article class="card-shell">
+          <div class="card-img" data-mark="Prop">
+            <span class="card-img-placeholder">Photo coming soon</span>
           </div>
-          <h3 class="card-title">Plans: Colt Walker Revolver</h3>
-          <p class="card-desc">Fully modeled in Fusion 360 and 3D printed. Multiple barrel and cylinder variations with an animated Fusion 360 breakdown.</p>
-          <p class="card-arrow">View project →</p>
-        </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="cat-badge">3D Printing</span>
+              <span class="cat-badge alt">Fusion 360</span>
+              <span class="status-badge complete">Complete</span>
+            </div>
+            <h3 class="card-title">Plans: Colt Walker Revolver</h3>
+            <p class="card-desc">A Fusion 360 study in variants, animation, and modular thinking built around one revolver platform.</p>
+            <p class="card-arrow">View project -&gt;</p>
+          </div>
+        </article>
       </a>
 
-      <!-- MISSILE -->
-      <a href="projects/missile.html" class="project-card" data-tools="3d-printing,fusion360" data-id="missile">
-        <div class="card-img">
-          <!-- <img src="assets/images/missile.jpg" alt="AIM-9 Sidewinder missile model"> -->
-          <span class="card-img-placeholder">Photo coming soon</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="cat-badge">3D Printing</span><span class="cat-badge" style="background:#D1FAE5;color:#065F46;border-color:#6EE7B7">Fusion 360</span>
-            <span class="status-badge complete">Complete</span>
+      <a href="projects/missile.html" class="project-card" data-id="missile" data-tools="3d-printing,fusion360">
+        <article class="card-shell">
+          <div class="card-img" data-mark="Model">
+            <span class="card-img-placeholder">Photo coming soon</span>
           </div>
-          <h3 class="card-title">Design: AIM-9 Sidewinder</h3>
-          <p class="card-desc">A missile-inspired side project that nailed tolerances on the first print. A satisfying one-and-done.</p>
-          <p class="card-arrow">View project →</p>
-        </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="cat-badge">3D Printing</span>
+              <span class="cat-badge alt">Fusion 360</span>
+              <span class="status-badge complete">Complete</span>
+            </div>
+            <h3 class="card-title">Design: AIM-9 Sidewinder</h3>
+            <p class="card-desc">A compact side project focused on good tolerances, clean CAD, and a satisfying first-print success.</p>
+            <p class="card-arrow">View project -&gt;</p>
+          </div>
+        </article>
       </a>
 
-      <!-- BASTION -->
-      <a href="projects/bastion.html" class="project-card" data-tools="gamedev" data-id="bastion">
-        <div class="card-img">
-          <!-- <img src="assets/images/bastion.jpg" alt="Bastion game screenshot"> -->
-          <span class="card-img-placeholder">Screenshot coming soon</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="cat-badge software">Game Dev</span>
-            <span class="status-badge in-progress">In Progress</span>
+      <a href="projects/bastion.html" class="project-card" data-id="bastion" data-tools="gamedev">
+        <article class="card-shell">
+          <div class="card-img" data-mark="Game">
+            <span class="card-img-placeholder">Screenshot coming soon</span>
           </div>
-          <h3 class="card-title">Bastion</h3>
-          <p class="card-desc">A roguelite tower defense game built in Godot 4. Procedural levels, strategic unit placement, and escalating enemy waves.</p>
-          <p class="card-arrow">View project →</p>
-        </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="cat-badge game">Game Dev</span>
+              <span class="status-badge in-progress">In Progress</span>
+            </div>
+            <h3 class="card-title">Bastion</h3>
+            <p class="card-desc">A roguelite tower defense game in Godot 4 with procedural runs, strategic placement, and escalating waves.</p>
+            <p class="card-arrow">View project -&gt;</p>
+          </div>
+        </article>
       </a>
-
-    </div><!-- /cards-grid -->
-  </div>
-</div>
+    </div>
+  </section>
+</main>
 
 <footer>
-  <p>© 2025 Erik Reiner · <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
+  <p>&copy; 2025 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
-
-<script>
-const toggle = document.querySelector('.nav-toggle');
-const links  = document.querySelector('.nav-links');
-toggle.addEventListener('click', () => { toggle.classList.toggle('open'); links.classList.toggle('open'); });
-
-const filterBtns = document.querySelectorAll('.filter-btn');
-const grid       = document.getElementById('cards-grid');
-let   filtering  = false;
-
-// ── TILT EFFECT ──
-function handleTilt(e) {
-  const rect = this.getBoundingClientRect();
-  const rx = ((e.clientY - rect.top  - rect.height/2) / (rect.height/2)) * -9;
-  const ry = ((e.clientX - rect.left - rect.width /2) / (rect.width /2)) *  9;
-  this.style.transition = 'box-shadow .1s ease';
-  this.style.transform  = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-8px) scale(1.03)`;
-  this.style.boxShadow  = `${-ry*1.5}px 18px 36px rgba(37,99,235,0.28)`;
-  this.style.zIndex     = '10';
-}
-function resetTilt() {
-  this.style.transition = 'transform .35s ease, box-shadow .35s ease';
-  this.style.transform  = '';
-  this.style.boxShadow  = '';
-  this.style.zIndex     = '';
-}
-function attachTilt(card) {
-  card.addEventListener('mousemove', handleTilt);
-  card.addEventListener('mouseleave', resetTilt);
-}
-document.querySelectorAll('.project-card').forEach(c => {
-  c.dataset.visible = 'true';
-  attachTilt(c);
-});
-
-// ── FILTER ──
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    if (filtering) return;
-    filtering = true;
-
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-
-    const allCards  = [...grid.querySelectorAll('.project-card')];
-    const matches   = c => filter === 'all' || (c.dataset.tools || '').split(',').includes(filter);
-    const toShow    = allCards.filter(c => matches(c));
-    const toHide    = allCards.filter(c => !matches(c));
-
-    // FIRST: snapshot positions NOW before anything changes
-    const firstPos = {};
-    toShow.forEach(c => {
-      if (c.dataset.visible === 'true') {
-        const r = c.getBoundingClientRect();
-        firstPos[c.dataset.id] = { x: r.left, y: r.top };
-      }
-    });
-
-    // Animate departing cards away (still in layout during this)
-    toHide.forEach(c => {
-      if (c.dataset.visible === 'false') return;
-      const rot = (Math.random() - 0.5) * 14;
-      c.style.transition    = 'transform .24s ease, opacity .24s ease';
-      c.style.transform     = `translateY(40px) rotate(${rot}deg) scale(0.84)`;
-      c.style.opacity       = '0';
-      c.style.pointerEvents = 'none';
-    });
-
-    setTimeout(() => {
-      // Remove departed from layout
-      toHide.forEach(c => {
-        c.style.display       = 'none';
-        c.style.transition    = '';
-        c.style.transform     = '';
-        c.style.opacity       = '';
-        c.style.pointerEvents = '';
-        c.dataset.visible     = 'false';
-      });
-
-      // ── PHASE 2: FLIP remaining + arriving cards ──
-
-      // Reveal arriving cards (invisible for now)
-      toShow.forEach(c => {
-        if (c.dataset.visible === 'false') {
-          c.style.display       = 'flex';
-          c.style.flexDirection = 'column';
-          c.style.opacity       = '0';
-          c.dataset.visible     = 'true';
-        }
-      });
-
-      // Reorder DOM: toShow first
-      [...toShow, ...toHide].forEach(c => grid.appendChild(c));
-
-      // Force reflow
-      grid.offsetHeight;
-
-      // LAST: record new positions
-      const lastPos = {};
-      toShow.forEach(c => {
-        const r = c.getBoundingClientRect();
-        lastPos[c.dataset.id] = { x: r.left, y: r.top };
-      });
-
-      // INVERT: snap each card back to where it was
-      toShow.forEach(c => {
-        const f = firstPos[c.dataset.id];
-        const l = lastPos[c.dataset.id];
-        c.style.transition = 'none';
-        if (f) {
-          c.style.transform = `translate(${f.x - l.x}px, ${f.y - l.y}px)`;
-          c.style.opacity   = '1';
-        } else {
-          // newly arriving — come in from below
-          c.style.transform = 'translateY(30px) scale(0.92)';
-          c.style.opacity   = '0';
-        }
-      });
-
-      // Force reflow
-      grid.offsetHeight;
-
-      // PLAY: slide to final positions
-      toShow.forEach((c, i) => {
-        const isNew = !firstPos[c.dataset.id];
-        setTimeout(() => {
-          c.style.transition = 'transform .42s cubic-bezier(.4,0,.2,1), opacity .35s ease';
-          c.style.transform  = '';
-          c.style.opacity    = '1';
-        }, isNew ? 60 + i * 55 : 0);
-      });
-
-      // Cleanup
-      setTimeout(() => {
-        toShow.forEach(c => { c.style.transition = ''; });
-        filtering = false;
-      }, 520);
-
-    }, 280);
-  });
-});
-</script>
 </body>
 </html>

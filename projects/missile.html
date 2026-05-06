@@ -3,15 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AIM-9 Sidewinder — Erik Reiner</title>
+<title>Design: AIM-9 Sidewinder | Erik Reiner</title>
+<meta name="description" content="AIM-9 Sidewinder-inspired CAD and print project by Erik Reiner.">
 <link rel="stylesheet" href="../assets/css/style.css">
+<script src="../assets/js/site.js" defer></script>
 </head>
-<body>
+<body data-page="project">
 
 <nav>
-  <div class="nav-inner">
+  <div class="shell nav-inner">
     <a href="../index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
@@ -22,23 +24,18 @@
   </div>
 </nav>
 
-<div class="project-hero">
-  <div class="project-hero-inner">
-    <a href="../projects.html" class="back-link">← All Projects</a>
-    <h1>Design: AIM-9 Sidewinder</h1>
-    <p class="project-hero-sub">CAD / Fusion 360</p>
-    <div class="project-meta">
-      <span class="cat-badge props">Props & Models</span>
-      <span class="status-badge complete">Complete</span>
-    </div>
+<header class="project-hero shell">
+  <a href="../projects.html" class="back-link">&larr; Back to projects</a>
+  <h1>Design: AIM-9 Sidewinder</h1>
+  <p class="project-hero-sub">CAD and print exercise</p>
+  <div class="project-meta">
+    <span class="cat-badge alt">Fusion 360</span>
+    <span class="cat-badge signal">3D Printing</span>
+    <span class="status-badge complete">Complete</span>
   </div>
-</div>
+</header>
 
-<div class="project-body">
-
-  <!-- Add your render/image here when ready:
-  <img src="../assets/images/missile.jpg" alt="AIM-9 Sidewinder model" class="project-img"> -->
-
+<main class="project-body">
   <div class="tech-list">
     <span class="tech-tag">Fusion 360</span>
     <span class="tech-tag">CAD</span>
@@ -46,20 +43,16 @@
     <span class="tech-tag">Tolerance Fitting</span>
   </div>
 
-  <h2>A fun exercise on tolerances</h2>
-  <p>Staying on theme and inspired by similar projects, a quick mockup of a missile similar to an AIM-9 was a fun side project.</p>
-  <p>This project was particularly satisfying in that it was a one-and-done print. No test prints, no reprints — it all worked first time. There was a time I thought I might send it up into the sky, but that time came and went and I ended up giving it to a happy child during a moving sale.</p>
+  <div class="project-intro">
+    <p>This side project started as a quick CAD exercise inspired by missile forms and ended up being especially satisfying because it worked the first time. No test-print spiral, no redesign loop, just a clean one-and-done build.</p>
+  </div>
 
-</div>
+  <h2>A tolerance exercise that stayed fun</h2>
+  <p>I approached the model as a way to practice fit and assembly while still making something visually striking. It was a reminder that even a small project can be rewarding when the geometry, print setup, and assembly choices line up cleanly.</p>
+</main>
 
 <footer>
-  <p>© 2025 Erik Reiner · <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
+  <p>&copy; 2025 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
-
-<script>
-const toggle = document.querySelector('.nav-toggle');
-const links = document.querySelector('.nav-links');
-toggle.addEventListener('click', () => { toggle.classList.toggle('open'); links.classList.toggle('open'); });
-</script>
 </body>
 </html>

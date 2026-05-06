@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Erik Reiner</title>
-<meta name="description" content="Erik Reiner — maker, cosplayer, builder, and game developer.">
+<title>Erik Reiner | Maker Portfolio</title>
+<meta name="description" content="Portfolio of Erik Reiner - cosplay builds, prop fabrication, CAD projects, and game development.">
 <link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/site.js" defer></script>
 </head>
-<body>
+<body data-page="home">
 
 <nav>
-  <div class="nav-inner">
+  <div class="shell nav-inner">
     <a href="index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu">
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
@@ -23,60 +24,78 @@
   </div>
 </nav>
 
-<div class="hero">
-  <p class="hero-eyebrow">Maker · Cosplayer · Builder · Dev</p>
-  <h1>Erik Reiner</h1>
-  <p>Building things at the intersection of fabrication, design, and technology.</p>
-</div>
-
-<div class="home-intro">
-  <div class="home-intro-text">
-    <h2>About Me</h2>
-    <p>I'm a hands-on maker specializing in cosplay, prop fabrication, and game development. I combine 3D printing, traditional fabrication, and digital design tools to bring detailed projects to life — from screen-accurate costumes to interactive game worlds.</p>
-    <p>Whether I'm hammering steel for a suit of armor, modeling parts in Fusion 360, or scripting enemy AI in Godot, the throughline is always the same: I love making things.</p>
-    <div class="home-tags">
-      <span class="home-tag tb">Cosplay</span>
-      <span class="home-tag tbl">3D Printing</span>
-      <span class="home-tag tg">Prop Making</span>
-      <span class="home-tag tw">Game Dev</span>
-      <span class="home-tag tg">Mechanical</span>
-    </div>
+<header class="page-hero shell">
+  <span class="eyebrow">Maker Portfolio</span>
+  <h1>Fabrication, costumes, CAD, and games.</h1>
+  <p>I build things, from screen-accurate costumes and fabricated props to CAD studies and interactive game worlds. The throughline is the same every time: strong references, thoughtful iteration, and a lot of hands-on problem solving.</p>
+  <div class="page-actions">
+    <a href="projects.html" class="button">Browse Projects</a>
+    <a href="contact.html" class="button-secondary">Get In Touch</a>
   </div>
-</div>
+  <div class="hero-stats">
+    <span class="stat-pill">Cosplay + props</span>
+    <span class="stat-pill">3D printing + Fusion 360</span>
+    <span class="stat-pill">Historical armor</span>
+    <span class="stat-pill">Godot game dev</span>
+  </div>
+</header>
 
-<div class="home-featured">
-  <div class="home-featured-inner">
-    <p class="section-label">Featured Project</p>
-    <a href="projects/metrocop.html" class="project-card" style="max-width: 520px; text-decoration: none;">
-      <div class="card-img">
-        <!-- Add image later: <img src="assets/images/metrocop.jpg" alt="Metrocop costume"> -->
-        <span class="card-img-placeholder">Photo coming soon</span>
-      </div>
-      <div class="card-body">
-        <div class="card-meta">
-          <span class="cat-badge">Costumes</span>
-          <span class="status-badge in-progress">In Progress</span>
+<main>
+  <section class="section shell">
+    <div class="panel grid-two">
+      <div class="home-copy">
+        <p class="section-label">About</p>
+        <h2>One portfolio, multiple disciplines, same craft-first approach.</h2>
+        <p>I am a hands-on maker focused on cosplay, prop fabrication, historical armor, CAD, and game development. My projects move between digital planning and physical execution, from modeling parts in Fusion 360 to sewing soft goods, shaping steel, wiring electronics, and building playable systems in Godot.</p>
+        <p>What ties the work together is the joy of figuring things out: translating references into real objects, solving fit and finish problems, and learning whatever tool a project demands. I like work that crosses disciplines and ends up feeling intentional, not just complete.</p>
+        <div class="home-tags">
+          <span class="home-tag">Screen-accurate costumes</span>
+          <span class="home-tag">Functional CAD models</span>
+          <span class="home-tag">Mixed-media fabrication</span>
+          <span class="home-tag">Procedural game systems</span>
         </div>
-        <h3 class="card-title">Half-Life 2: Metrocop</h3>
-        <p class="card-desc">Screen-accurate Civil Protection unit. Full wearable costume with 3D-printed armor, fabricated components, and hand-finished detailing throughout.</p>
-        <p class="card-arrow">View project →</p>
       </div>
+
+      <div class="panel" style="padding:24px;">
+        <p class="section-label">Working Style</p>
+        <h3 class="card-title">Research heavy. Build ready. Always iterating.</h3>
+        <p class="card-desc">I like projects that ask for more than one discipline at once. That usually means reference gathering, prototyping, test fitting, and refining until the final thing feels intentional instead of merely finished.</p>
+        <p class="card-arrow">Current focus: large-scale costume builds and a Godot tower defense game.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section shell">
+    <div class="section-header">
+      <div>
+        <p class="section-label">Featured Project</p>
+        <h2 class="section-title">Half-Life 2: Metrocop</h2>
+      </div>
+      <a href="projects.html" class="cta-link">See all projects</a>
+    </div>
+
+    <a href="projects/metrocop.html" class="feature-card">
+      <article class="card-shell" style="min-height:0;">
+        <div class="card-img" data-mark="Featured">
+          <span class="card-img-placeholder">Photo coming soon</span>
+        </div>
+        <div class="card-body">
+          <div class="card-meta">
+            <span class="cat-badge">3D Printing</span>
+            <span class="cat-badge alt">Fusion 360</span>
+            <span class="status-badge in-progress">In Progress</span>
+          </div>
+          <h3 class="card-title">A screen-accurate Civil Protection build with mixed fabrication.</h3>
+          <p class="card-desc">This costume combines printed armor, fabricated components, sewing, finishing work, and electronics. It is a good snapshot of how I like to work: cross-disciplinary, reference-driven, and detail focused.</p>
+          <p class="card-arrow">Open project page -&gt;</p>
+        </div>
+      </article>
     </a>
-    <a href="projects.html" class="cta-link">See all projects →</a>
-  </div>
-</div>
+  </section>
+</main>
 
 <footer>
-  <p>© 2025 Erik Reiner · <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
+  <p>&copy; 2025 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
-
-<script>
-const toggle = document.querySelector('.nav-toggle');
-const links = document.querySelector('.nav-links');
-toggle.addEventListener('click', () => {
-  toggle.classList.toggle('open');
-  links.classList.toggle('open');
-});
-</script>
 </body>
 </html>
