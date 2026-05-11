@@ -1,0 +1,10 @@
+# Local OS and editor noise
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+
+# Reference captures from the old Google Sites import
+oldsite_*.html
+fetch_projects_*.html
+

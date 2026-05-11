@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Erik Reiner | Maker Portfolio</title>
 <meta name="description" content="Portfolio of Erik Reiner - cosplay builds, prop fabrication, CAD projects, and game development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#8f9f3f">
+<link rel="canonical" href="https://www.erikreiner.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Erik Reiner | Maker Portfolio">
+<meta property="og:description" content="Portfolio of Erik Reiner - cosplay builds, prop fabrication, CAD projects, and game development.">
+<meta property="og:url" content="https://www.erikreiner.com/">
+<meta property="og:image" content="https://www.erikreiner.com/assets/images/projects/metrocop/metrocop-1.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.erikreiner.com/assets/images/projects/metrocop/metrocop-1.png">
 <link rel="stylesheet" href="assets/css/style.css">
 <script src="assets/js/site.js" defer></script>
 </head>
@@ -19,6 +32,7 @@
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </div>
@@ -76,26 +90,45 @@
 
     <a href="projects/metrocop.html" class="feature-card">
       <article class="card-shell" style="min-height:0;">
-        <div class="card-img" data-mark="Featured">
-          <span class="card-img-placeholder">Photo coming soon</span>
+        <div class="card-img has-photo" data-mark="Featured">
+          <img class="card-photo" src="assets/images/projects/metrocop/metrocop-1.png" alt="Close portrait of the Half-Life 2 Metrocop costume showing the helmet and chest armor." loading="lazy" decoding="async" width="1284" height="1875">
+          <span class="card-img-placeholder is-hidden">Featured Metrocop build</span>
         </div>
         <div class="card-body">
           <div class="card-meta">
             <span class="cat-badge">3D Printing</span>
             <span class="cat-badge alt">Fusion 360</span>
-            <span class="status-badge in-progress">In Progress</span>
+            <span class="status-badge evolving">Always Evolving</span>
           </div>
           <h3 class="card-title">A screen-accurate Civil Protection build with mixed fabrication.</h3>
-          <p class="card-desc">This costume combines printed armor, fabricated components, sewing, finishing work, and electronics. It is a good snapshot of how I like to work: cross-disciplinary, reference-driven, and detail focused.</p>
+          <p class="card-desc">This build pulls together printed armor, fabricated components, sewing, finishing work, and electronics. It is one of the clearest snapshots of how I like to work: cross-disciplinary, reference-driven, and obsessed with getting the silhouette and surface treatment to feel right.</p>
           <p class="card-arrow">Open project page -&gt;</p>
         </div>
       </article>
     </a>
   </section>
+
+  <section class="section shell">
+    <div class="grid-two">
+      <article class="panel" style="padding:24px;">
+        <p class="section-label">From the Blog</p>
+        <h2 class="card-title">Notes from the bench, the CAD screen, and the awkward in-between.</h2>
+        <p class="card-desc">I wanted a place for the in-progress thoughts too, not just the polished end results. The blog is where I write about workflow changes, leather experiments, online shop ambitions, and the smaller observations that shape the bigger builds.</p>
+        <a href="blog.html" class="cta-link">Read the journal</a>
+      </article>
+
+      <article class="panel blog-highlight">
+        <p class="blog-meta">Latest entry | December 24, 2025</p>
+        <h3 class="card-title">Leather, CAD, and the joy of cheating elegantly.</h3>
+        <p class="card-desc">I wrote about using Fusion 360 to make editable leather patterns and 3D printed script stencils, which has been one of the most unexpectedly useful overlaps on the whole site.</p>
+        <a href="blog.html#dec-24-2025" class="card-arrow">Open latest note -&gt;</a>
+      </article>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <p>&copy; 2025 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
+  <p>&copy; 2025-2026 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
 </body>
 </html>
