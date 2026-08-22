@@ -57,7 +57,7 @@ if (document.body.dataset.page === "projects") {
   const buttons = Array.from(document.querySelectorAll(".filter-btn"));
   const status = document.getElementById("filter-status");
   let activeFilter = "all";
-  let currentOrder = cards.map((card) => card.dataset.id);
+  let currentOrder = [];
 
   function shuffle(list) {
     const copy = [...list];
@@ -84,12 +84,27 @@ if (document.body.dataset.page === "projects") {
     return `Showing ${count} ${label} project${count === 1 ? "" : "s"}`;
   }
 
+  function reshuffleOrder(filter = activeFilter) {
+    const visible = getVisibleCards(filter);
+    currentOrder = shuffle(visible).map((card) => card.dataset.id);
+  }
+
+  function syncOrderToFilter(filter) {
+    const visible = getVisibleCards(filter);
+    const visibleIds = new Set(visible.map((card) => card.dataset.id));
+    currentOrder = currentOrder.filter((id) => visibleIds.has(id));
+    visible.forEach((card) => {
+      if (!currentOrder.includes(card.dataset.id)) {
+        currentOrder.push(card.dataset.id);
+      }
+    });
+  }
+
   function layoutCards(filter = activeFilter, animate = true) {
+    syncOrderToFilter(filter);
     const visibleCards = getVisibleCards(filter);
     const hiddenCards = cards.filter((card) => !visibleCards.includes(card));
     const hiddenState = new Map(cards.map((card) => [card, card.classList.contains("is-hidden")]));
-
-    currentOrder = shuffle(visibleCards).map((card) => card.dataset.id);
 
     const orderedVisible = currentOrder
       .map((id) => cards.find((card) => card.dataset.id === id))
@@ -179,6 +194,7 @@ if (document.body.dataset.page === "projects") {
         item.classList.toggle("active", isActive);
         item.setAttribute("aria-pressed", String(isActive));
       });
+      reshuffleOrder(nextFilter);
       layoutCards(nextFilter, true);
     });
   });
@@ -208,10 +224,20 @@ if (document.body.dataset.page === "projects") {
   });
 
   if (stage) {
-    const resizeObserver = new ResizeObserver(() => {
+    // layoutCards() writes stage height, which retriggers this observer.
+    // Only relayout on width changes or the feedback loop kills the
+    // shuffle animation mid-flight.
+    let lastStageWidth = Math.round(stage.getBoundingClientRect().width);
+
+    const resizeObserver = new ResizeObserver((entries) => {
+      const entry = entries[entries.length - 1];
+      const width = Math.round(entry.contentRect.width);
+      if (width === lastStageWidth) return;
+      lastStageWidth = width;
       layoutCards(activeFilter, false);
     });
 
+    reshuffleOrder("all");
     resizeObserver.observe(stage);
     layoutCards(activeFilter, false);
   }
