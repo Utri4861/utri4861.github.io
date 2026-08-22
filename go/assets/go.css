@@ -40,8 +40,17 @@ a:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
 main { position: relative; z-index: 1; width: min(100% - 40px, 760px); min-height: 100vh; margin: 0 auto; padding: 32px 0 26px; display: flex; flex-direction: column; }
 .intro { display: flex; justify-content: space-between; align-items: center; gap: 24px; }
 .identity { display: flex; align-items: center; gap: 14px; }
-.mark { position: relative; width: 45px; height: 45px; overflow: hidden; flex: 0 0 auto; background: #fff; }
-.mark img { position: absolute; width: 66px; height: 66px; max-width: none; left: -10px; top: 0; }
+.mark { position: relative; width: 45px; height: 45px; overflow: hidden; flex: 0 0 auto; }
+.mark img {
+  position: absolute;
+  width: 66px;
+  height: 66px;
+  max-width: none;
+  left: -10px;
+  top: 0;
+  filter: invert(1) hue-rotate(180deg);
+  mix-blend-mode: screen;
+}
 .identity p { margin: 0; font: 600 20px/1 Barlow Condensed, sans-serif; letter-spacing: .08em; text-transform: uppercase; }
 .identity div > span { display: block; margin-top: 6px; color: var(--muted); font: 400 8px/1 IBM Plex Mono, monospace; letter-spacing: .16em; text-transform: uppercase; }
 .status { display: flex; align-items: center; gap: 9px; margin: 0; color: var(--muted); font: 400 8px/1 IBM Plex Mono, monospace; letter-spacing: .14em; text-transform: uppercase; }
