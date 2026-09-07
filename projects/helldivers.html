@@ -22,18 +22,20 @@
 <script src="../assets/js/site.js" defer></script>
 </head>
 <body data-page="project">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<nav>
+<nav aria-label="Main navigation">
   <div class="shell nav-inner">
-    <a href="../index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <a href="/" class="nav-brand">Erik Reiner</a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../projects.html" class="active">Projects</a></li>
-      <li><a href="../blog.html">Blog</a></li>
-      <li><a href="../contact.html">Contact</a></li>
+    <ul class="nav-links" id="main-nav">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/projects.html" class="active" aria-current="location">Projects</a></li>
+      <li><a href="/citadel/">Citadel / Shop</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -49,7 +51,8 @@
   </div>
 </header>
 
-<main class="project-body">
+<main class="project-body" id="main-content" tabindex="-1">
+  <dl class="project-summary"><div><dt>Project</dt><dd>Wearable costume</dd></div><div><dt>Tools &amp; materials</dt><dd>3D printing, sewing, metal details, paint</dd></div><div><dt>Focus</dt><dd>Armor fit and movement</dd></div></dl>
   <div class="wip-notice">
     <span class="wip-notice-icon">[+]</span>
     <p>This armor set is complete, and the page now serves as a record of the finished build, test fits, and the fabrication decisions that got it there.</p>
@@ -70,33 +73,35 @@
 
   <section class="project-gallery split" aria-label="Helldivers armor gallery">
     <figure class="project-img">
-      <img src="../assets/images/projects/helldivers/helldivers-1.jpg" alt="Helldivers B-01 armor test fit outdoors with rifle prop." loading="lazy" decoding="async" width="1800" height="1013">
+      <img src="../assets/images/projects/helldivers/web/helldivers-1-jpg-960.webp" alt="Helldivers B-01 armor test fit outdoors with rifle prop." decoding="async" width="1800" height="1013" data-original="../assets/images/projects/helldivers/helldivers-1.jpg" srcset="../assets/images/projects/helldivers/web/helldivers-1-jpg-480.webp 480w, ../assets/images/projects/helldivers/web/helldivers-1-jpg-960.webp 960w, ../assets/images/projects/helldivers/web/helldivers-1-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw" fetchpriority="high">
       <figcaption>A strong early full-suit test fit that shows the overall silhouette, proportions, and how the armor reads once the printed parts and soft goods start behaving like one costume.</figcaption>
     </figure>
     <figure class="project-img">
-      <img src="../assets/images/projects/helldivers/helldivers-2.jpg" alt="Rear three-quarter detail view of the Helldivers B-01 armor test fit." loading="lazy" decoding="async" width="1800" height="1013">
+      <img src="../assets/images/projects/helldivers/web/helldivers-2-jpg-960.webp" alt="Rear three-quarter detail view of the Helldivers B-01 armor test fit." loading="lazy" decoding="async" width="1800" height="1013" data-original="../assets/images/projects/helldivers/helldivers-2.jpg" srcset="../assets/images/projects/helldivers/web/helldivers-2-jpg-480.webp 480w, ../assets/images/projects/helldivers/web/helldivers-2-jpg-960.webp 960w, ../assets/images/projects/helldivers/web/helldivers-2-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>A detail angle from the back and side where the shoulder, helmet, and backpack area start to show the layered construction and how much of the project depends on clean transitions between parts.</figcaption>
     </figure>
   </section>
 
-  <h2>Final Build State</h2>
+  <h2>Finished Build</h2>
   <p>The finished suit has the things I wanted most out of it: a strong in-game silhouette, convincing layering between hard and soft materials, and a paint pass that stops the printed parts from reading like raw plastic. Getting there meant refining fit, cleaning up the soft goods, and making sure the whole thing behaved like wearable gear instead of separate components strapped together.</p>
   <p>That is really the whole challenge of a build like this. The digital files can look great on their own, but the final costume only works if the undersuit, straps, spacing, and body movement all cooperate under real use.</p>
 
   <figure class="project-img">
-    <img src="../assets/images/projects/helldivers/helldivers-3.jpg" alt="Helldivers B-01 armor action pose during test fit." loading="lazy" decoding="async" width="1800" height="1013">
+    <img src="../assets/images/projects/helldivers/web/helldivers-3-jpg-960.webp" alt="Helldivers B-01 armor action pose during test fit." loading="lazy" decoding="async" width="1800" height="1013" data-original="../assets/images/projects/helldivers/helldivers-3.jpg" srcset="../assets/images/projects/helldivers/web/helldivers-3-jpg-480.webp 480w, ../assets/images/projects/helldivers/web/helldivers-3-jpg-960.webp 960w, ../assets/images/projects/helldivers/web/helldivers-3-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw">
     <figcaption>Another test-fit view that helps show where the armor already succeeds as a wearable set instead of just a collection of finished pieces.</figcaption>
   </figure>
 
   <h2>Reference and Translation</h2>
   <p>Part of the fun in game-costume work is translating a clean game render into something that still feels believable once it has seams, closures, body mechanics, and material thickness. This build lives in that space between prop making and clothing.</p>
   <figure class="project-img">
-    <img src="../assets/images/projects/helldivers/helldivers-reference.png" alt="Comparison image between Helldivers game reference and the completed B-01 armor build." loading="lazy" decoding="async" width="1024" height="914">
-    <figcaption>A direct comparison between in-game reference and the completed build, which is where decisions about proportion, weathering, and comfort all start colliding in useful ways.</figcaption>
+    <img src="../assets/images/projects/helldivers/web/helldivers-reference-png-960.webp" alt="Comparison image between Helldivers game reference and the completed B-01 armor build." loading="lazy" decoding="async" width="1024" height="914" data-original="../assets/images/projects/helldivers/helldivers-reference.png" srcset="../assets/images/projects/helldivers/web/helldivers-reference-png-480.webp 480w, ../assets/images/projects/helldivers/web/helldivers-reference-png-960.webp 960w, ../assets/images/projects/helldivers/web/helldivers-reference-png-1024.webp 1024w" sizes="(max-width: 720px) 100vw, 50vw">
+    <figcaption>In-game reference alongside the costume, comparing proportions and paint treatment.</figcaption>
   </figure>
+  <section class="related-projects" aria-label="Related projects"><h2>Keep exploring</h2><div class="page-actions"><a class="button-secondary" href="metrocop.html">Half-Life 2: Metrocop →</a><a class="button-secondary" href="knight.html">15th C. Milanese Armor →</a><a class="cta-link" href="/projects.html">All projects →</a></div></section>
 </main>
 
 <footer>
+  <div class="site-footer-links"><a href="/projects.html">Projects</a><a href="/citadel/">Citadel Supply Co.</a><a href="/go/">Socials &amp; links</a><a href="/contact.html">Contact</a></div>
   <p>&copy; 2025-2026 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
 </body>

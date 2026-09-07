@@ -22,18 +22,20 @@
 <script src="../assets/js/site.js" defer></script>
 </head>
 <body data-page="project">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<nav>
+<nav aria-label="Main navigation">
   <div class="shell nav-inner">
-    <a href="../index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <a href="/" class="nav-brand">Erik Reiner</a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../projects.html" class="active">Projects</a></li>
-      <li><a href="../blog.html">Blog</a></li>
-      <li><a href="../contact.html">Contact</a></li>
+    <ul class="nav-links" id="main-nav">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/projects.html" class="active" aria-current="location">Projects</a></li>
+      <li><a href="/citadel/">Citadel / Shop</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -49,7 +51,8 @@
   </div>
 </header>
 
-<main class="project-body">
+<main class="project-body" id="main-content" tabindex="-1">
+  <dl class="project-summary"><div><dt>Project</dt><dd>CAD study</dd></div><div><dt>Tools &amp; materials</dt><dd>Fusion 360</dd></div><div><dt>Focus</dt><dd>Modeling from vintage plans</dd></div></dl>
   <div class="tech-list">
     <span class="tech-tag">Fusion 360</span>
     <span class="tech-tag">CAD</span>
@@ -62,7 +65,7 @@
 
   <section class="project-gallery" aria-label="Cannon render gallery">
     <figure class="project-img">
-      <img src="../assets/images/projects/cannon/cannon-render.png" alt="Rendered 24-pounder cannon model in brass and wood tones." loading="lazy" decoding="async" width="1232" height="676">
+      <img src="../assets/images/projects/cannon/web/cannon-render-png-960.webp" alt="Rendered 24-pounder cannon model in brass and wood tones." decoding="async" width="1232" height="676" data-original="../assets/images/projects/cannon/cannon-render.png" srcset="../assets/images/projects/cannon/web/cannon-render-png-480.webp 480w, ../assets/images/projects/cannon/web/cannon-render-png-960.webp 960w, ../assets/images/projects/cannon/web/cannon-render-png-1232.webp 1232w" sizes="(max-width: 720px) 100vw, 50vw" fetchpriority="high">
       <figcaption>The final render still has a lot of charm. It captures the appeal of translating found historical plans into something readable, dimensional, and a little theatrical.</figcaption>
     </figure>
   </section>
@@ -72,9 +75,11 @@
 
   <h2>What it taught me</h2>
   <p>Even though the original plans assumed different fabrication methods, translating them into CAD forced me to think carefully about proportions, construction logic, and how to break a large form into manageable components.</p>
+  <section class="related-projects" aria-label="Related projects"><h2>Keep exploring</h2><div class="page-actions"><a class="button-secondary" href="missile.html">AIM-9 CAD Study →</a><a class="button-secondary" href="revolver.html">Colt Walker CAD Study →</a><a class="cta-link" href="/projects.html">All projects →</a></div></section>
 </main>
 
 <footer>
+  <div class="site-footer-links"><a href="/projects.html">Projects</a><a href="/citadel/">Citadel Supply Co.</a><a href="/go/">Socials &amp; links</a><a href="/contact.html">Contact</a></div>
   <p>&copy; 2025-2026 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
 </body>

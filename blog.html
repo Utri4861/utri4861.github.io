@@ -22,18 +22,20 @@
 <script src="assets/js/site.js" defer></script>
 </head>
 <body data-page="blog">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<nav>
+<nav aria-label="Main navigation">
   <div class="shell nav-inner">
-    <a href="index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <a href="/" class="nav-brand">Erik Reiner</a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="blog.html" class="active">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
+    <ul class="nav-links" id="main-nav">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/projects.html">Projects</a></li>
+      <li><a href="/citadel/">Citadel / Shop</a></li>
+      <li><a href="/blog.html" class="active" aria-current="page">Blog</a></li>
+      <li><a href="/contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -41,25 +43,11 @@
 <header class="page-hero compact shell">
   <span class="eyebrow">Blog</span>
   <h1>Notes from the shop.</h1>
-  <p>I wanted a place for the thoughts around the builds, not just the finished portfolio pages. This is where I write about workflow changes, leather experiments, online presence, commissions, and the weird middle ground between digital planning and hands-on making.</p>
+  <p>Occasional notes on making things: workshop experiments, CAD crossovers, and lessons from the builds.</p>
 </header>
 
-<main class="section shell">
-  <section class="grid-two" style="margin-bottom:28px;">
-    <article class="panel" style="padding:24px;">
-      <p class="section-label">Why It Exists</p>
-      <h2 class="card-title">The portfolio shows the projects. The blog shows the thinking around them.</h2>
-      <p class="card-desc">A lot of the interesting stuff happens between milestones: small process breakthroughs, business experiments, tool changes, and the moments where one discipline unexpectedly improves another. I wanted room for that too.</p>
-    </article>
-
-    <article class="panel" style="padding:24px;">
-      <p class="section-label">What To Expect</p>
-      <h2 class="card-title">Build notes, workflow experiments, and the occasional identity crisis.</h2>
-      <p class="card-desc">Some entries are practical. Some are reflective. Most of them are me trying to get clearer about how I work, what I want this site to be, and where the projects are heading next.</p>
-    </article>
-  </section>
-
-  <section class="blog-stack">
+<main class="section shell" id="main-content" tabindex="-1">
+<section class="blog-stack">
     <article class="panel blog-entry" id="dec-24-2025">
       <div class="blog-entry-inner">
         <div class="blog-date-block">
@@ -70,6 +58,7 @@
           <h2>Leather, last-minute gifts, and one of my favorite workflow crossovers.</h2>
           <p>Christmas had me rushing to finish a few gifts, which pushed the leatherwork back into focus. That turned into a nice reminder that the overlap between leather and CAD is better than I would have guessed when I started. Fusion 360 has become part of how I build templates and patterns, and the fact that it is parametric means those ideas stay editable instead of turning into one-off dead ends.</p>
           <p>That workflow has also made lettering and tooling feel a lot less intimidating. I generate a script, clean it up into an SVG, bring it into Fusion, extrude the negative, and print a stencil. From there I can trace it cleanly onto the leather and concentrate on the hand work instead of fighting the layout. A couple weeks earlier I did not feel remotely confident about tooling. Now I at least feel like I have a repeatable way into it.</p>
+          <figure class="blog-illustration"><img src="assets/images/projects/leatherwork/web/leather-satchel-1-jpg-960.webp" alt="The finished brown leather satchel, one of my leatherwork projects." decoding="async" width="4032" height="3024" data-original="assets/images/projects/leatherwork/leather-satchel-1.jpg" srcset="assets/images/projects/leatherwork/web/leather-satchel-1-jpg-480.webp 480w, assets/images/projects/leatherwork/web/leather-satchel-1-jpg-960.webp 960w, assets/images/projects/leatherwork/web/leather-satchel-1-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw" fetchpriority="high"><figcaption><a href="projects/leather.html">Explore the leatherwork projects →</a></figcaption></figure>
           <div class="blog-tag-row">
             <span class="cat-badge leather">Leatherworking</span>
             <span class="cat-badge alt">Fusion 360</span>
@@ -120,6 +109,7 @@
 </main>
 
 <footer>
+  <div class="site-footer-links"><a href="/projects.html">Projects</a><a href="/citadel/">Citadel Supply Co.</a><a href="/go/">Socials &amp; links</a><a href="/contact.html">Contact</a></div>
   <p>&copy; 2025-2026 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
 </body>

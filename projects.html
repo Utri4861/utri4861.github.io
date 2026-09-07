@@ -22,71 +22,60 @@
 <script src="assets/js/site.js" defer></script>
 </head>
 <body data-page="projects">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<nav>
+<nav aria-label="Main navigation">
   <div class="shell nav-inner">
-    <a href="index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <a href="/" class="nav-brand">Erik Reiner</a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html" class="active">Projects</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
+    <ul class="nav-links" id="main-nav">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/projects.html" class="active" aria-current="page">Projects</a></li>
+      <li><a href="/citadel/">Citadel / Shop</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
 
 <header class="page-hero compact shell">
   <span class="eyebrow">Project Index</span>
-  <h1>Work that moves between physical and digital craft.</h1>
-  <p>Filter by toolset and the cards reshuffle into a new arrangement. The point is not just sorting the list, but letting the page feel active and hands-on.</p>
+  <h1>Costumes, props, and digital projects.</h1>
+  <p>Explore eight builds, from wearable armor to CAD studies and a game prototype. Filter by the tools and disciplines behind them.</p>
 </header>
 
-<main class="shell section">
+<main class="shell section" id="main-content" tabindex="-1">
   <section class="panel toolbar">
     <div class="section-header" style="margin-bottom:20px;">
       <div>
         <p class="section-label">Browse by discipline</p>
-        <h2 class="section-title">Projects across fabrication, CAD, and game development.</h2>
+        <h2 class="section-title">Find your discipline.</h2>
       </div>
       <p class="filter-status" id="filter-status" aria-live="polite">Showing 8 projects</p>
     </div>
 
     <div class="filter-bar" role="group" aria-label="Filter by tool">
-      <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
-      <button class="filter-btn" data-filter="3d-printing" aria-pressed="false">3D Printing</button>
-      <button class="filter-btn" data-filter="fusion360" aria-pressed="false">Fusion 360</button>
-      <button class="filter-btn" data-filter="sewing" aria-pressed="false">Sewing</button>
-      <button class="filter-btn" data-filter="airbrush" aria-pressed="false">Airbrush</button>
-      <button class="filter-btn" data-filter="metalworking" aria-pressed="false">Metalworking</button>
-      <button class="filter-btn" data-filter="leatherworking" aria-pressed="false">Leatherworking</button>
-      <button class="filter-btn" data-filter="electronics" aria-pressed="false">Electronics</button>
-      <button class="filter-btn" data-filter="gamedev" aria-pressed="false">Game Dev</button>
+      <button class="filter-btn active" disabled data-filter="all" aria-pressed="true">All</button>
+      <button class="filter-btn" disabled data-filter="3d-printing" aria-pressed="false">3D Printing</button>
+      <button class="filter-btn" disabled data-filter="fusion360" aria-pressed="false">Fusion 360</button>
+      <button class="filter-btn" disabled data-filter="sewing" aria-pressed="false">Sewing</button>
+      <button class="filter-btn" disabled data-filter="airbrush" aria-pressed="false">Airbrush</button>
+      <button class="filter-btn" disabled data-filter="metalworking" aria-pressed="false">Metalworking</button>
+      <button class="filter-btn" disabled data-filter="leatherworking" aria-pressed="false">Leatherworking</button>
+      <button class="filter-btn" disabled data-filter="electronics" aria-pressed="false">Electronics</button>
+      <button class="filter-btn" disabled data-filter="gamedev" aria-pressed="false">Game Dev</button>
     </div>
+    <div class="toolbar-actions"><button class="filter-btn" type="button" data-shuffle hidden>Shuffle order</button><noscript>All projects are shown. Filtering needs JavaScript.</noscript></div>
   </section>
 
-  <section class="grid-two" style="margin-top:24px; margin-bottom:28px;">
-    <article class="panel" style="padding:24px;">
-      <p class="section-label">Costumes</p>
-      <h2 class="card-title">Wearable builds with fabrication at the center.</h2>
-      <p class="card-desc">These projects usually combine 3D printing, sewing, finishing, and hardware work. They start with references and become a balancing act between silhouette, comfort, and convincing materials.</p>
-    </article>
-
-    <article class="panel" style="padding:24px;">
-      <p class="section-label">CAD</p>
-      <h2 class="card-title">Mechanical studies, print-ready models, and design exercises.</h2>
-      <p class="card-desc">The CAD work leans into clean modeling, historical or found-plan references, and the fun of seeing a digital idea turn into something physical, animated, or ready for a first print.</p>
-    </article>
-  </section>
-
-  <section class="cards-wrap">
+  <section class="cards-wrap" aria-label="Project results">
     <div class="cards-stage" id="cards-stage">
-      <a href="projects/metrocop.html" class="project-card" data-id="metrocop" data-tools="3d-printing,fusion360,sewing,airbrush,electronics">
+      <a href="projects/metrocop.html" class="project-card" data-id="metrocop" data-tools="3d-printing,fusion360,sewing,airbrush,electronics" aria-label="Half-Life 2: Metrocop">
         <article class="card-shell">
           <div class="card-img has-photo photo-metrocop" data-mark="Costume">
-            <img class="card-photo" src="assets/images/projects/metrocop/metrocop-1.png" alt="Close portrait of the Half-Life 2 Metrocop costume showing the helmet and chest armor." loading="lazy" decoding="async" width="1284" height="1875">
+            <img class="card-photo" src="assets/images/projects/metrocop/web/metrocop-1-png-960.webp" alt="Close portrait of the Half-Life 2 Metrocop costume showing the helmet and chest armor." decoding="async" width="1284" height="1875" data-original="assets/images/projects/metrocop/metrocop-1.png" srcset="assets/images/projects/metrocop/web/metrocop-1-png-480.webp 480w, assets/images/projects/metrocop/web/metrocop-1-png-960.webp 960w, assets/images/projects/metrocop/web/metrocop-1-png-1284.webp 1284w" sizes="(max-width: 720px) 100vw, 50vw" fetchpriority="high">
             <span class="card-img-placeholder is-hidden">Metrocop build</span>
           </div>
           <div class="card-body">
@@ -102,10 +91,10 @@
         </article>
       </a>
 
-      <a href="projects/helldivers.html" class="project-card" data-id="helldivers" data-tools="3d-printing,sewing,airbrush,metalworking">
+      <a href="projects/helldivers.html" class="project-card" data-id="helldivers" data-tools="3d-printing,sewing,airbrush,metalworking" aria-label="Helldivers 2: B-01 Armor">
         <article class="card-shell">
           <div class="card-img has-photo photo-top" data-mark="Armor">
-            <img class="card-photo" src="assets/images/projects/helldivers/helldivers-1.jpg" alt="Helldivers B-01 armor test-fit photo outdoors with rifle prop." loading="lazy" decoding="async" width="1800" height="1013">
+            <img class="card-photo" src="assets/images/projects/helldivers/web/helldivers-1-jpg-960.webp" alt="Helldivers B-01 armor test-fit photo outdoors with rifle prop." loading="lazy" decoding="async" width="1800" height="1013" data-original="assets/images/projects/helldivers/helldivers-1.jpg" srcset="assets/images/projects/helldivers/web/helldivers-1-jpg-480.webp 480w, assets/images/projects/helldivers/web/helldivers-1-jpg-960.webp 960w, assets/images/projects/helldivers/web/helldivers-1-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw">
             <span class="card-img-placeholder is-hidden">Helldivers test fit</span>
           </div>
           <div class="card-body">
@@ -121,10 +110,10 @@
         </article>
       </a>
 
-      <a href="projects/knight.html" class="project-card" data-id="knight" data-tools="sewing,leatherworking,metalworking">
+      <a href="projects/knight.html" class="project-card" data-id="knight" data-tools="sewing,leatherworking,metalworking" aria-label="15th C. Milanese Armor">
         <article class="card-shell">
           <div class="card-img has-photo photo-top" data-mark="Historical">
-            <img class="card-photo" src="assets/images/projects/knight/knight-1.jpg" alt="Blue and white Milanese armor outdoors holding a sword." loading="lazy" decoding="async" width="1284" height="1268">
+            <img class="card-photo" src="assets/images/projects/knight/web/knight-1-jpg-960.webp" alt="Blue and white Milanese armor outdoors holding a sword." loading="lazy" decoding="async" width="1284" height="1268" data-original="assets/images/projects/knight/knight-1.jpg" srcset="assets/images/projects/knight/web/knight-1-jpg-480.webp 480w, assets/images/projects/knight/web/knight-1-jpg-960.webp 960w, assets/images/projects/knight/web/knight-1-jpg-1284.webp 1284w" sizes="(max-width: 720px) 100vw, 50vw">
             <span class="card-img-placeholder is-hidden">Completed armor build</span>
           </div>
           <div class="card-body">
@@ -140,10 +129,10 @@
         </article>
       </a>
 
-      <a href="projects/leather.html" class="project-card" data-id="leatherwork" data-tools="leatherworking,fusion360,3d-printing">
+      <a href="projects/leather.html" class="project-card" data-id="leatherwork" data-tools="leatherworking,fusion360,3d-printing" aria-label="Leatherwork: Gifts and Studies">
         <article class="card-shell">
           <div class="card-img has-photo" data-mark="Leather">
-            <img class="card-photo" src="assets/images/projects/leatherwork/leather-satchel-1.jpg" alt="Handmade brown leather satchel on a tabletop." loading="lazy" decoding="async" width="4032" height="3024">
+            <img class="card-photo" src="assets/images/projects/leatherwork/web/leather-satchel-1-jpg-960.webp" alt="Handmade brown leather satchel on a tabletop." loading="lazy" decoding="async" width="4032" height="3024" data-original="assets/images/projects/leatherwork/leather-satchel-1.jpg" srcset="assets/images/projects/leatherwork/web/leather-satchel-1-jpg-480.webp 480w, assets/images/projects/leatherwork/web/leather-satchel-1-jpg-960.webp 960w, assets/images/projects/leatherwork/web/leather-satchel-1-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw">
             <span class="card-img-placeholder is-hidden">Leatherwork studies</span>
           </div>
           <div class="card-body">
@@ -159,10 +148,10 @@
         </article>
       </a>
 
-      <a href="projects/cannon.html" class="project-card" data-id="cannon" data-tools="3d-printing,fusion360">
+      <a href="projects/cannon.html" class="project-card" data-id="cannon" data-tools="3d-printing,fusion360" aria-label="Pop Mechanics: 24-Pounder Cannon">
         <article class="card-shell">
           <div class="card-img has-photo" data-mark="CAD">
-            <img class="card-photo" src="assets/images/projects/cannon/cannon-render.png" alt="Rendered CAD model of a 24-pounder cannon." loading="lazy" decoding="async" width="1232" height="676">
+            <img class="card-photo" src="assets/images/projects/cannon/web/cannon-render-png-960.webp" alt="Rendered CAD model of a 24-pounder cannon." loading="lazy" decoding="async" width="1232" height="676" data-original="assets/images/projects/cannon/cannon-render.png" srcset="assets/images/projects/cannon/web/cannon-render-png-480.webp 480w, assets/images/projects/cannon/web/cannon-render-png-960.webp 960w, assets/images/projects/cannon/web/cannon-render-png-1232.webp 1232w" sizes="(max-width: 720px) 100vw, 50vw">
             <span class="card-img-placeholder is-hidden">24-pounder study</span>
           </div>
           <div class="card-body">
@@ -178,10 +167,10 @@
         </article>
       </a>
 
-      <a href="projects/revolver.html" class="project-card" data-id="revolver" data-tools="3d-printing,fusion360">
+      <a href="projects/revolver.html" class="project-card" data-id="revolver" data-tools="3d-printing,fusion360" aria-label="Plans: Colt Walker Revolver">
         <article class="card-shell">
           <div class="card-img has-photo" data-mark="Prop">
-            <img class="card-photo" src="assets/images/projects/revolver/revolver-render.png" alt="Rendered Colt Walker revolver CAD model." loading="lazy" decoding="async" width="1041" height="590">
+            <img class="card-photo" src="assets/images/projects/revolver/web/revolver-render-png-960.webp" alt="Rendered Colt Walker revolver CAD model." loading="lazy" decoding="async" width="1041" height="590" data-original="assets/images/projects/revolver/revolver-render.png" srcset="assets/images/projects/revolver/web/revolver-render-png-480.webp 480w, assets/images/projects/revolver/web/revolver-render-png-960.webp 960w, assets/images/projects/revolver/web/revolver-render-png-1041.webp 1041w" sizes="(max-width: 720px) 100vw, 50vw">
             <span class="card-img-placeholder is-hidden">Variant study</span>
           </div>
           <div class="card-body">
@@ -197,10 +186,10 @@
         </article>
       </a>
 
-      <a href="projects/missile.html" class="project-card" data-id="missile" data-tools="3d-printing,fusion360">
+      <a href="projects/missile.html" class="project-card" data-id="missile" data-tools="3d-printing,fusion360" aria-label="Design: AIM-9 Sidewinder">
         <article class="card-shell">
           <div class="card-img has-photo" data-mark="Model">
-            <img class="card-photo" src="assets/images/projects/missile/missile-render.png" alt="Rendered AIM-9 Sidewinder-inspired CAD model." loading="lazy" decoding="async" width="914" height="574">
+            <img class="card-photo" src="assets/images/projects/missile/web/missile-render-png-914.webp" alt="Rendered AIM-9 Sidewinder-inspired CAD model." loading="lazy" decoding="async" width="914" height="574" data-original="assets/images/projects/missile/missile-render.png" srcset="assets/images/projects/missile/web/missile-render-png-480.webp 480w, assets/images/projects/missile/web/missile-render-png-914.webp 914w" sizes="(max-width: 720px) 100vw, 50vw">
             <span class="card-img-placeholder is-hidden">Clean first print</span>
           </div>
           <div class="card-body">
@@ -216,10 +205,10 @@
         </article>
       </a>
 
-      <a href="projects/bastion.html" class="project-card" data-id="bastion" data-tools="gamedev">
+      <a href="projects/bastion.html" class="project-card" data-id="bastion" data-tools="gamedev" aria-label="Bastion">
         <article class="card-shell">
           <div class="card-img" data-mark="Game">
-            <span class="card-img-placeholder">Game footage in development</span>
+            <span class="card-img-placeholder">Godot 4 / Game prototype</span>
           </div>
           <div class="card-body">
             <div class="card-meta">
@@ -237,6 +226,7 @@
 </main>
 
 <footer>
+  <div class="site-footer-links"><a href="/projects.html">Projects</a><a href="/citadel/">Citadel Supply Co.</a><a href="/go/">Socials &amp; links</a><a href="/contact.html">Contact</a></div>
   <p>&copy; 2025-2026 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
 </body>

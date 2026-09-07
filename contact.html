@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact | Erik Reiner</title>
-<meta name="description" content="Contact Erik Reiner for commissions, collaborations, or project inquiries.">
+<meta name="description" content="Contact Erik Reiner for project questions, collaborations, and selective custom-build inquiries.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
@@ -13,7 +13,7 @@
 <link rel="canonical" href="https://www.erikreiner.com/contact.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Contact">
-<meta property="og:description" content="Contact Erik Reiner for commissions, collaborations, or project inquiries.">
+<meta property="og:description" content="Contact Erik Reiner for project questions, collaborations, and selective custom-build inquiries.">
 <meta property="og:url" content="https://www.erikreiner.com/contact.html">
 <meta property="og:image" content="https://www.erikreiner.com/assets/images/projects/metrocop/metrocop-1.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -22,34 +22,37 @@
 <script src="assets/js/site.js" defer></script>
 </head>
 <body data-page="contact">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<nav>
+<nav aria-label="Main navigation">
   <div class="shell nav-inner">
-    <a href="index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <a href="/" class="nav-brand">Erik Reiner</a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
+    <ul class="nav-links" id="main-nav">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/projects.html">Projects</a></li>
+      <li><a href="/citadel/">Citadel / Shop</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contact.html" class="active" aria-current="page">Contact</a></li>
     </ul>
   </div>
 </nav>
 
 <header class="page-hero compact shell">
   <span class="eyebrow">Contact</span>
-  <h1>Open to collaborations, commissions, and interesting builds.</h1>
+  <h1>Let’s talk about the work.</h1>
   <p>If you want to talk cosplay, fabrication, props, CAD work, or game development, these are the best places to reach me.</p>
 </header>
 
-<main class="section shell">
+<main class="section shell" id="main-content" tabindex="-1">
   <div class="panel contact-grid">
     <div class="contact-intro">
       <p class="section-label">Say Hello</p>
       <h2>Best for project inquiries and portfolio follow-up.</h2>
-      <p>Email is the clearest option for commissions, collaboration ideas, or anything that needs a longer conversation. Social links are great for keeping up with ongoing builds and shorter messages.</p>
+      <p>My focus is on Citadel’s prop collection, with custom projects considered selectively. For a build inquiry, email a short outline, reference images, your budget, and the date you need it.</p>
+      <p>For an existing Etsy order, message me through your order on Etsy so the details stay together. For products and availability, <a href="citadel/">visit Citadel Supply Co.</a></p>
     </div>
 
     <div class="contact-links">
@@ -64,10 +67,11 @@
 
       <div class="copy-email-row">
         <span>Prefer copying it manually?</span>
-        <button class="copy-email" type="button" data-copy-email="erik@erikreiner.com">Copy email</button>
+        <button class="copy-email" type="button" hidden data-copy-email="erik@erikreiner.com">Copy email</button>
       </div>
 
-      <a class="contact-link" href="https://instagram.com/megasupercritic" target="_blank" rel="noreferrer">
+      <p id="copy-status" role="status" aria-live="polite"></p>
+      <a class="contact-link" href="https://instagram.com/megasupercritic" target="_blank" rel="noopener noreferrer">
         <div class="contact-icon">IG</div>
         <div>
           <div class="contact-name">Instagram</div>
@@ -76,16 +80,16 @@
         <span class="contact-arrow">-&gt;</span>
       </a>
 
-      <a class="contact-link" href="https://tiktok.com/@utrisworkshop" target="_blank" rel="noreferrer">
+      <a class="contact-link" href="https://tiktok.com/@citadelsupplyco" target="_blank" rel="noopener noreferrer">
         <div class="contact-icon neutral">TT</div>
         <div>
           <div class="contact-name">TikTok</div>
-          <div class="contact-handle">@utrisworkshop</div>
+          <div class="contact-handle">@citadelsupplyco</div>
         </div>
         <span class="contact-arrow">-&gt;</span>
       </a>
 
-      <a class="contact-link" href="https://www.therpf.com/members/utri" target="_blank" rel="noreferrer">
+      <a class="contact-link" href="https://www.therpf.com/members/utri" target="_blank" rel="noopener noreferrer">
         <div class="contact-icon neutral">RPF</div>
         <div>
           <div class="contact-name">The RPF</div>
@@ -98,6 +102,7 @@
 </main>
 
 <footer>
+  <div class="site-footer-links"><a href="/projects.html">Projects</a><a href="/citadel/">Citadel Supply Co.</a><a href="/go/">Socials &amp; links</a><a href="/contact.html">Contact</a></div>
   <p>&copy; 2025-2026 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
 </body>

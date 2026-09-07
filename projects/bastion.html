@@ -15,25 +15,25 @@
 <meta property="og:title" content="Bastion">
 <meta property="og:description" content="Bastion, a Godot 4 roguelite tower defense game by Erik Reiner.">
 <meta property="og:url" content="https://www.erikreiner.com/projects/bastion.html">
-<meta property="og:image" content="https://www.erikreiner.com/assets/images/projects/metrocop/metrocop-1.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.erikreiner.com/assets/images/projects/metrocop/metrocop-1.png">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="../assets/css/style.css">
 <script src="../assets/js/site.js" defer></script>
 </head>
 <body data-page="project">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<nav>
+<nav aria-label="Main navigation">
   <div class="shell nav-inner">
-    <a href="../index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <a href="/" class="nav-brand">Erik Reiner</a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../projects.html" class="active">Projects</a></li>
-      <li><a href="../blog.html">Blog</a></li>
-      <li><a href="../contact.html">Contact</a></li>
+    <ul class="nav-links" id="main-nav">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/projects.html" class="active" aria-current="location">Projects</a></li>
+      <li><a href="/citadel/">Citadel / Shop</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -48,10 +48,11 @@
   </div>
 </header>
 
-<main class="project-body">
+<main class="project-body" id="main-content" tabindex="-1">
+  <dl class="project-summary"><div><dt>Project</dt><dd>Game prototype</dd></div><div><dt>Tools &amp; materials</dt><dd>Godot 4, GDScript</dd></div><div><dt>Focus</dt><dd>Procedural levels and defensive systems</dd></div></dl>
   <div class="wip-notice">
     <span class="wip-notice-icon">[+]</span>
-    <p>Bastion is in active development. Screenshots, systems write-ups, and devlog-style updates will land here over time.</p>
+    <p>A Godot 4 tower-defense prototype. This page outlines the gameplay and development focus; a public build is not currently linked here.</p>
   </div>
 
   <div class="tech-list">
@@ -71,9 +72,11 @@
 
   <h2>Development Focus</h2>
   <p>This project is where I explore systems design, procedural generation, and Godot workflow all at once. It also serves as a sandbox for figuring out how visual assets, gameplay iteration, and production scope can support each other.</p>
+  <section class="related-projects" aria-label="Related projects"><h2>Keep exploring</h2><div class="page-actions"><a class="button-secondary" href="missile.html">AIM-9 CAD Study →</a><a class="button-secondary" href="metrocop.html">Half-Life 2: Metrocop →</a><a class="cta-link" href="/projects.html">All projects →</a></div></section>
 </main>
 
 <footer>
+  <div class="site-footer-links"><a href="/projects.html">Projects</a><a href="/citadel/">Citadel Supply Co.</a><a href="/go/">Socials &amp; links</a><a href="/contact.html">Contact</a></div>
   <p>&copy; 2025-2026 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
 </body>

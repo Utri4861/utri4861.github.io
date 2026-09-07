@@ -22,133 +22,128 @@
 <script src="assets/js/site.js" defer></script>
 </head>
 <body data-page="home">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<nav>
+<nav aria-label="Main navigation">
   <div class="shell nav-inner">
-    <a href="index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <a href="/" class="nav-brand">Erik Reiner</a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
+    <ul class="nav-links" id="main-nav">
+      <li><a href="/index.html" class="active" aria-current="page">Home</a></li>
+      <li><a href="/projects.html">Projects</a></li>
+      <li><a href="/citadel/">Citadel / Shop</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
 
-<header class="page-hero shell">
-  <span class="eyebrow">Maker Portfolio</span>
-  <h1>Fabrication, costumes, CAD, and games.</h1>
-  <p>I build things, from screen-accurate costumes and fabricated props to CAD studies and interactive game worlds. The throughline is the same every time: strong references, thoughtful iteration, and a lot of hands-on problem solving.</p>
-  <div class="page-actions">
-    <a href="projects.html" class="button">Browse Projects</a>
-    <a href="contact.html" class="button-secondary">Get In Touch</a>
-  </div>
-  <div class="hero-stats">
-    <span class="stat-pill">Cosplay + props</span>
-    <span class="stat-pill">3D printing + Fusion 360</span>
-    <span class="stat-pill">Historical armor</span>
-    <span class="stat-pill">Godot game dev</span>
-  </div>
-</header>
-
-<main>
-  <section class="section shell">
-    <div class="panel grid-two">
-      <div class="home-copy">
-        <p class="section-label">About</p>
-        <h2>One portfolio, multiple disciplines, same craft-first approach.</h2>
-        <p>I am a hands-on maker focused on cosplay, prop fabrication, historical armor, CAD, and game development. My projects move between digital planning and physical execution, from modeling parts in Fusion 360 to sewing soft goods, shaping steel, wiring electronics, and building playable systems in Godot.</p>
-        <p>What ties the work together is the joy of figuring things out: translating references into real objects, solving fit and finish problems, and learning whatever tool a project demands. I like work that crosses disciplines and ends up feeling intentional, not just complete.</p>
-        <div class="home-tags">
-          <span class="home-tag">Screen-accurate costumes</span>
-          <span class="home-tag">Functional CAD models</span>
-          <span class="home-tag">Mixed-media fabrication</span>
-          <span class="home-tag">Procedural game systems</span>
-        </div>
-      </div>
-
-      <div class="panel" style="padding:24px;">
-        <p class="section-label">Working Style</p>
-        <h3 class="card-title">Research heavy. Build ready. Always iterating.</h3>
-        <p class="card-desc">I like projects that ask for more than one discipline at once. That usually means reference gathering, prototyping, test fitting, and refining until the final thing feels intentional instead of merely finished.</p>
-        <p class="card-arrow">Current focus: large-scale costume builds and a Godot tower defense game.</p>
-      </div>
+<header class="page-hero shell home-hero">
+  <div>
+    <span class="eyebrow">Erik Reiner / Maker</span>
+    <h1>Fabrication, costumes, CAD, and games.</h1>
+    <p>I turn digital references into things you can wear, hold, and use. My work brings together 3D printing, sewing, metalwork, electronics, and a lot of test fitting.</p>
+    <div class="page-actions">
+      <a href="projects.html" class="button">Explore the projects</a>
+      <a href="citadel/" class="button-secondary">Citadel Supply Co.</a>
     </div>
-  </section>
-
+  </div>
+  <figure class="home-hero-photo">
+    <a href="projects/metrocop.html"><img src="assets/images/projects/metrocop/web/metrocop-1-png-960.webp" alt="My finished Half-Life 2 Metrocop helmet and armor." width="1284" height="1875" fetchpriority="high" decoding="async" data-original="assets/images/projects/metrocop/metrocop-1.png" srcset="assets/images/projects/metrocop/web/metrocop-1-png-480.webp 480w, assets/images/projects/metrocop/web/metrocop-1-png-960.webp 960w, assets/images/projects/metrocop/web/metrocop-1-png-1284.webp 1284w" sizes="(max-width: 720px) 100vw, 50vw"></a>
+    <figcaption>Half-Life 2: Metrocop — costume, props, and electronics</figcaption>
+  </figure>
+</header>
+<main id="main-content" tabindex="-1">
   <section class="section shell">
     <div class="section-header">
-      <div>
-        <p class="section-label">Featured Project</p>
-        <h2 class="section-title">Half-Life 2: Metrocop</h2>
-      </div>
-      <a href="projects.html" class="cta-link">See all projects</a>
+      <div><p class="section-label">Selected work</p><h2 class="section-title">From the workshop.</h2></div>
+      <a href="projects.html" class="cta-link">All eight projects →</a>
     </div>
-
-    <a href="projects/metrocop.html" class="feature-card">
-      <article class="card-shell" style="min-height:0;">
-        <div class="card-img has-photo" data-mark="Featured">
-          <img class="card-photo" src="assets/images/projects/metrocop/metrocop-1.png" alt="Close portrait of the Half-Life 2 Metrocop costume showing the helmet and chest armor." loading="lazy" decoding="async" width="1284" height="1875">
-          <span class="card-img-placeholder is-hidden">Featured Metrocop build</span>
-        </div>
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="cat-badge">3D Printing</span>
-            <span class="cat-badge alt">Fusion 360</span>
-            <span class="status-badge evolving">Always Evolving</span>
+    <div class="selected-work"><a href="projects/metrocop.html" class="feature-card" aria-label="Half-Life 2: Metrocop">
+        <article class="card-shell">
+          <div class="card-img has-photo photo-metrocop" data-mark="Costume">
+            <img class="card-photo" src="assets/images/projects/metrocop/web/metrocop-1-png-960.webp" alt="Close portrait of the Half-Life 2 Metrocop costume showing the helmet and chest armor." loading="lazy" decoding="async" width="1284" height="1875" data-original="assets/images/projects/metrocop/metrocop-1.png" srcset="assets/images/projects/metrocop/web/metrocop-1-png-480.webp 480w, assets/images/projects/metrocop/web/metrocop-1-png-960.webp 960w, assets/images/projects/metrocop/web/metrocop-1-png-1284.webp 1284w" sizes="(max-width: 720px) 100vw, 50vw">
+            <span class="card-img-placeholder is-hidden">Metrocop build</span>
           </div>
-          <h3 class="card-title">A screen-accurate Civil Protection build with mixed fabrication.</h3>
-          <p class="card-desc">This build pulls together printed armor, fabricated components, sewing, finishing work, and electronics. It is one of the clearest snapshots of how I like to work: cross-disciplinary, reference-driven, and obsessed with getting the silhouette and surface treatment to feel right.</p>
-          <p class="card-arrow">Open project page -&gt;</p>
-        </div>
-      </article>
-    </a>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="cat-badge">3D Printing</span>
+              <span class="cat-badge alt">Fusion 360</span>
+              <span class="status-badge evolving">Always Evolving</span>
+            </div>
+            <h3 class="card-title">Half-Life 2: Metrocop</h3>
+            <p class="card-desc">Screen-accurate Civil Protection unit with printed armor, fabricated parts, and detailed finishing work.</p>
+            <p class="card-arrow">View project -&gt;</p>
+          </div>
+        </article>
+      </a>
+<a href="projects/leather.html" class="feature-card" aria-label="Leatherwork: Gifts and Studies">
+        <article class="card-shell">
+          <div class="card-img has-photo" data-mark="Leather">
+            <img class="card-photo" src="assets/images/projects/leatherwork/web/leather-satchel-1-jpg-960.webp" alt="Handmade brown leather satchel on a tabletop." loading="lazy" decoding="async" width="4032" height="3024" data-original="assets/images/projects/leatherwork/leather-satchel-1.jpg" srcset="assets/images/projects/leatherwork/web/leather-satchel-1-jpg-480.webp 480w, assets/images/projects/leatherwork/web/leather-satchel-1-jpg-960.webp 960w, assets/images/projects/leatherwork/web/leather-satchel-1-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw">
+            <span class="card-img-placeholder is-hidden">Leatherwork studies</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="cat-badge leather">Leatherworking</span>
+              <span class="cat-badge alt">Fusion 360</span>
+              <span class="status-badge complete">Complete</span>
+            </div>
+            <h3 class="card-title">Leatherwork: Gifts and Studies</h3>
+            <p class="card-desc">Small leather projects where I use pattern-making, tooling, and CAD-assisted stencils to turn gift ideas into polished finished pieces.</p>
+            <p class="card-arrow">View project -&gt;</p>
+          </div>
+        </article>
+      </a>
+<a href="projects/knight.html" class="feature-card" aria-label="15th C. Milanese Armor">
+        <article class="card-shell">
+          <div class="card-img has-photo photo-top" data-mark="Historical">
+            <img class="card-photo" src="assets/images/projects/knight/web/knight-1-jpg-960.webp" alt="Blue and white Milanese armor outdoors holding a sword." loading="lazy" decoding="async" width="1284" height="1268" data-original="assets/images/projects/knight/knight-1.jpg" srcset="assets/images/projects/knight/web/knight-1-jpg-480.webp 480w, assets/images/projects/knight/web/knight-1-jpg-960.webp 960w, assets/images/projects/knight/web/knight-1-jpg-1284.webp 1284w" sizes="(max-width: 720px) 100vw, 50vw">
+            <span class="card-img-placeholder is-hidden">Completed armor build</span>
+          </div>
+          <div class="card-body">
+            <div class="card-meta">
+              <span class="cat-badge steel">Metalworking</span>
+              <span class="cat-badge leather">Leatherworking</span>
+              <span class="status-badge complete">Complete</span>
+            </div>
+            <h3 class="card-title">15th C. Milanese Armor</h3>
+            <p class="card-desc">A long-running historical armor project built from Nadler patterns and shaped by years of iteration.</p>
+            <p class="card-arrow">View project -&gt;</p>
+          </div>
+        </article>
+      </a></div>
   </section>
-
   <section class="section shell">
-    <div class="grid-two">
-      <article class="panel" style="padding:24px;">
-        <p class="section-label">Available on Etsy</p>
-        <h2 class="card-title">A couple of the Metrocop props turned into real shop listings.</h2>
-        <p class="card-desc">Some of the same CAD and prop work from the Metrocop project now exists as finished pieces people can actually buy. I want the portfolio to stay craft-first, but it is nice when the design work grows legs and leaves the bench.</p>
-      </article>
-
-      <article class="panel" style="padding:24px;">
-        <p class="blog-meta">Current listings</p>
-        <h3 class="card-title">Metrocop belt box and stunstick</h3>
-        <p class="card-desc">These finished props now live under Citadel Supply Co., my small-batch fabrication brand. Explore the brand or go directly to either Etsy listing.</p>
-        <div class="page-actions">
-          <a href="citadel/" class="button">Visit Citadel Supply Co.</a>
-          <a href="https://www.etsy.com/listing/4499309506/civil-protection-metrocop-light-up-belt" class="button-secondary" target="_blank" rel="noopener noreferrer">View belt box</a>
-          <a href="https://www.etsy.com/listing/4499342041/civil-protection-metrocop-stunstick" class="button-secondary" target="_blank" rel="noopener noreferrer">View stunstick</a>
-        </div>
-      </article>
+    <div class="panel home-copy">
+      <p class="section-label">About</p>
+      <h2>Digital planning. Hands-on making.</h2>
+      <p>I’m a California-based maker working across props, costumes, leatherwork, historical armor, and game development. I use Fusion 360 to plan parts, then work through the practical questions at the bench: how they fit, move, fasten, and finish.</p>
+      <a class="cta-link" href="contact.html">Get in touch →</a>
     </div>
   </section>
-
   <section class="section shell">
-    <div class="grid-two">
-      <article class="panel" style="padding:24px;">
-        <p class="section-label">From the Blog</p>
-        <h2 class="card-title">Notes from the bench, the CAD screen, and the awkward in-between.</h2>
-        <p class="card-desc">I wanted a place for the in-progress thoughts too, not just the polished end results. The blog is where I write about workflow changes, leather experiments, online shop ambitions, and the smaller observations that shape the bigger builds.</p>
-        <a href="blog.html" class="cta-link">Read the journal</a>
-      </article>
-
-      <article class="panel blog-highlight">
-        <p class="blog-meta">Latest entry | December 24, 2025</p>
-        <h3 class="card-title">Leather, CAD, and the joy of cheating elegantly.</h3>
-        <p class="card-desc">I wrote about using Fusion 360 to make editable leather patterns and 3D printed script stencils, which has been one of the most unexpectedly useful overlaps on the whole site.</p>
-        <a href="blog.html#dec-24-2025" class="card-arrow">Open latest note -&gt;</a>
-      </article>
+    <div class="panel grid-two">
+      <div><p class="section-label">Citadel Supply Co.</p><h2 class="section-title">From my workshop to yours.</h2></div>
+      <div><p>Citadel Supply Co. is my prop-making shop. Explore the Metrocop stunstick and light-up belt box, with ordering and current availability on Etsy.</p>
+        <div class="page-actions"><a href="citadel/" class="button">Explore Citadel</a><a href="https://www.etsy.com/shop/CitadelSupplyCo" class="button-secondary" target="_blank" rel="noopener noreferrer">Shop on Etsy ↗</a></div>
+      </div>
     </div>
+  </section>
+  <section class="section shell">
+    <article class="panel">
+      <p class="blog-meta">Workshop notes / December 24, 2025</p>
+      <h2 class="card-title">Leather patterns, CAD, and printed stencils.</h2>
+      <p class="card-desc">How editable patterns and lettering stencils found their way into my leatherwork.</p>
+      <a href="blog.html#dec-24-2025" class="cta-link">Read the note →</a>
+    </article>
   </section>
 </main>
 
 <footer>
+  <div class="site-footer-links"><a href="/projects.html">Projects</a><a href="/citadel/">Citadel Supply Co.</a><a href="/go/">Socials &amp; links</a><a href="/contact.html">Contact</a></div>
   <p>&copy; 2025-2026 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
 </body>

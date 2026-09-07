@@ -22,18 +22,20 @@
 <script src="../assets/js/site.js" defer></script>
 </head>
 <body data-page="project">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<nav>
+<nav aria-label="Main navigation">
   <div class="shell nav-inner">
-    <a href="../index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <a href="/" class="nav-brand">Erik Reiner</a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../projects.html" class="active">Projects</a></li>
-      <li><a href="../blog.html">Blog</a></li>
-      <li><a href="../contact.html">Contact</a></li>
+    <ul class="nav-links" id="main-nav">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/projects.html" class="active" aria-current="location">Projects</a></li>
+      <li><a href="/citadel/">Citadel / Shop</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -49,7 +51,8 @@
   </div>
 </header>
 
-<main class="project-body">
+<main class="project-body" id="main-content" tabindex="-1">
+  <dl class="project-summary"><div><dt>Project</dt><dd>CAD & printed model</dd></div><div><dt>Tools &amp; materials</dt><dd>Fusion 360, 3D printing</dd></div><div><dt>Focus</dt><dd>Part fit and print tolerances</dd></div></dl>
   <div class="tech-list">
     <span class="tech-tag">Fusion 360</span>
     <span class="tech-tag">CAD</span>
@@ -63,11 +66,11 @@
 
   <section class="project-gallery split" aria-label="Missile render gallery">
     <figure class="project-img">
-      <img src="../assets/images/projects/missile/missile-render.png" alt="Rendered AIM-9 Sidewinder-inspired model." loading="lazy" decoding="async" width="914" height="574">
+      <img src="../assets/images/projects/missile/web/missile-render-png-914.webp" alt="Rendered AIM-9 Sidewinder-inspired model." decoding="async" width="914" height="574" data-original="../assets/images/projects/missile/missile-render.png" srcset="../assets/images/projects/missile/web/missile-render-png-480.webp 480w, ../assets/images/projects/missile/web/missile-render-png-914.webp 914w" sizes="(max-width: 720px) 100vw, 50vw" fetchpriority="high">
       <figcaption>The render sells the clean proportions and the satisfaction of a project that hit its tolerances without a long rework cycle.</figcaption>
     </figure>
     <figure class="project-img">
-      <img src="../assets/images/projects/missile/drawings/1.png" alt="First sheet of the missile drawing set showing the assembly." loading="lazy" decoding="async" width="3309" height="2339">
+      <img src="../assets/images/projects/missile/drawings/web/1-png-960.webp" alt="First sheet of the missile drawing set showing the assembly." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/missile/drawings/1.png" data-fullsize="../assets/images/projects/missile/drawings/1.png" srcset="../assets/images/projects/missile/drawings/web/1-png-480.webp 480w, ../assets/images/projects/missile/drawings/web/1-png-960.webp 960w, ../assets/images/projects/missile/drawings/web/1-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
       <figcaption>The drawing sheets are part of the project story, not just supporting documentation. They show the model as a set of decisions instead of a single finished render.</figcaption>
     </figure>
   </section>
@@ -79,55 +82,55 @@
     <div class="sheet-carousel-frame">
       <div class="sheet-carousel-track" data-carousel-track>
         <figure class="project-img">
-          <img src="../assets/images/projects/missile/drawings/13.png" alt="Missile drawing sheet 1 of 13." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/missile/drawings/web/13-png-960.webp" alt="Missile drawing sheet 1 of 13." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/missile/drawings/13.png" data-fullsize="../assets/images/projects/missile/drawings/13.png" srcset="../assets/images/projects/missile/drawings/web/13-png-480.webp 480w, ../assets/images/projects/missile/drawings/web/13-png-960.webp 960w, ../assets/images/projects/missile/drawings/web/13-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 1 of 13</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/missile/drawings/12.png" alt="Missile drawing sheet 2 of 13." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/missile/drawings/web/12-png-960.webp" alt="Missile drawing sheet 2 of 13." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/missile/drawings/12.png" data-fullsize="../assets/images/projects/missile/drawings/12.png" srcset="../assets/images/projects/missile/drawings/web/12-png-480.webp 480w, ../assets/images/projects/missile/drawings/web/12-png-960.webp 960w, ../assets/images/projects/missile/drawings/web/12-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 2 of 13</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/missile/drawings/11.png" alt="Missile drawing sheet 3 of 13." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/missile/drawings/web/11-png-960.webp" alt="Missile drawing sheet 3 of 13." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/missile/drawings/11.png" data-fullsize="../assets/images/projects/missile/drawings/11.png" srcset="../assets/images/projects/missile/drawings/web/11-png-480.webp 480w, ../assets/images/projects/missile/drawings/web/11-png-960.webp 960w, ../assets/images/projects/missile/drawings/web/11-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 3 of 13</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/missile/drawings/10.png" alt="Missile drawing sheet 4 of 13." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/missile/drawings/web/10-png-960.webp" alt="Missile drawing sheet 4 of 13." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/missile/drawings/10.png" data-fullsize="../assets/images/projects/missile/drawings/10.png" srcset="../assets/images/projects/missile/drawings/web/10-png-480.webp 480w, ../assets/images/projects/missile/drawings/web/10-png-960.webp 960w, ../assets/images/projects/missile/drawings/web/10-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 4 of 13</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/missile/drawings/9.png" alt="Missile drawing sheet 5 of 13." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/missile/drawings/web/9-png-960.webp" alt="Missile drawing sheet 5 of 13." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/missile/drawings/9.png" data-fullsize="../assets/images/projects/missile/drawings/9.png" srcset="../assets/images/projects/missile/drawings/web/9-png-480.webp 480w, ../assets/images/projects/missile/drawings/web/9-png-960.webp 960w, ../assets/images/projects/missile/drawings/web/9-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 5 of 13</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/missile/drawings/8.png" alt="Missile drawing sheet 6 of 13." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/missile/drawings/web/8-png-960.webp" alt="Missile drawing sheet 6 of 13." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/missile/drawings/8.png" data-fullsize="../assets/images/projects/missile/drawings/8.png" srcset="../assets/images/projects/missile/drawings/web/8-png-480.webp 480w, ../assets/images/projects/missile/drawings/web/8-png-960.webp 960w, ../assets/images/projects/missile/drawings/web/8-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 6 of 13</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/missile/drawings/7.png" alt="Missile drawing sheet 7 of 13." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/missile/drawings/web/7-png-960.webp" alt="Missile drawing sheet 7 of 13." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/missile/drawings/7.png" data-fullsize="../assets/images/projects/missile/drawings/7.png" srcset="../assets/images/projects/missile/drawings/web/7-png-480.webp 480w, ../assets/images/projects/missile/drawings/web/7-png-960.webp 960w, ../assets/images/projects/missile/drawings/web/7-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 7 of 13</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/missile/drawings/6.png" alt="Missile drawing sheet 8 of 13." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/missile/drawings/web/6-png-960.webp" alt="Missile drawing sheet 8 of 13." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/missile/drawings/6.png" data-fullsize="../assets/images/projects/missile/drawings/6.png" srcset="../assets/images/projects/missile/drawings/web/6-png-480.webp 480w, ../assets/images/projects/missile/drawings/web/6-png-960.webp 960w, ../assets/images/projects/missile/drawings/web/6-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 8 of 13</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/missile/drawings/5.png" alt="Missile drawing sheet 9 of 13." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/missile/drawings/web/5-png-960.webp" alt="Missile drawing sheet 9 of 13." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/missile/drawings/5.png" data-fullsize="../assets/images/projects/missile/drawings/5.png" srcset="../assets/images/projects/missile/drawings/web/5-png-480.webp 480w, ../assets/images/projects/missile/drawings/web/5-png-960.webp 960w, ../assets/images/projects/missile/drawings/web/5-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 9 of 13</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/missile/drawings/4.png" alt="Missile drawing sheet 10 of 13." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/missile/drawings/web/4-png-960.webp" alt="Missile drawing sheet 10 of 13." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/missile/drawings/4.png" data-fullsize="../assets/images/projects/missile/drawings/4.png" srcset="../assets/images/projects/missile/drawings/web/4-png-480.webp 480w, ../assets/images/projects/missile/drawings/web/4-png-960.webp 960w, ../assets/images/projects/missile/drawings/web/4-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 10 of 13</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/missile/drawings/3.png" alt="Missile drawing sheet 11 of 13." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/missile/drawings/web/3-png-960.webp" alt="Missile drawing sheet 11 of 13." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/missile/drawings/3.png" data-fullsize="../assets/images/projects/missile/drawings/3.png" srcset="../assets/images/projects/missile/drawings/web/3-png-480.webp 480w, ../assets/images/projects/missile/drawings/web/3-png-960.webp 960w, ../assets/images/projects/missile/drawings/web/3-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 11 of 13</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/missile/drawings/2.png" alt="Missile drawing sheet 12 of 13." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/missile/drawings/web/2-png-960.webp" alt="Missile drawing sheet 12 of 13." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/missile/drawings/2.png" data-fullsize="../assets/images/projects/missile/drawings/2.png" srcset="../assets/images/projects/missile/drawings/web/2-png-480.webp 480w, ../assets/images/projects/missile/drawings/web/2-png-960.webp 960w, ../assets/images/projects/missile/drawings/web/2-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 12 of 13</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/missile/drawings/1.png" alt="Missile drawing sheet 13 of 13." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/missile/drawings/web/1-png-960.webp" alt="Missile drawing sheet 13 of 13." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/missile/drawings/1.png" data-fullsize="../assets/images/projects/missile/drawings/1.png" srcset="../assets/images/projects/missile/drawings/web/1-png-480.webp 480w, ../assets/images/projects/missile/drawings/web/1-png-960.webp 960w, ../assets/images/projects/missile/drawings/web/1-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 13 of 13</figcaption>
         </figure>
       </div>
@@ -138,9 +141,11 @@
       <button class="sheet-carousel-nav" type="button" data-carousel-next aria-label="Next drawing sheet">&rarr;</button>
     </div>
   </section>
+  <section class="related-projects" aria-label="Related projects"><h2>Keep exploring</h2><div class="page-actions"><a class="button-secondary" href="cannon.html">24-Pounder Cannon →</a><a class="button-secondary" href="revolver.html">Colt Walker CAD Study →</a><a class="cta-link" href="/projects.html">All projects →</a></div></section>
 </main>
 
 <footer>
+  <div class="site-footer-links"><a href="/projects.html">Projects</a><a href="/citadel/">Citadel Supply Co.</a><a href="/go/">Socials &amp; links</a><a href="/contact.html">Contact</a></div>
   <p>&copy; 2025-2026 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
 </body>

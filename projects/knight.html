@@ -22,18 +22,20 @@
 <script src="../assets/js/site.js" defer></script>
 </head>
 <body data-page="project">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<nav>
+<nav aria-label="Main navigation">
   <div class="shell nav-inner">
-    <a href="../index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <a href="/" class="nav-brand">Erik Reiner</a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../projects.html" class="active">Projects</a></li>
-      <li><a href="../blog.html">Blog</a></li>
-      <li><a href="../contact.html">Contact</a></li>
+    <ul class="nav-links" id="main-nav">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/projects.html" class="active" aria-current="location">Projects</a></li>
+      <li><a href="/citadel/">Citadel / Shop</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -49,7 +51,8 @@
   </div>
 </header>
 
-<main class="project-body">
+<main class="project-body" id="main-content" tabindex="-1">
+  <dl class="project-summary"><div><dt>Project</dt><dd>Historical-inspired armor</dd></div><div><dt>Tools &amp; materials</dt><dd>Metalworking, sewing, leatherwork</dd></div><div><dt>Focus</dt><dd>Plate, soft goods and articulation</dd></div></dl>
   <div class="tech-list">
     <span class="tech-tag">Mild Steel</span>
     <span class="tech-tag">Leatherworking</span>
@@ -64,17 +67,17 @@
 
   <section class="project-gallery split" aria-label="Milanese armor gallery">
     <figure class="project-img">
-      <img src="../assets/images/projects/knight/knight-1.jpg" alt="Blue and white Milanese armor outdoors with sword in hand." loading="lazy" decoding="async" width="1284" height="1268">
+      <img src="../assets/images/projects/knight/web/knight-1-jpg-960.webp" alt="Blue and white Milanese armor outdoors with sword in hand." decoding="async" width="1284" height="1268" data-original="../assets/images/projects/knight/knight-1.jpg" srcset="../assets/images/projects/knight/web/knight-1-jpg-480.webp 480w, ../assets/images/projects/knight/web/knight-1-jpg-960.webp 960w, ../assets/images/projects/knight/web/knight-1-jpg-1284.webp 1284w" sizes="(max-width: 720px) 100vw, 50vw" fetchpriority="high">
       <figcaption>An outdoor hero shot that shows the color palette, silhouette, and the way the armor reads as a full character rather than a pile of separate pieces.</figcaption>
     </figure>
     <figure class="project-img">
-      <img src="../assets/images/projects/knight/knight-2.jpg" alt="Indoor portrait of the Milanese armor suit." loading="lazy" decoding="async" width="1284" height="1272">
+      <img src="../assets/images/projects/knight/web/knight-2-jpg-960.webp" alt="Indoor portrait of the Milanese armor suit." loading="lazy" decoding="async" width="1284" height="1272" data-original="../assets/images/projects/knight/knight-2.jpg" srcset="../assets/images/projects/knight/web/knight-2-jpg-480.webp 480w, ../assets/images/projects/knight/web/knight-2-jpg-960.webp 960w, ../assets/images/projects/knight/web/knight-2-jpg-1284.webp 1284w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>A closer portrait of the suit with the gambeson and plate working together, which is where a lot of the project personality really lives.</figcaption>
     </figure>
   </section>
 
   <h2>Introduction</h2>
-  <p>Made with <a href="https://nadler.us/armour.html" target="_blank" rel="noreferrer">patterns by Craig Nadler</a>, this build started as a way to make something ambitious with the tools I had. The arms, chest, and legs are Nadler patterns, and even the helmet grew out of that same research path.</p>
+  <p>Made with <a href="https://nadler.us/armour.html" target="_blank" rel="noopener noreferrer">patterns by Craig Nadler</a>, this build started as a way to make something ambitious with the tools I had. The arms, chest, and legs are Nadler patterns, and even the helmet grew out of that same research path.</p>
 
   <div class="video-wrap">
     <iframe src="https://www.youtube.com/embed/HLx4HV4yIh4" title="Milanese Armor Part 1" allowfullscreen loading="lazy"></iframe>
@@ -86,32 +89,32 @@
   <p>Some years earlier I had already made myself a rough gambeson by taking apart a dress shirt, tracing the pieces onto a large section of blue fabric, and quilting the whole thing together with batting. It was crude, but it worked, and it ended up setting both the silhouette and the blue-and-white color scheme for everything that followed.</p>
 
   <h2>Patterns and Plate Development</h2>
-  <p>One of my favorite things in the archive is how visible the learning process still is. Before polished hero photos or finished wear shots, there were graph-paper arm patterns, traced plate layouts, hardware planning, and the kind of flat-lay documentation that only exists when someone is really trying to think a build through piece by piece.</p>
+  <p>The archive includes pattern references alongside plate layouts and hardware planning. The reference sheets help explain the construction; dates on those sheets should not be read as dates of my own build.</p>
 
   <section class="project-gallery split" aria-label="Armor pattern development gallery">
     <figure class="project-img">
-      <img src="../assets/images/projects/knight/knight-elbow-pattern-1.jpg" alt="Early elbow cop pattern drawn on graph paper." loading="lazy" decoding="async" width="595" height="768">
-      <figcaption>An early elbow pattern from 1999, complete with graph paper and handwritten notes. It is scrappy, direct, and exactly the kind of artifact that shows how this project began.</figcaption>
+      <img src="../assets/images/projects/knight/web/knight-elbow-pattern-1-jpg-595.webp" alt="Early elbow cop pattern drawn on graph paper." loading="lazy" decoding="async" width="595" height="768" data-original="../assets/images/projects/knight/knight-elbow-pattern-1.jpg" srcset="../assets/images/projects/knight/web/knight-elbow-pattern-1-jpg-480.webp 480w, ../assets/images/projects/knight/web/knight-elbow-pattern-1-jpg-595.webp 595w" sizes="(max-width: 720px) 100vw, 50vw">
+      <figcaption>Elbow pattern reference with graph paper and handwritten notes. The 1999 date belongs to the reference sheet, not the chronology of my build.</figcaption>
     </figure>
     <figure class="project-img">
-      <img src="../assets/images/projects/knight/knight-rerebrace-pattern.jpg" alt="Rerebrace armor pattern drawn on graph paper." loading="lazy" decoding="async" width="595" height="768">
-      <figcaption>A rerebrace pattern study from the same early phase, when the project still lived mostly as flattened shapes and educated guesses before it earned any volume.</figcaption>
+      <img src="../assets/images/projects/knight/web/knight-rerebrace-pattern-jpg-595.webp" alt="Rerebrace armor pattern drawn on graph paper." loading="lazy" decoding="async" width="595" height="768" data-original="../assets/images/projects/knight/knight-rerebrace-pattern.jpg" srcset="../assets/images/projects/knight/web/knight-rerebrace-pattern-jpg-480.webp 480w, ../assets/images/projects/knight/web/knight-rerebrace-pattern-jpg-595.webp 595w" sizes="(max-width: 720px) 100vw, 50vw">
+      <figcaption>Rerebrace pattern reference showing the flat shapes used to plan the upper-arm plates.</figcaption>
     </figure>
   </section>
 
   <section class="project-gallery split" aria-label="Cuirass component planning gallery">
     <figure class="project-img">
-      <img src="../assets/images/projects/knight/knight-cuirass-layout.jpg" alt="Cuirass plate layout photographed on a white background." loading="lazy" decoding="async" width="3253" height="1923">
+      <img src="../assets/images/projects/knight/web/knight-cuirass-layout-jpg-960.webp" alt="Cuirass plate layout photographed on a white background." loading="lazy" decoding="async" width="3253" height="1923" data-original="../assets/images/projects/knight/knight-cuirass-layout.jpg" srcset="../assets/images/projects/knight/web/knight-cuirass-layout-jpg-480.webp 480w, ../assets/images/projects/knight/web/knight-cuirass-layout-jpg-960.webp 960w, ../assets/images/projects/knight/web/knight-cuirass-layout-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>The cuirass plates laid out flat, which makes the chest build read almost like a kit of parts. Seeing it this way says a lot about how much planning sits behind the finished silhouette.</figcaption>
     </figure>
     <figure class="project-img">
-      <img src="../assets/images/projects/knight/knight-cuirass-hardware.jpg" alt="Cuirass hardware layout photographed on a white background." loading="lazy" decoding="async" width="1533" height="1583">
+      <img src="../assets/images/projects/knight/web/knight-cuirass-hardware-jpg-960.webp" alt="Cuirass hardware layout photographed on a white background." loading="lazy" decoding="async" width="1533" height="1583" data-original="../assets/images/projects/knight/knight-cuirass-hardware.jpg" srcset="../assets/images/projects/knight/web/knight-cuirass-hardware-jpg-480.webp 480w, ../assets/images/projects/knight/web/knight-cuirass-hardware-jpg-960.webp 960w, ../assets/images/projects/knight/web/knight-cuirass-hardware-jpg-1533.webp 1533w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>Hardware planning for the cuirass. This is the less glamorous side of armor making, but it is also where comfort, articulation, and durability either come together or fall apart.</figcaption>
     </figure>
   </section>
 
   <figure class="project-img">
-    <img src="../assets/images/projects/knight/knight-cuirass-straps.jpg" alt="Leather strap layout for the cuirass photographed on a white background." loading="lazy" decoding="async" width="2400" height="2560">
+    <img src="../assets/images/projects/knight/web/knight-cuirass-straps-jpg-960.webp" alt="Leather strap layout for the cuirass photographed on a white background." loading="lazy" decoding="async" width="2400" height="2560" data-original="../assets/images/projects/knight/knight-cuirass-straps.jpg" srcset="../assets/images/projects/knight/web/knight-cuirass-straps-jpg-480.webp 480w, ../assets/images/projects/knight/web/knight-cuirass-straps-jpg-960.webp 960w, ../assets/images/projects/knight/web/knight-cuirass-straps-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw">
     <figcaption>The leather straps for the cuirass laid out on their own. It is a good reminder that armor is never just plate; it is always a conversation between steel, leather, fit, and how the body actually moves inside the suit.</figcaption>
   </figure>
 
@@ -132,9 +135,11 @@
   <p>I have declared this project finished more than once, and every time I end up coming back with another idea. At this point, the continued evolution is part of the appeal. It is not just a costume anymore; it is a record of craft growth over time.</p>
   <p>It is hard, sweaty work, but it is also some of the most fun I have had making anything. I love the way it looks, I love the way it feels to wear, and it is always a hit at the Ren Faire.</p>
   <p>I used to think the goal was to finally call it done. Now I am more interested in letting it keep evolving. That has become part of the craft for me too.</p>
+  <section class="related-projects" aria-label="Related projects"><h2>Keep exploring</h2><div class="page-actions"><a class="button-secondary" href="helldivers.html">Helldivers 2: B-01 Armor →</a><a class="button-secondary" href="leather.html">Leatherwork →</a><a class="cta-link" href="/projects.html">All projects →</a></div></section>
 </main>
 
 <footer>
+  <div class="site-footer-links"><a href="/projects.html">Projects</a><a href="/citadel/">Citadel Supply Co.</a><a href="/go/">Socials &amp; links</a><a href="/contact.html">Contact</a></div>
   <p>&copy; 2025-2026 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
 </body>

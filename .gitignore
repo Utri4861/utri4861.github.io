@@ -3,8 +3,8 @@
 Thumbs.db
 Desktop.ini
 .vscode/
+__pycache__/
 
 # Reference captures from the old Google Sites import
 oldsite_*.html
 fetch_projects_*.html
-

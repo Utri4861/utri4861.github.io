@@ -1,380 +1,246 @@
-document.body.classList.add("js-ready");
+const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+const finePointerQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+const mobileNavQuery = window.matchMedia('(max-width: 720px)');
+const toggle = document.querySelector('.nav-toggle');
+const links = document.querySelector('.nav-links');
+const filterKeys = ['all', '3d-printing', 'fusion360', 'sewing', 'airbrush', 'metalworking', 'leatherworking', 'electronics', 'gamedev'];
+const incomingFilter = new URL(location.href).searchParams.get('filter');
+const backLink = document.querySelector('.back-link');
+if (backLink && filterKeys.includes(incomingFilter) && incomingFilter !== 'all') {
+  const target = new URL(backLink.getAttribute('href'), location.href);
+  target.searchParams.set('filter', incomingFilter);
+  backLink.href = target.href;
+}
 
-const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-const mobileNavQuery = window.matchMedia("(max-width: 720px)");
-const toggle = document.querySelector(".nav-toggle");
-const links = document.querySelector(".nav-links");
-
-function syncMobileNav(expanded = toggle?.classList.contains("open") || false) {
+function syncMobileNav(expanded = false) {
   if (!toggle || !links) return;
-
-  toggle.setAttribute("aria-expanded", String(expanded));
-
-  if (mobileNavQuery.matches) {
-    links.inert = !expanded;
-    links.setAttribute("aria-hidden", String(!expanded));
-  } else {
-    links.inert = false;
-    links.removeAttribute("aria-hidden");
-  }
+  toggle.classList.toggle('open', expanded);
+  links.classList.toggle('open', expanded);
+  toggle.setAttribute('aria-expanded', String(expanded));
+  links.inert = mobileNavQuery.matches && !expanded;
+  if (links.inert) links.setAttribute('aria-hidden', 'true');
+  else links.removeAttribute('aria-hidden');
+}
+if (toggle && links) {
+  document.body.classList.add('nav-ready');
+  toggle.addEventListener('click', () => syncMobileNav(!toggle.classList.contains('open')));
+  mobileNavQuery.addEventListener('change', () => syncMobileNav());
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && toggle.classList.contains('open')) {
+      syncMobileNav();
+      toggle.focus();
+    }
+  });
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.nav-inner')) syncMobileNav();
+  });
+  links.addEventListener('click', (event) => {
+    if (event.target.closest('a')) syncMobileNav();
+  });
+  syncMobileNav();
 }
 
-toggle?.addEventListener("click", () => {
-  const expanded = toggle.classList.toggle("open");
-  links?.classList.toggle("open", expanded);
-  syncMobileNav(expanded);
-});
-
-if (mobileNavQuery.addEventListener) {
-  mobileNavQuery.addEventListener("change", () => syncMobileNav());
-} else {
-  mobileNavQuery.addListener(() => syncMobileNav());
-}
-syncMobileNav(false);
-
-document.querySelectorAll("[data-copy-email]").forEach((button) => {
-  const originalText = button.textContent;
-
-  button.addEventListener("click", async () => {
-    const email = button.dataset.copyEmail;
-    if (!email) return;
-
+document.querySelectorAll('[data-copy-email]').forEach((button) => {
+  button.hidden = false;
+  button.addEventListener('click', async () => {
+    const status = document.getElementById('copy-status');
     try {
-      await navigator.clipboard.writeText(email);
-      button.textContent = "Copied";
-      setTimeout(() => {
-        button.textContent = originalText;
-      }, 1800);
+      await navigator.clipboard.writeText(button.dataset.copyEmail);
+      status.textContent = 'Email address copied.';
     } catch {
-      window.prompt("Copy this email address:", email);
+      status.textContent = 'Select the email address above to copy it.';
     }
   });
 });
 
-if (document.body.dataset.page === "projects") {
-  const stage = document.getElementById("cards-stage");
-  const cards = stage ? Array.from(stage.querySelectorAll(".project-card")) : [];
-  const buttons = Array.from(document.querySelectorAll(".filter-btn"));
-  const status = document.getElementById("filter-status");
-  let activeFilter = "all";
-  let currentOrder = [];
+const stage = document.getElementById('cards-stage');
+if (stage) {
+  const cards = [...stage.querySelectorAll('.project-card')];
+  const buttons = [...document.querySelectorAll('[data-filter]')];
+  const status = document.getElementById('filter-status');
+  const shuffle = document.querySelector('[data-shuffle]');
+  let activeFilter = 'all';
+  let order = [...cards];
+  const animations = new Set();
 
-  function shuffle(list) {
-    const copy = [...list];
-    for (let i = copy.length - 1; i > 0; i -= 1) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [copy[i], copy[j]] = [copy[j], copy[i]];
-    }
-    return copy;
-  }
-
-  function getVisibleCards(filter) {
-    return cards.filter((card) => {
-      if (filter === "all") return true;
-      return (card.dataset.tools || "").split(",").includes(filter);
+  function render(animate = true) {
+    animations.forEach((animation) => animation.cancel());
+    animations.clear();
+    const before = new Map(cards.filter((card) => !card.hidden).map((card) => [card, card.getBoundingClientRect()]));
+    order.forEach((card) => {
+      card.hidden = activeFilter !== 'all' && !card.dataset.tools.split(',').includes(activeFilter);
+      const target = new URL(card.getAttribute('href'), location.href);
+      if (activeFilter === 'all') target.searchParams.delete('filter');
+      else target.searchParams.set('filter', activeFilter);
+      card.href = target.href;
+      stage.append(card);
     });
-  }
-
-  function describeFilter(filter, count) {
-    if (filter === "all") {
-      return `Showing ${count} projects`;
-    }
-
-    const label = buttons.find((button) => button.dataset.filter === filter)?.textContent || filter;
-    return `Showing ${count} ${label} project${count === 1 ? "" : "s"}`;
-  }
-
-  function reshuffleOrder(filter = activeFilter) {
-    const visible = getVisibleCards(filter);
-    currentOrder = shuffle(visible).map((card) => card.dataset.id);
-  }
-
-  function syncOrderToFilter(filter) {
-    const visible = getVisibleCards(filter);
-    const visibleIds = new Set(visible.map((card) => card.dataset.id));
-    currentOrder = currentOrder.filter((id) => visibleIds.has(id));
+    buttons.forEach((button) => {
+      const selected = button.dataset.filter === activeFilter;
+      button.classList.toggle('active', selected);
+      button.setAttribute('aria-pressed', String(selected));
+    });
+    const visible = order.filter((card) => !card.hidden);
+    const label = buttons.find((button) => button.dataset.filter === activeFilter)?.textContent;
+    status.textContent = `Showing ${visible.length}${activeFilter === 'all' ? '' : ` ${label}`} project${visible.length === 1 ? '' : 's'}`;
+    shuffle.disabled = visible.length < 2;
+    if (!animate || reducedMotionQuery.matches) return;
     visible.forEach((card) => {
-      if (!currentOrder.includes(card.dataset.id)) {
-        currentOrder.push(card.dataset.id);
-      }
+      if (!card.animate) return;
+      const previous = before.get(card);
+      const current = card.getBoundingClientRect();
+      const animation = card.animate([
+        { transform: previous ? `translate(${previous.left - current.left}px, ${previous.top - current.top}px)` : 'translateY(12px)', opacity: previous ? 1 : 0 },
+        { transform: 'translate(0, 0)', opacity: 1 }
+      ], { duration: 380, easing: 'cubic-bezier(.2,.8,.2,1)' });
+      animations.add(animation);
+      animation.onfinish = () => animations.delete(animation);
     });
   }
-
-  function layoutCards(filter = activeFilter, animate = true) {
-    syncOrderToFilter(filter);
-    const visibleCards = getVisibleCards(filter);
-    const hiddenCards = cards.filter((card) => !visibleCards.includes(card));
-    const hiddenState = new Map(cards.map((card) => [card, card.classList.contains("is-hidden")]));
-
-    const orderedVisible = currentOrder
-      .map((id) => cards.find((card) => card.dataset.id === id))
-      .filter(Boolean);
-
-    const stageWidth = stage.clientWidth;
-    const minWidth = 260;
-    const gap = 24;
-    const columns = Math.max(1, Math.floor((stageWidth + gap) / (minWidth + gap)));
-    const cardWidth = columns === 1
-      ? stageWidth
-      : Math.floor((stageWidth - gap * (columns - 1)) / columns);
-    stage.style.setProperty("--card-width", `${cardWidth}px`);
-    stage.style.setProperty("--card-height", "360px");
-
-    orderedVisible.forEach((card) => {
-      card.style.width = `${cardWidth}px`;
-      card.removeAttribute("aria-hidden");
-      card.removeAttribute("tabindex");
-      card.classList.remove("is-hidden");
-    });
-
-    const columnHeights = Array(columns).fill(0);
-
-    orderedVisible.forEach((card) => {
-      const cardHeight = card.offsetHeight;
-      const column = columnHeights.indexOf(Math.min(...columnHeights));
-      const x = column * (cardWidth + gap);
-      const y = columnHeights[column];
-      const wasHidden = hiddenState.get(card);
-
-      columnHeights[column] += cardHeight + gap;
-
-      card.style.setProperty("--x", `${x}px`);
-      card.style.setProperty("--y", `${y}px`);
-
-      if (wasHidden && animate) {
-        card.style.transition = "none";
-        card.style.setProperty("--offset-x", `${(Math.random() - 0.5) * 110}px`);
-        card.style.setProperty("--offset-y", "56px");
-        card.style.setProperty("--scale", "0.92");
-        void card.offsetWidth;
-        card.style.transition = "";
-        requestAnimationFrame(() => {
-          card.style.setProperty("--offset-x", "0px");
-          card.style.setProperty("--offset-y", "0px");
-          card.style.setProperty("--scale", "1");
-        });
-      } else {
-        card.style.transition = animate ? "" : "none";
-        card.style.setProperty("--offset-x", "0px");
-        card.style.setProperty("--offset-y", "0px");
-        card.style.setProperty("--scale", "1");
-      }
-    });
-
-    stage.style.height = `${Math.max(0, ...columnHeights) - gap}px`;
-
-    hiddenCards.forEach((card) => {
-      const driftX = `${(Math.random() - 0.5) * 60}px`;
-      card.style.setProperty("--offset-x", animate ? driftX : "0px");
-      card.style.setProperty("--offset-y", animate ? "42px" : "0px");
-      card.style.setProperty("--scale", animate ? "0.88" : "1");
-      card.classList.add("is-hidden");
-      card.setAttribute("aria-hidden", "true");
-      card.setAttribute("tabindex", "-1");
-      card.style.transition = animate ? "" : "none";
-    });
-
-    status.textContent = describeFilter(filter, orderedVisible.length);
-
-    if (!animate) {
-      requestAnimationFrame(() => {
-        cards.forEach((card) => {
-          card.style.transition = "";
-        });
-      });
-    }
+  function restore() {
+    const value = new URL(location.href).searchParams.get('filter');
+    activeFilter = buttons.some((button) => button.dataset.filter === value) ? value : 'all';
+    order = [...cards];
+    render(false);
   }
-
   buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const nextFilter = button.dataset.filter;
-      activeFilter = nextFilter;
-      buttons.forEach((item) => {
-        const isActive = item === button;
-        item.classList.toggle("active", isActive);
-        item.setAttribute("aria-pressed", String(isActive));
-      });
-      reshuffleOrder(nextFilter);
-      layoutCards(nextFilter, true);
+    button.disabled = false;
+    button.addEventListener('click', () => {
+      activeFilter = button.dataset.filter;
+      order = [...cards];
+      const url = new URL(location.href);
+      if (activeFilter === 'all') url.searchParams.delete('filter');
+      else url.searchParams.set('filter', activeFilter);
+      history.pushState(null, '', url);
+      render();
     });
   });
-
+  shuffle.hidden = false;
+  shuffle.addEventListener('click', () => {
+    for (let i = order.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [order[i], order[j]] = [order[j], order[i]];
+    }
+    render();
+    status.textContent += ' · Order shuffled';
+  });
+  window.addEventListener('popstate', restore);
+  reducedMotionQuery.addEventListener('change', () => {
+    if (reducedMotionQuery.matches) animations.forEach((animation) => animation.cancel());
+  });
+  restore();
   cards.forEach((card) => {
-    const shell = card.querySelector(".card-shell");
-
-    card.addEventListener("mouseenter", () => {
-      card.classList.add("is-active");
+    const shell = card.querySelector('.card-shell');
+    let frame = 0;
+    function reset() {
+      cancelAnimationFrame(frame);
+      frame = 0;
+      shell.style.transform = '';
+      card.classList.remove('is-active');
+    }
+    card.addEventListener('pointermove', (event) => {
+      if (reducedMotionQuery.matches || !finePointerQuery.matches || frame) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        const rect = card.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - .5;
+        const y = (event.clientY - rect.top) / rect.height - .5;
+        shell.style.transform = `perspective(1080px) rotateX(${-y * 5}deg) rotateY(${x * 5}deg) translateY(-3px)`;
+        card.classList.add('is-active');
+      });
     });
-
-    card.addEventListener("mousemove", (event) => {
-      const rect = card.getBoundingClientRect();
-      const rotateX = ((event.clientY - rect.top - rect.height / 2) / rect.height) * -14;
-      const rotateY = ((event.clientX - rect.left - rect.width / 2) / rect.width) * 14;
-      shell.style.transform = `perspective(1080px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-14px) scale(1.025)`;
-      shell.style.boxShadow = `${-rotateY * 1.8}px 34px 54px rgba(15, 23, 42, 0.24)`;
-      shell.style.borderColor = "rgba(29, 78, 216, 0.22)";
-    });
-
-    card.addEventListener("mouseleave", () => {
-      shell.style.transform = "";
-      shell.style.boxShadow = "";
-      shell.style.borderColor = "";
-      card.classList.remove("is-active");
-    });
+    card.addEventListener('pointerleave', reset);
+    card.addEventListener('pointercancel', reset);
+    reducedMotionQuery.addEventListener('change', reset);
+    finePointerQuery.addEventListener('change', reset);
   });
-
-  if (stage) {
-    // layoutCards() writes stage height, which retriggers this observer.
-    // Only relayout on width changes or the feedback loop kills the
-    // shuffle animation mid-flight.
-    let lastStageWidth = Math.round(stage.getBoundingClientRect().width);
-
-    const resizeObserver = new ResizeObserver((entries) => {
-      const entry = entries[entries.length - 1];
-      const width = Math.round(entry.contentRect.width);
-      if (width === lastStageWidth) return;
-      lastStageWidth = width;
-      layoutCards(activeFilter, false);
-    });
-
-    reshuffleOrder("all");
-    resizeObserver.observe(stage);
-    layoutCards(activeFilter, false);
-  }
 }
 
-const carousels = Array.from(document.querySelectorAll("[data-sheet-carousel]"));
-
-carousels.forEach((carousel) => {
-  const frame = carousel.querySelector(".sheet-carousel-frame");
-  const track = carousel.querySelector("[data-carousel-track]");
-  const slides = track ? Array.from(track.querySelectorAll(".project-img")) : [];
-  const previous = carousel.querySelector("[data-carousel-prev]");
-  const next = carousel.querySelector("[data-carousel-next]");
-  const status = carousel.querySelector("[data-carousel-status]");
+document.querySelectorAll('[data-sheet-carousel]').forEach((carousel) => {
+  const frame = carousel.querySelector('.sheet-carousel-frame');
+  const slides = [...carousel.querySelectorAll('.project-img')];
+  const previous = carousel.querySelector('[data-carousel-prev]');
+  const next = carousel.querySelector('[data-carousel-next]');
+  const status = carousel.querySelector('[data-carousel-status]');
+  const controls = carousel.querySelector('.sheet-carousel-controls');
+  if (!frame || !slides.length || !controls) return;
   let index = 0;
-  let startX = null;
-  let startY = null;
-
-  if (!track || slides.length === 0) {
-    return;
-  }
-
-  carousel.setAttribute("aria-roledescription", "carousel");
-  status?.setAttribute("aria-live", "polite");
-
-  slides.forEach((slide, slideIndex) => {
-    slide.setAttribute("aria-roledescription", "slide");
-    slide.setAttribute("aria-label", `${slideIndex + 1} of ${slides.length}`);
+  let pointerStart = null;
+  const label = document.createElement('label');
+  label.className = 'sheet-picker';
+  label.textContent = 'Choose sheet ';
+  const picker = document.createElement('select');
+  picker.setAttribute('aria-label', `Choose sheet: ${carousel.getAttribute('aria-label') || 'drawing set'}`);
+  slides.forEach((slide, i) => {
+    const option = document.createElement('option');
+    option.value = String(i);
+    option.textContent = slide.querySelector('figcaption')?.textContent || `Sheet ${i + 1}`;
+    picker.append(option);
+    slide.setAttribute('aria-roledescription', 'slide');
+    slide.setAttribute('aria-label', `${i + 1} of ${slides.length}`);
   });
-
-  function syncFrameHeight() {
-    const activeSlide = slides[index];
-    if (!frame || !activeSlide) {
-      return;
-    }
-
-    const height = activeSlide.offsetHeight;
-    if (height) {
-      frame.style.height = `${height}px`;
-    }
+  label.append(picker);
+  controls.append(label);
+  const fullSize = document.createElement('a');
+  fullSize.className = 'sheet-fullsize';
+  fullSize.textContent = 'Open full-size sheet ↗';
+  fullSize.target = '_blank';
+  fullSize.rel = 'noopener noreferrer';
+  controls.append(fullSize);
+  carousel.setAttribute('aria-roledescription', 'carousel');
+  status?.setAttribute('aria-live', 'polite');
+  function syncHeight() {
+    const height = slides[index].offsetHeight;
+    if (height) frame.style.height = `${height}px`;
   }
-
-  function goTo(nextIndex) {
-    const clampedIndex = Math.max(0, Math.min(slides.length - 1, nextIndex));
-    if (clampedIndex === index) return;
-    index = clampedIndex;
+  function render() {
+    const classes = ['is-far-prev', 'is-prev', 'is-current', 'is-next', 'is-far-next'];
+    slides.forEach((slide, i) => {
+      slide.classList.remove(...classes);
+      slide.setAttribute('aria-hidden', String(i !== index));
+      slide.inert = i !== index;
+      const delta = i - index;
+      if (Math.abs(delta) <= 2) slide.classList.add(classes[delta + 2]);
+    });
+    picker.value = String(index);
+    const image = slides[index].querySelector('img');
+    fullSize.href = image.dataset.fullsize || image.src;
+    if (status) status.textContent = `${index + 1} / ${slides.length}`;
+    if (previous) previous.disabled = index === 0;
+    if (next) next.disabled = index === slides.length - 1;
+    requestAnimationFrame(syncHeight);
+  }
+  function goTo(value) {
+    index = Math.max(0, Math.min(slides.length - 1, value));
     render();
   }
-
-  function render() {
-    slides.forEach((slide, slideIndex) => {
-      slide.classList.remove("is-current", "is-prev", "is-next", "is-far-prev", "is-far-next");
-      slide.setAttribute("aria-hidden", String(slideIndex !== index));
-
-      const delta = slideIndex - index;
-      if (delta === 0) {
-        slide.classList.add("is-current");
-      } else if (delta === -1) {
-        slide.classList.add("is-prev");
-      } else if (delta === 1) {
-        slide.classList.add("is-next");
-      } else if (delta === -2) {
-        slide.classList.add("is-far-prev");
-      } else if (delta === 2) {
-        slide.classList.add("is-far-next");
-      }
-    });
-
-    if (status) {
-      status.textContent = `${index + 1} / ${slides.length}`;
-    }
-
-    if (previous) {
-      previous.disabled = index === 0;
-    }
-
-    if (next) {
-      next.disabled = index === slides.length - 1;
-    }
-
-    requestAnimationFrame(syncFrameHeight);
-  }
-
-  previous?.addEventListener("click", () => {
-    goTo(index - 1);
-  });
-
-  next?.addEventListener("click", () => {
-    goTo(index + 1);
-  });
-
-  carousel.addEventListener("keydown", (event) => {
-    if (!carousel.contains(document.activeElement)) {
-      return;
-    }
-
-    if (event.key === "ArrowLeft") {
+  picker.addEventListener('change', () => goTo(Number(picker.value)));
+  previous?.addEventListener('click', () => goTo(index - 1));
+  next?.addEventListener('click', () => goTo(index + 1));
+  carousel.addEventListener('keydown', (event) => {
+    if (event.target.closest('select, input, textarea, a')) return;
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
       event.preventDefault();
-      goTo(index - 1);
-    }
-
-    if (event.key === "ArrowRight") {
-      event.preventDefault();
-      goTo(index + 1);
+      goTo(index + (event.key === 'ArrowLeft' ? -1 : 1));
     }
   });
-
-  carousel.addEventListener("pointerdown", (event) => {
-    if (event.pointerType === "mouse") return;
-    startX = event.clientX;
-    startY = event.clientY;
+  frame.addEventListener('pointerdown', (event) => {
+    if (event.pointerType !== 'mouse' && event.isPrimary) pointerStart = { id: event.pointerId, x: event.clientX, y: event.clientY };
   });
-
-  carousel.addEventListener("pointerup", (event) => {
-    if (startX === null || startY === null) return;
-
-    const deltaX = event.clientX - startX;
-    const deltaY = event.clientY - startY;
-    startX = null;
-    startY = null;
-
-    if (Math.abs(deltaX) < 44 || Math.abs(deltaX) < Math.abs(deltaY)) {
-      return;
-    }
-
-    if (deltaX < 0) {
-      goTo(index + 1);
-    } else {
-      goTo(index - 1);
-    }
+  frame.addEventListener('pointerup', (event) => {
+    const start = pointerStart;
+    pointerStart = null;
+    if (!start || start.id !== event.pointerId) return;
+    const dx = event.clientX - start.x;
+    const dy = event.clientY - start.y;
+    if (Math.abs(dx) >= 44 && Math.abs(dx) > Math.abs(dy)) goTo(index + (dx < 0 ? 1 : -1));
   });
-
-  slides.forEach((slide) => {
-    const image = slide.querySelector("img");
-    image?.addEventListener("load", syncFrameHeight);
-  });
-
-  window.addEventListener("resize", syncFrameHeight);
+  frame.addEventListener('pointercancel', () => { pointerStart = null; });
+  frame.addEventListener('pointerleave', () => { pointerStart = null; });
+  slides.forEach((slide) => slide.querySelector('img')?.addEventListener('load', syncHeight));
+  window.addEventListener('resize', syncHeight);
+  document.fonts?.ready.then(syncHeight);
+  carousel.classList.add('carousel-ready');
   render();
+  requestAnimationFrame(() => requestAnimationFrame(() => carousel.classList.add('carousel-initialized')));
 });

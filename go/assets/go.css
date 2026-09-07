@@ -17,7 +17,7 @@ body {
   overflow-x: hidden;
   background: var(--black);
   color: var(--white);
-  font-family: Inter, sans-serif;
+  font-family: system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -62,14 +62,14 @@ h1 { margin: 0; font: 600 clamp(64px, 13vw, 108px)/.77 Barlow Condensed, sans-se
 .destination::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--white); transform: translateX(-102%); transition: transform .38s cubic-bezier(.2,.8,.2,1); }
 .destination:hover { color: var(--black); border-color: var(--white); transform: translateX(5px); }
 .destination:hover::before { transform: translateX(0); }
-.destination-primary { min-height: 126px; background: var(--orange); color: #fff; border-color: var(--orange); }
+.destination-primary { min-height: 126px; background: var(--orange); color: var(--black); border-color: var(--orange); }
 .destination-primary::before { background: #fff; }
 .destination-shop { background: rgba(255,255,255,.025); }
 .destination-index { align-self: start; padding-top: 7px; color: currentColor; opacity: .63; font: 500 8px/1 IBM Plex Mono, monospace; }
 .destination-copy { min-width: 0; }
 .destination-copy b { display: block; font: 600 clamp(28px, 5.2vw, 39px)/1 Barlow Condensed, sans-serif; letter-spacing: .015em; text-transform: uppercase; }
 .destination-copy small { display: block; margin-top: 8px; color: currentColor; opacity: .62; font: 400 10px/1.4 IBM Plex Mono, monospace; }
-.destination-arrow { font: 400 28px/1 Inter, sans-serif; transition: transform .25s ease; }
+.destination-arrow { font: 400 28px/1 system-ui, sans-serif; transition: transform .25s ease; }
 .destination:hover .destination-arrow { transform: translate(4px, -4px); color: var(--orange); }
 
 footer { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 34px; padding-top: 24px; border-top: 1px solid var(--line); }
@@ -108,3 +108,36 @@ footer > p span { color: var(--orange); }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .cursor-glow { display: none; }
 }
+[hidden] { display: none !important; }
+body, main { min-height: 100svh; }
+::selection { color: var(--black); }
+.destination { isolation: isolate; }
+.destination-copy small, .destination-index { opacity: 1; }
+.identity div > span, .status, .eyebrow, .destination-index, footer nav span, footer > p { font-size: .75rem; line-height: 1.5; letter-spacing: .06em; }
+.destination-copy small { font-size: .8125rem; }
+footer nav b { font-size: .8125rem; overflow-wrap: anywhere; }
+footer { grid-template-columns: 1fr; gap: 18px; }
+footer nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+footer nav a { min-height: 44px; }
+footer > p { color: var(--muted); text-align: left; }
+.directory { padding-block: clamp(32px, 6svh, 64px); }
+.motion-toggle { color: var(--muted); border: 1px solid var(--line); background: transparent; min-height: 44px; padding: 8px 12px; font: .75rem 'IBM Plex Mono', monospace; cursor: pointer; border-radius: 4px; }
+.motion-toggle:focus-visible { outline: 2px solid var(--orange); outline-offset: 4px; }
+.motion-paused *, .motion-paused *::before, .motion-paused *::after { animation-play-state: paused !important; transition: none !important; }
+.motion-paused .cursor-glow { display: none; }
+@media (max-width: 650px) {
+  .intro { align-items: flex-start; gap: 12px; }
+  .status { display: none; }
+  footer nav { grid-template-columns: 1fr; gap: 12px; }
+  footer nav a { display: flex; justify-content: space-between; align-items: center; gap: 12px; border-bottom: 1px solid var(--line); padding-bottom: 8px; }
+  footer nav span { margin: 0; }
+  .directory-heading { margin-bottom: 20px; gap: 12px; }
+}
+@media (max-height: 760px) {
+  main { padding-block: 18px; }
+  .directory { padding-block: 28px; }
+  .destination, .destination-primary { min-height: 96px; padding-block: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .destination:hover { transform: none; } }
+.skip-link { position: fixed; left: 8px; top: 8px; z-index: 100; background: var(--white); color: var(--black); padding: 12px; transform: translateY(-160%); }
+.skip-link:focus { transform: none; }

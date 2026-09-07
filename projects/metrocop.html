@@ -22,18 +22,20 @@
 <script src="../assets/js/site.js" defer></script>
 </head>
 <body data-page="project">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
-<nav>
+<nav aria-label="Main navigation">
   <div class="shell nav-inner">
-    <a href="../index.html" class="nav-brand">Erik Reiner</a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <a href="/" class="nav-brand">Erik Reiner</a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
       <span></span><span></span><span></span>
     </button>
-    <ul class="nav-links">
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="../projects.html" class="active">Projects</a></li>
-      <li><a href="../blog.html">Blog</a></li>
-      <li><a href="../contact.html">Contact</a></li>
+    <ul class="nav-links" id="main-nav">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/projects.html" class="active" aria-current="location">Projects</a></li>
+      <li><a href="/citadel/">Citadel / Shop</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contact.html">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -49,7 +51,9 @@
   </div>
 </header>
 
-<main class="project-body">
+<main class="project-body" id="main-content" tabindex="-1">
+  <dl class="project-summary"><div><dt>Project</dt><dd>Costume, props & electronics</dd></div><div><dt>Tools &amp; materials</dt><dd>3D printing, Fusion 360, sewing, finishing</dd></div><div><dt>Focus</dt><dd>Digital reference to wearable equipment</dd></div></dl>
+<nav class="project-toc" aria-label="On this page"><a href="#stunstick">Stunstick</a><a href="#belt-boxes">Belt Boxes</a><a href="#radio-box">Radio Box</a><a href="#pager-box">Pager Box</a><a href="#switch-box">Switch Box</a></nav>
   <div class="wip-notice">
     <span class="wip-notice-icon">[+]</span>
     <p>This project is always evolving. I keep refining parts, adding better documentation, and deepening the breakdown as the build changes over time.</p>
@@ -70,22 +74,22 @@
 
   <section class="project-gallery" aria-label="Metrocop project gallery">
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/metrocop-1.png" alt="Close portrait of the Half-Life 2 Metrocop costume showing the helmet and chest armor." loading="lazy" decoding="async" width="1284" height="1875">
+      <img src="../assets/images/projects/metrocop/web/metrocop-1-png-960.webp" alt="Close portrait of the Half-Life 2 Metrocop costume showing the helmet and chest armor." decoding="async" width="1284" height="1875" data-original="../assets/images/projects/metrocop/metrocop-1.png" srcset="../assets/images/projects/metrocop/web/metrocop-1-png-480.webp 480w, ../assets/images/projects/metrocop/web/metrocop-1-png-960.webp 960w, ../assets/images/projects/metrocop/web/metrocop-1-png-1284.webp 1284w" sizes="(max-width: 720px) 100vw, 50vw" fetchpriority="high">
       <figcaption>A straighter portrait view that shows the mask finish, chest silhouette, and soft-goods layering without the lens distortion fighting the costume.</figcaption>
     </figure>
   </section>
 
-  <h2>Stunstick</h2>
+  <h2 id="stunstick">Stunstick</h2>
   <p>Built around a PVC pipe core with 3D-printed components, the stunstick became a good test of low-cost construction and high-finish presentation. The goal was something sturdy enough to handle, but polished enough to read as a convincing in-universe prop.</p>
   <p><a href="https://www.etsy.com/listing/4499342041/civil-protection-metrocop-stunstick" class="button-secondary" target="_blank" rel="noopener noreferrer">Buy the stunstick on Etsy</a></p>
 
   <section class="project-gallery split" aria-label="Metrocop stunstick gallery">
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/metrocop-baton-3-unpainted.jpg" alt="Unpainted early Metrocop stunstick build held in hand." loading="lazy" decoding="async" width="3024" height="4032">
+      <img src="../assets/images/projects/metrocop/web/metrocop-baton-3-unpainted-jpg-960.webp" alt="Unpainted early Metrocop stunstick build held in hand." loading="lazy" decoding="async" width="3024" height="4032" data-original="../assets/images/projects/metrocop/metrocop-baton-3-unpainted.jpg" srcset="../assets/images/projects/metrocop/web/metrocop-baton-3-unpainted-jpg-480.webp 480w, ../assets/images/projects/metrocop/web/metrocop-baton-3-unpainted-jpg-960.webp 960w, ../assets/images/projects/metrocop/web/metrocop-baton-3-unpainted-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>The stunstick started as a PVC core and a handful of printed fittings, then got sanded, painted, and tuned until it felt like one convincing object instead of stacked parts.</figcaption>
     </figure>
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/metrocop-baton-4.jpg" alt="Another angle of the Metrocop stunstick prop with dark finish." loading="lazy" decoding="async" width="3024" height="4032">
+      <img src="../assets/images/projects/metrocop/web/metrocop-baton-4-jpg-960.webp" alt="Another angle of the Metrocop stunstick prop with dark finish." loading="lazy" decoding="async" width="3024" height="4032" data-original="../assets/images/projects/metrocop/metrocop-baton-4.jpg" srcset="../assets/images/projects/metrocop/web/metrocop-baton-4-jpg-480.webp 480w, ../assets/images/projects/metrocop/web/metrocop-baton-4-jpg-960.webp 960w, ../assets/images/projects/metrocop/web/metrocop-baton-4-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>Dialing in surface finish and color contrast did a lot of the heavy lifting here. It is a simple build structurally, but the presentation matters.</figcaption>
     </figure>
   </section>
@@ -94,43 +98,43 @@
     <div class="sheet-carousel-frame">
       <div class="sheet-carousel-track" data-carousel-track>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/stunstick-drawings/10.png" alt="Stunstick drawing sheet 1 of 10." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/metrocop/stunstick-drawings/web/10-png-960.webp" alt="Stunstick drawing sheet 1 of 10." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/metrocop/stunstick-drawings/10.png" srcset="../assets/images/projects/metrocop/stunstick-drawings/web/10-png-480.webp 480w, ../assets/images/projects/metrocop/stunstick-drawings/web/10-png-960.webp 960w, ../assets/images/projects/metrocop/stunstick-drawings/web/10-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px" data-fullsize="../assets/images/projects/metrocop/stunstick-drawings/10.png">
           <figcaption>Sheet 1 of 10</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/stunstick-drawings/9.png" alt="Stunstick drawing sheet 2 of 10." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/metrocop/stunstick-drawings/web/9-png-960.webp" alt="Stunstick drawing sheet 2 of 10." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/metrocop/stunstick-drawings/9.png" srcset="../assets/images/projects/metrocop/stunstick-drawings/web/9-png-480.webp 480w, ../assets/images/projects/metrocop/stunstick-drawings/web/9-png-960.webp 960w, ../assets/images/projects/metrocop/stunstick-drawings/web/9-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px" data-fullsize="../assets/images/projects/metrocop/stunstick-drawings/9.png">
           <figcaption>Sheet 2 of 10</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/stunstick-drawings/8.png" alt="Stunstick drawing sheet 3 of 10." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/metrocop/stunstick-drawings/web/8-png-960.webp" alt="Stunstick drawing sheet 3 of 10." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/metrocop/stunstick-drawings/8.png" srcset="../assets/images/projects/metrocop/stunstick-drawings/web/8-png-480.webp 480w, ../assets/images/projects/metrocop/stunstick-drawings/web/8-png-960.webp 960w, ../assets/images/projects/metrocop/stunstick-drawings/web/8-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px" data-fullsize="../assets/images/projects/metrocop/stunstick-drawings/8.png">
           <figcaption>Sheet 3 of 10</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/stunstick-drawings/7.png" alt="Stunstick drawing sheet 4 of 10." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/metrocop/stunstick-drawings/web/7-png-960.webp" alt="Stunstick drawing sheet 4 of 10." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/metrocop/stunstick-drawings/7.png" srcset="../assets/images/projects/metrocop/stunstick-drawings/web/7-png-480.webp 480w, ../assets/images/projects/metrocop/stunstick-drawings/web/7-png-960.webp 960w, ../assets/images/projects/metrocop/stunstick-drawings/web/7-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px" data-fullsize="../assets/images/projects/metrocop/stunstick-drawings/7.png">
           <figcaption>Sheet 4 of 10</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/stunstick-drawings/6.png" alt="Stunstick drawing sheet 5 of 10." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/metrocop/stunstick-drawings/web/6-png-960.webp" alt="Stunstick drawing sheet 5 of 10." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/metrocop/stunstick-drawings/6.png" srcset="../assets/images/projects/metrocop/stunstick-drawings/web/6-png-480.webp 480w, ../assets/images/projects/metrocop/stunstick-drawings/web/6-png-960.webp 960w, ../assets/images/projects/metrocop/stunstick-drawings/web/6-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px" data-fullsize="../assets/images/projects/metrocop/stunstick-drawings/6.png">
           <figcaption>Sheet 5 of 10</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/stunstick-drawings/5.png" alt="Stunstick drawing sheet 6 of 10." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/metrocop/stunstick-drawings/web/5-png-960.webp" alt="Stunstick drawing sheet 6 of 10." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/metrocop/stunstick-drawings/5.png" srcset="../assets/images/projects/metrocop/stunstick-drawings/web/5-png-480.webp 480w, ../assets/images/projects/metrocop/stunstick-drawings/web/5-png-960.webp 960w, ../assets/images/projects/metrocop/stunstick-drawings/web/5-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px" data-fullsize="../assets/images/projects/metrocop/stunstick-drawings/5.png">
           <figcaption>Sheet 6 of 10</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/stunstick-drawings/4.png" alt="Stunstick drawing sheet 7 of 10." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/metrocop/stunstick-drawings/web/4-png-960.webp" alt="Stunstick drawing sheet 7 of 10." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/metrocop/stunstick-drawings/4.png" srcset="../assets/images/projects/metrocop/stunstick-drawings/web/4-png-480.webp 480w, ../assets/images/projects/metrocop/stunstick-drawings/web/4-png-960.webp 960w, ../assets/images/projects/metrocop/stunstick-drawings/web/4-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px" data-fullsize="../assets/images/projects/metrocop/stunstick-drawings/4.png">
           <figcaption>Sheet 7 of 10</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/stunstick-drawings/3.png" alt="Stunstick drawing sheet 8 of 10." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/metrocop/stunstick-drawings/web/3-png-960.webp" alt="Stunstick drawing sheet 8 of 10." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/metrocop/stunstick-drawings/3.png" srcset="../assets/images/projects/metrocop/stunstick-drawings/web/3-png-480.webp 480w, ../assets/images/projects/metrocop/stunstick-drawings/web/3-png-960.webp 960w, ../assets/images/projects/metrocop/stunstick-drawings/web/3-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px" data-fullsize="../assets/images/projects/metrocop/stunstick-drawings/3.png">
           <figcaption>Sheet 8 of 10</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/stunstick-drawings/2.png" alt="Stunstick drawing sheet 9 of 10." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/metrocop/stunstick-drawings/web/2-png-960.webp" alt="Stunstick drawing sheet 9 of 10." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/metrocop/stunstick-drawings/2.png" srcset="../assets/images/projects/metrocop/stunstick-drawings/web/2-png-480.webp 480w, ../assets/images/projects/metrocop/stunstick-drawings/web/2-png-960.webp 960w, ../assets/images/projects/metrocop/stunstick-drawings/web/2-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px" data-fullsize="../assets/images/projects/metrocop/stunstick-drawings/2.png">
           <figcaption>Sheet 9 of 10</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/stunstick-drawings/1.png" alt="Stunstick drawing sheet 10 of 10." loading="lazy" decoding="async" width="3309" height="2339">
+          <img src="../assets/images/projects/metrocop/stunstick-drawings/web/1-png-960.webp" alt="Stunstick drawing sheet 10 of 10." loading="lazy" decoding="async" width="3309" height="2339" data-original="../assets/images/projects/metrocop/stunstick-drawings/1.png" srcset="../assets/images/projects/metrocop/stunstick-drawings/web/1-png-480.webp 480w, ../assets/images/projects/metrocop/stunstick-drawings/web/1-png-960.webp 960w, ../assets/images/projects/metrocop/stunstick-drawings/web/1-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px" data-fullsize="../assets/images/projects/metrocop/stunstick-drawings/1.png">
           <figcaption>Sheet 10 of 10</figcaption>
         </figure>
       </div>
@@ -142,47 +146,47 @@
     </div>
   </section>
 
-  <h2>Belt Boxes</h2>
+  <h2 id="belt-boxes">Belt Boxes</h2>
   <p>The belt boxes were reverse engineered with printability, serviceability, and lighting where appropriate in mind. I designed the lit boxes around readily available puck-light components, while the switch box stayed focused on silhouette, assembly, and practical belt mounting.</p>
   <p><a href="https://www.etsy.com/listing/4499309506/civil-protection-metrocop-light-up-belt" class="button-secondary" target="_blank" rel="noopener noreferrer">Buy the light-up belt box on Etsy</a></p>
 
   <section class="project-gallery split" aria-label="Metrocop belt box overview gallery">
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/belt-boxes/radio/radio-box-1.png" alt="Rendered radio belt box for the Metrocop build." loading="lazy" decoding="async" width="536" height="548">
+      <img src="../assets/images/projects/metrocop/belt-boxes/radio/web/radio-box-1-png-536.webp" alt="Rendered radio belt box for the Metrocop build." loading="lazy" decoding="async" width="536" height="548" data-original="../assets/images/projects/metrocop/belt-boxes/radio/radio-box-1.png" srcset="../assets/images/projects/metrocop/belt-boxes/radio/web/radio-box-1-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/radio/web/radio-box-1-png-536.webp 536w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>The radio box was one of the more recognizable pieces, so getting the silhouette and front-face details right mattered more than adding unnecessary complexity.</figcaption>
     </figure>
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/belt-boxes/pager/pager-box-1.png" alt="Rendered pager belt box for the Metrocop build." loading="lazy" decoding="async" width="670" height="620">
+      <img src="../assets/images/projects/metrocop/belt-boxes/pager/web/pager-box-1-png-670.webp" alt="Rendered pager belt box for the Metrocop build." loading="lazy" decoding="async" width="670" height="620" data-original="../assets/images/projects/metrocop/belt-boxes/pager/pager-box-1.png" srcset="../assets/images/projects/metrocop/belt-boxes/pager/web/pager-box-1-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/pager/web/pager-box-1-png-670.webp 670w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>The pager box had a simpler face, which meant proportion and panel breaks had to carry more of the visual identity.</figcaption>
     </figure>
   </section>
 
   <figure class="project-img">
-    <img src="../assets/images/projects/metrocop/belt-boxes/switch/switch-box-1.png" alt="Rendered switch belt box for the Metrocop build." loading="lazy" decoding="async" width="762" height="664">
+    <img src="../assets/images/projects/metrocop/belt-boxes/switch/web/switch-box-1-png-762.webp" alt="Rendered switch belt box for the Metrocop build." loading="lazy" decoding="async" width="762" height="664" data-original="../assets/images/projects/metrocop/belt-boxes/switch/switch-box-1.png" srcset="../assets/images/projects/metrocop/belt-boxes/switch/web/switch-box-1-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/switch/web/switch-box-1-png-762.webp 762w" sizes="(max-width: 720px) 100vw, 50vw">
     <figcaption>The switch box sits in the same family as the others, but the vented face and blockier construction give it its own personality on the belt.</figcaption>
   </figure>
 
-  <h2>Radio Box</h2>
+  <h2 id="radio-box">Radio Box</h2>
   <p>The radio box was a good example of how I approached the whole belt-box set: reverse engineer the outer shape, make smart decisions about printability, and leave room for the lighting and battery access to work without ruining the silhouette.</p>
 
   <section class="project-gallery split" aria-label="Metrocop radio box gallery">
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/belt-boxes/radio/radio-box-2.png" alt="Rear three-quarter render of the radio belt box." loading="lazy" decoding="async" width="479" height="503">
+      <img src="../assets/images/projects/metrocop/belt-boxes/radio/web/radio-box-2-png-479.webp" alt="Rear three-quarter render of the radio belt box." loading="lazy" decoding="async" width="479" height="503" data-original="../assets/images/projects/metrocop/belt-boxes/radio/radio-box-2.png" srcset="../assets/images/projects/metrocop/belt-boxes/radio/web/radio-box-2-png-479.webp 479w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>A rear angle that shows the mounting geometry and helps explain how the object needed to work as a wearable prop, not just a nice front render.</figcaption>
     </figure>
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/belt-boxes/radio/radio-box-3.png" alt="Side view of the radio belt box render." loading="lazy" decoding="async" width="621" height="639">
+      <img src="../assets/images/projects/metrocop/belt-boxes/radio/web/radio-box-3-png-621.webp" alt="Side view of the radio belt box render." loading="lazy" decoding="async" width="621" height="639" data-original="../assets/images/projects/metrocop/belt-boxes/radio/radio-box-3.png" srcset="../assets/images/projects/metrocop/belt-boxes/radio/web/radio-box-3-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/radio/web/radio-box-3-png-621.webp 621w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>Side views like this were useful because the depth and wedge shape do a lot of the work that makes the piece feel like it belongs in the Half-Life world.</figcaption>
     </figure>
   </section>
 
   <section class="project-gallery split" aria-label="Metrocop radio box build photos">
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/belt-boxes/radio/radio-build-3.jpg" alt="Front three-quarter view of the completed radio belt box." loading="lazy" decoding="async" width="2880" height="2160">
+      <img src="../assets/images/projects/metrocop/belt-boxes/radio/web/radio-build-3-jpg-960.webp" alt="Front three-quarter view of the completed radio belt box." loading="lazy" decoding="async" width="2880" height="2160" data-original="../assets/images/projects/metrocop/belt-boxes/radio/radio-build-3.jpg" srcset="../assets/images/projects/metrocop/belt-boxes/radio/web/radio-build-3-jpg-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/radio/web/radio-build-3-jpg-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/radio/web/radio-build-3-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>The finished shell proved out the main goal: keep the object feeling screen-accurate while still letting it function like a real illuminated prop on the costume.</figcaption>
     </figure>
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/belt-boxes/radio/radio-build-2.jpg" alt="Interior of the completed radio belt box showing battery tray and lighting hardware." loading="lazy" decoding="async" width="2880" height="2160">
+      <img src="../assets/images/projects/metrocop/belt-boxes/radio/web/radio-build-2-jpg-960.webp" alt="Interior of the completed radio belt box showing battery tray and lighting hardware." loading="lazy" decoding="async" width="2880" height="2160" data-original="../assets/images/projects/metrocop/belt-boxes/radio/radio-build-2.jpg" srcset="../assets/images/projects/metrocop/belt-boxes/radio/web/radio-build-2-jpg-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/radio/web/radio-build-2-jpg-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/radio/web/radio-build-2-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>I built the internals around easy battery swaps and a simple lighting package, which made the prop much more practical to wear and troubleshoot.</figcaption>
     </figure>
   </section>
@@ -191,35 +195,35 @@
     <div class="sheet-carousel-frame">
       <div class="sheet-carousel-track" data-carousel-track>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/radio/drawings/1.png" alt="Radio box drawing sheet 1 of 8." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/1-png-960.webp" alt="Radio box drawing sheet 1 of 8." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/radio/drawings/1.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/radio/drawings/1.png" srcset="../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/1-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/1-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/1-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 1 of 8</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/radio/drawings/2.png" alt="Radio box drawing sheet 2 of 8." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/2-png-960.webp" alt="Radio box drawing sheet 2 of 8." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/radio/drawings/2.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/radio/drawings/2.png" srcset="../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/2-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/2-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/2-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 2 of 8</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/radio/drawings/3.png" alt="Radio box drawing sheet 3 of 8." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/3-png-960.webp" alt="Radio box drawing sheet 3 of 8." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/radio/drawings/3.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/radio/drawings/3.png" srcset="../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/3-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/3-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/3-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 3 of 8</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/radio/drawings/4.png" alt="Radio box drawing sheet 4 of 8." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/4-png-960.webp" alt="Radio box drawing sheet 4 of 8." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/radio/drawings/4.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/radio/drawings/4.png" srcset="../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/4-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/4-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/4-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 4 of 8</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/radio/drawings/5.png" alt="Radio box drawing sheet 5 of 8." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/5-png-960.webp" alt="Radio box drawing sheet 5 of 8." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/radio/drawings/5.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/radio/drawings/5.png" srcset="../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/5-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/5-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/5-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 5 of 8</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/radio/drawings/6.png" alt="Radio box drawing sheet 6 of 8." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/6-png-960.webp" alt="Radio box drawing sheet 6 of 8." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/radio/drawings/6.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/radio/drawings/6.png" srcset="../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/6-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/6-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/6-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 6 of 8</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/radio/drawings/7.png" alt="Radio box drawing sheet 7 of 8." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/7-png-960.webp" alt="Radio box drawing sheet 7 of 8." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/radio/drawings/7.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/radio/drawings/7.png" srcset="../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/7-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/7-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/7-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 7 of 8</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/radio/drawings/8.png" alt="Radio box drawing sheet 8 of 8." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/8-png-960.webp" alt="Radio box drawing sheet 8 of 8." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/radio/drawings/8.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/radio/drawings/8.png" srcset="../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/8-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/8-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/radio/drawings/web/8-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 8 of 8</figcaption>
         </figure>
       </div>
@@ -231,27 +235,27 @@
     </div>
   </section>
 
-  <h2>Pager Box</h2>
+  <h2 id="pager-box">Pager Box</h2>
   <p>The pager box leaned more on subtle form changes than surface detail, so the challenge was making sure the paneling, clip area, and front recesses felt deliberate instead of plain. Once the lighting went in, it started to feel properly alive.</p>
 
   <section class="project-gallery split" aria-label="Metrocop pager box gallery">
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/belt-boxes/pager/pager-box-2.png" alt="Rear angle render of the pager belt box." loading="lazy" decoding="async" width="668" height="604">
+      <img src="../assets/images/projects/metrocop/belt-boxes/pager/web/pager-box-2-png-668.webp" alt="Rear angle render of the pager belt box." loading="lazy" decoding="async" width="668" height="604" data-original="../assets/images/projects/metrocop/belt-boxes/pager/pager-box-2.png" srcset="../assets/images/projects/metrocop/belt-boxes/pager/web/pager-box-2-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/pager/web/pager-box-2-png-668.webp 668w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>The back and clip side mattered because these props live on a costume, which means the hidden surfaces still affect how convincing the whole thing feels on the body.</figcaption>
     </figure>
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/belt-boxes/pager/pager-box-3.png" alt="Alternate front render of the pager belt box." loading="lazy" decoding="async" width="599" height="567">
+      <img src="../assets/images/projects/metrocop/belt-boxes/pager/web/pager-box-3-png-599.webp" alt="Alternate front render of the pager belt box." loading="lazy" decoding="async" width="599" height="567" data-original="../assets/images/projects/metrocop/belt-boxes/pager/pager-box-3.png" srcset="../assets/images/projects/metrocop/belt-boxes/pager/web/pager-box-3-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/pager/web/pager-box-3-png-599.webp 599w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>A view of the pager box without the front panel, revealing the battery compartment and lighting housing within.</figcaption>
     </figure>
   </section>
 
   <section class="project-gallery split" aria-label="Metrocop pager box build photos">
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/belt-boxes/pager/pager-build-1.jpg" alt="Lit pager belt box prototype for the Metrocop build." loading="lazy" decoding="async" width="2880" height="2160">
+      <img src="../assets/images/projects/metrocop/belt-boxes/pager/web/pager-build-1-jpg-960.webp" alt="Lit pager belt box prototype for the Metrocop build." loading="lazy" decoding="async" width="2880" height="2160" data-original="../assets/images/projects/metrocop/belt-boxes/pager/pager-build-1.jpg" srcset="../assets/images/projects/metrocop/belt-boxes/pager/web/pager-build-1-jpg-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/pager/web/pager-build-1-jpg-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/pager/web/pager-build-1-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>The finished pager box shows how much the glow and front-face proportions do to sell the prop, even before weathering or belt mounting enter the picture.</figcaption>
     </figure>
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/belt-boxes/pager/pager-build-2.jpg" alt="Interior of the completed pager belt box showing battery tray and lighting housing." loading="lazy" decoding="async" width="2880" height="2160">
+      <img src="../assets/images/projects/metrocop/belt-boxes/pager/web/pager-build-2-jpg-960.webp" alt="Interior of the completed pager belt box showing battery tray and lighting housing." loading="lazy" decoding="async" width="2880" height="2160" data-original="../assets/images/projects/metrocop/belt-boxes/pager/pager-build-2.jpg" srcset="../assets/images/projects/metrocop/belt-boxes/pager/web/pager-build-2-jpg-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/pager/web/pager-build-2-jpg-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/pager/web/pager-build-2-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>Under the front panel, the inside is intentionally simple: enough structure to hold the light and batteries securely without overengineering a small prop.</figcaption>
     </figure>
   </section>
@@ -260,39 +264,39 @@
     <div class="sheet-carousel-frame">
       <div class="sheet-carousel-track" data-carousel-track>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/1.png" alt="Pager box drawing sheet 1 of 9." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/1-png-960.webp" alt="Pager box drawing sheet 1 of 9." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/pager/drawings/1.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/pager/drawings/1.png" srcset="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/1-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/1-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/1-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 1 of 9</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/2.png" alt="Pager box drawing sheet 2 of 9." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/2-png-960.webp" alt="Pager box drawing sheet 2 of 9." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/pager/drawings/2.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/pager/drawings/2.png" srcset="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/2-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/2-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/2-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 2 of 9</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/3.png" alt="Pager box drawing sheet 3 of 9." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/3-png-960.webp" alt="Pager box drawing sheet 3 of 9." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/pager/drawings/3.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/pager/drawings/3.png" srcset="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/3-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/3-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/3-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 3 of 9</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/4.png" alt="Pager box drawing sheet 4 of 9." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/4-png-960.webp" alt="Pager box drawing sheet 4 of 9." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/pager/drawings/4.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/pager/drawings/4.png" srcset="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/4-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/4-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/4-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 4 of 9</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/5.png" alt="Pager box drawing sheet 5 of 9." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/5-png-960.webp" alt="Pager box drawing sheet 5 of 9." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/pager/drawings/5.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/pager/drawings/5.png" srcset="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/5-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/5-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/5-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 5 of 9</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/6.png" alt="Pager box drawing sheet 6 of 9." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/6-png-960.webp" alt="Pager box drawing sheet 6 of 9." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/pager/drawings/6.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/pager/drawings/6.png" srcset="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/6-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/6-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/6-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 6 of 9</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/7.png" alt="Pager box drawing sheet 7 of 9." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/7-png-960.webp" alt="Pager box drawing sheet 7 of 9." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/pager/drawings/7.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/pager/drawings/7.png" srcset="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/7-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/7-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/7-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 7 of 9</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/8.png" alt="Pager box drawing sheet 8 of 9." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/8-png-960.webp" alt="Pager box drawing sheet 8 of 9." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/pager/drawings/8.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/pager/drawings/8.png" srcset="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/8-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/8-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/8-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 8 of 9</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/9.png" alt="Pager box drawing sheet 9 of 9." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/9-png-960.webp" alt="Pager box drawing sheet 9 of 9." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/pager/drawings/9.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/pager/drawings/9.png" srcset="../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/9-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/9-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/pager/drawings/web/9-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 9 of 9</figcaption>
         </figure>
       </div>
@@ -304,27 +308,27 @@
     </div>
   </section>
 
-  <h2>Switch Box</h2>
+  <h2 id="switch-box">Switch Box</h2>
   <p>The switch box was the blockiest of the three, but that did not make it simpler. It still needed the same discipline in proportions, seams, vent spacing, and mounting logic so it could sit on the belt without reading like a generic box.</p>
 
   <section class="project-gallery split" aria-label="Metrocop switch box gallery">
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/belt-boxes/switch/switch-box-2.png" alt="Back view render of the switch belt box." loading="lazy" decoding="async" width="682" height="666">
+      <img src="../assets/images/projects/metrocop/belt-boxes/switch/web/switch-box-2-png-682.webp" alt="Back view render of the switch belt box." loading="lazy" decoding="async" width="682" height="666" data-original="../assets/images/projects/metrocop/belt-boxes/switch/switch-box-2.png" srcset="../assets/images/projects/metrocop/belt-boxes/switch/web/switch-box-2-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/switch/web/switch-box-2-png-682.webp 682w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>A back view that shows the mount area and how much of this kind of prop design depends on respecting the unseen practical side too.</figcaption>
     </figure>
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/belt-boxes/switch/switch-box-3.png" alt="Alternate angle render of the switch belt box." loading="lazy" decoding="async" width="666" height="662">
+      <img src="../assets/images/projects/metrocop/belt-boxes/switch/web/switch-box-3-png-666.webp" alt="Alternate angle render of the switch belt box." loading="lazy" decoding="async" width="666" height="662" data-original="../assets/images/projects/metrocop/belt-boxes/switch/switch-box-3.png" srcset="../assets/images/projects/metrocop/belt-boxes/switch/web/switch-box-3-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/switch/web/switch-box-3-png-666.webp 666w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>A view of the front of the switch box without the front grate, showcasing the ordinarily hidden switches underneath. Separating these pieces enhances printability and eases finishing after printing.</figcaption>
     </figure>
   </section>
 
   <section class="project-gallery split" aria-label="Metrocop switch box build photos">
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/belt-boxes/switch/switch-build-1.jpg" alt="Completed switch box prototype for the Metrocop build." loading="lazy" decoding="async" width="2880" height="2160">
+      <img src="../assets/images/projects/metrocop/belt-boxes/switch/web/switch-build-1-jpg-960.webp" alt="Completed switch box prototype for the Metrocop build." loading="lazy" decoding="async" width="2880" height="2160" data-original="../assets/images/projects/metrocop/belt-boxes/switch/switch-build-1.jpg" srcset="../assets/images/projects/metrocop/belt-boxes/switch/web/switch-build-1-jpg-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/switch/web/switch-build-1-jpg-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/switch/web/switch-build-1-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>The finished switch box proved that the vent rhythm, layered face, and blockier proportions could still feel like a deliberate costume component instead of a generic utility box.</figcaption>
     </figure>
     <figure class="project-img">
-      <img src="../assets/images/projects/metrocop/belt-boxes/switch/switch-build-2.jpg" alt="Switch box parts staged during assembly for the Metrocop build." loading="lazy" decoding="async" width="2880" height="2160">
+      <img src="../assets/images/projects/metrocop/belt-boxes/switch/web/switch-build-2-jpg-960.webp" alt="Switch box parts staged during assembly for the Metrocop build." loading="lazy" decoding="async" width="2880" height="2160" data-original="../assets/images/projects/metrocop/belt-boxes/switch/switch-build-2.jpg" srcset="../assets/images/projects/metrocop/belt-boxes/switch/web/switch-build-2-jpg-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/switch/web/switch-build-2-jpg-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/switch/web/switch-build-2-jpg-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 50vw">
       <figcaption>The staged parts shot shows how the box breaks down into manageable pieces for printing, cleanup, and assembly before it all disappears into the final costume.</figcaption>
     </figure>
   </section>
@@ -333,23 +337,23 @@
     <div class="sheet-carousel-frame">
       <div class="sheet-carousel-track" data-carousel-track>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/switch/drawings/1.png" alt="Switch box drawing sheet 1 of 5." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/1-png-960.webp" alt="Switch box drawing sheet 1 of 5." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/switch/drawings/1.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/switch/drawings/1.png" srcset="../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/1-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/1-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/1-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 1 of 5</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/switch/drawings/2.png" alt="Switch box drawing sheet 2 of 5." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/2-png-960.webp" alt="Switch box drawing sheet 2 of 5." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/switch/drawings/2.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/switch/drawings/2.png" srcset="../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/2-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/2-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/2-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 2 of 5</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/switch/drawings/3.png" alt="Switch box drawing sheet 3 of 5." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/3-png-960.webp" alt="Switch box drawing sheet 3 of 5." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/switch/drawings/3.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/switch/drawings/3.png" srcset="../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/3-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/3-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/3-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 3 of 5</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/switch/drawings/4.png" alt="Switch box drawing sheet 4 of 5." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/4-png-960.webp" alt="Switch box drawing sheet 4 of 5." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/switch/drawings/4.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/switch/drawings/4.png" srcset="../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/4-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/4-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/4-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 4 of 5</figcaption>
         </figure>
         <figure class="project-img">
-          <img src="../assets/images/projects/metrocop/belt-boxes/switch/drawings/5.png" alt="Switch box drawing sheet 5 of 5." loading="lazy" decoding="async" width="3400" height="2200">
+          <img src="../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/5-png-960.webp" alt="Switch box drawing sheet 5 of 5." loading="lazy" decoding="async" width="3400" height="2200" data-original="../assets/images/projects/metrocop/belt-boxes/switch/drawings/5.png" data-fullsize="../assets/images/projects/metrocop/belt-boxes/switch/drawings/5.png" srcset="../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/5-png-480.webp 480w, ../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/5-png-960.webp 960w, ../assets/images/projects/metrocop/belt-boxes/switch/drawings/web/5-png-1600.webp 1600w" sizes="(max-width: 720px) 100vw, 700px">
           <figcaption>Sheet 5 of 5</figcaption>
         </figure>
       </div>
@@ -360,9 +364,11 @@
       <button class="sheet-carousel-nav" type="button" data-carousel-next aria-label="Next switch box drawing sheet">&rarr;</button>
     </div>
   </section>
+  <section class="related-projects" aria-label="Related projects"><h2>Keep exploring</h2><div class="page-actions"><a class="button-secondary" href="helldivers.html">Helldivers 2: B-01 Armor →</a><a class="button-secondary" href="leather.html">Leatherwork →</a><a class="cta-link" href="/projects.html">All projects →</a></div></section>
 </main>
 
 <footer>
+  <div class="site-footer-links"><a href="/projects.html">Projects</a><a href="/citadel/">Citadel Supply Co.</a><a href="/go/">Socials &amp; links</a><a href="/contact.html">Contact</a></div>
   <p>&copy; 2025-2026 Erik Reiner | <a href="mailto:erik@erikreiner.com">erik@erikreiner.com</a></p>
 </footer>
 </body>
