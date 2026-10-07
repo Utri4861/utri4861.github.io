@@ -172,6 +172,7 @@ def images():
             attrs['src'] = relative(variants[min(1, len(variants) - 1)][0])
             attrs['srcset'] = ', '.join(f'{relative(output)} {width}w' for output, width in variants)
             attrs['sizes'] = '(max-width: 720px) 100vw, 700px' if is_drawing else '(max-width: 720px) 100vw, 50vw'
+            if path.name == 'metrocop-build.html': attrs['sizes'] = '(max-width: 850px) calc(100vw - 80px), 780px'
             if is_logo: attrs['sizes'] = '150px' if 'footer' in text[max(0, match.start()-200):match.start()] else '70px'
             attrs['decoding'] = 'async'
             if first and not is_logo:

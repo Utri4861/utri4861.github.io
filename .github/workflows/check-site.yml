@@ -18,4 +18,5 @@ jobs:
       - run: python scripts/prepare.py --check
       - run: node --check assets/js/site.js
       - run: node --check go/assets/go.js
-      - run: node --test scripts/site.test.cjs
+      - run: node --check assets/js/metrocop-timeline.js
+      - run: node --test scripts/site.test.cjs scripts/metrocop-archive.test.cjs scripts/metrocop-timeline.test.cjs
