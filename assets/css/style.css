@@ -40,26 +40,9 @@ body {
   min-height: 100vh;
   font-family: 'Space Grotesk', sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at 0% 0%, rgba(143, 159, 63, 0.16), transparent 30%),
-    radial-gradient(circle at 100% 12%, rgba(69, 75, 71, 0.14), transparent 26%),
-    linear-gradient(180deg, #f2f3ed 0%, var(--bg) 100%);
+  background: #eef0e9;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.16;
-  background-image:
-    linear-gradient(rgba(32, 37, 34, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(32, 37, 34, 0.05) 1px, transparent 1px);
-  background-size: 28px 28px;
-  -webkit-mask-image: radial-gradient(circle at center, black 44%, transparent 100%);
-  mask-image: radial-gradient(circle at center, black 44%, transparent 100%);
 }
 
 img {
@@ -87,8 +70,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  backdrop-filter: blur(18px);
-  background: rgba(239, 241, 234, 0.86);
+  background: #eef0e9;
   border-bottom: 1px solid var(--line);
 }
 
@@ -242,13 +224,13 @@ nav {
   gap: 10px;
   min-height: 48px;
   padding: 0 20px;
-  border-radius: 999px;
+  border-radius: 8px;
   text-decoration: none;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background-color 180ms ease, color 180ms ease;
 }
 
 .button {
-  background: linear-gradient(135deg, var(--brand-deep), #3d4918);
+  background: var(--brand-deep);
   color: #fbfcf6;
   box-shadow: 0 14px 30px rgba(79, 94, 32, 0.24);
 }
@@ -281,19 +263,8 @@ nav {
 }
 
 .blog-entry {
-  position: relative;
-  overflow: hidden;
-}
-
-.blog-entry::before {
-  content: "";
-  position: absolute;
-  top: 26px;
-  bottom: 26px;
-  left: 0;
-  width: 4px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--brand), rgba(143, 159, 63, 0.16));
+  padding: 28px 0;
+  border-top: 1px solid var(--line-strong);
 }
 
 .blog-entry-inner {
@@ -346,8 +317,8 @@ nav {
 
 .panel {
   padding: 28px;
-  border-radius: var(--radius-xl);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.64));
+  border-radius: 12px;
+  background: var(--surface-strong);
   border: 1px solid rgba(17, 24, 39, 0.08);
   box-shadow: var(--shadow);
 }
@@ -463,7 +434,7 @@ nav {
   flex-direction: column;
   min-height: var(--card-height);
   overflow: hidden;
-  border-radius: var(--radius-lg);
+  border-radius: 12px;
   background: var(--surface-strong);
   border: 1px solid rgba(17, 24, 39, 0.08);
   box-shadow: var(--shadow-tight);
@@ -1313,3 +1284,16 @@ footer p {
   .sheet-carousel.carousel-ready .project-img:not(.is-current) { opacity: 0; }
   .sheet-carousel.carousel-ready .project-img.is-current { transform: translateX(-50%); }
 }
+
+/* Portfolio labels are text; the build journal retains its approved badges. */
+body:not(:has(.archive-layout)) :is(.cat-badge, .status-badge) {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  color: var(--muted);
+  min-height: 0;
+  padding: 0;
+  font-size: .75rem;
+  letter-spacing: .025em;
+}
+body:not(:has(.archive-layout)) .project-meta .status-badge { margin-left: 0; }

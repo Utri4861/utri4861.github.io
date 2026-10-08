@@ -128,9 +128,7 @@ None of these is an exact match. The pockets, shoulders, and torso length all in
 
 My other estimates included $56.67 for boots, $32 each for gloves and a jacket, $20 for trousers, $8 for belts, $6 for printed belt boxes, and $8 for their electronics. Ribbon was another small expense.
 
-These were planning figures, not a final cost report. Buying and adapting existing clothing looked more practical than making every garment from scratch. I could keep prototyping the helmet and accessories while spacing out the larger purchases.
-
-The priority was to keep the build affordable without losing the character's silhouette.`,
+These were planning figures, not a final cost report. Buying and adapting existing clothing looked more practical than making every garment from scratch. I could keep prototyping the helmet and accessories while spacing out the larger purchases.`,
 29: `I recovered the photographs of my original vest panels and collected them into a shared folder: https://drive.google.com/drive/folders/1-1hiDVZVlkQkN3gTG1afJ1kh2x4ShLq0?usp=sharing.
 
 These are raw reference images rather than finished vector patterns. They document the prototype, including areas I'd still like to refine. The later digitized templates are a better starting point for a new build.`,
@@ -142,7 +140,7 @@ I'm considering having a tailor add a rear vent to give it the slight flare of t
 I've also replaced the first pair of boots. Their chunky shape was fighting the slimmer silhouette I wanted.`,
 35: `The way the trousers fall over the boots matters as much as the individual garments. I'm planning to blouse the legs to control that transition and keep the shape closer to the reference.
 
-For the boots, I'm still drawn to a clean, slim profile. Finding practical footwear is one thing; finding the right outline is another.`,
+For the boots, I'm still drawn to a clean, slim profile.`,
 36: `A quick test fit brings the jacket and trousers together. I'm liking the silhouette so far; seeing the layers on a body is much more useful than judging each piece on its own.
 
 {{1}}`,
@@ -190,9 +188,7 @@ I'm less certain about the blue lenses. They stand out strongly, so I'm consider
 48: `The jacket is an inexpensive Columbia field coat I found on eBay. Searching for “field coat” and “field jacket” helped narrow the options to garments with the front pockets, high collar, and longer body I needed.`,
 51: `For the clothing, shape matters more than finding one exact product listing. The jacket needed front pockets and enough length; the gloves needed a slim gauntlet profile.
 
-Women's motorcycle gauntlets offered a more streamlined shape than many men's versions, although sizing required care. The boots I used were Harley Davidson boots bought secondhand. Round-toe riding, engineer, or harness styles can offer a similar outline, depending on the details.
-
-These are the choices behind this build, rather than a current shopping list.`,
+Women's motorcycle gauntlets offered a more streamlined shape than many men's versions, although sizing required care. The boots I used were Harley Davidson boots bought secondhand. Round-toe riding, engineer, or harness styles can offer a similar outline, depending on the details.`,
 53: `The prototype vest came together in roughly a day or two of hands-on work. Sketching it from several angles gave me a mental model, and I used the center chest square as a reference for the surrounding pieces.
 
 I cut the foam panels, joined their backs with cloth strips, and tried the assembly on. Where it didn't fit, I trimmed; where it did, I moved on to heat-forming.
@@ -242,7 +238,7 @@ For a new build, use the revised template in the 2025 entry instead.`,
 {{video}}
 
 The lenses are held in with hot glue so I can remove them; I changed them three times while refining the look. A simple U-channel rubber trim finishes the edge of the mask. It's the same general type of material sold as automotive door-edge guard.`,
-75: `The lenses came from a pair of dollar-store sunglasses. A small, inexpensive part ended up being the solution for one of the mask's most noticeable details.`,
+75: `The lenses came from a pair of dollar-store sunglasses.`,
 80: `I modeled the early belt accessories myself in Blender. Those files belong to an earlier stage of the project, before the later Fusion 360 redesigns.
 
 The vest templates have also become useful beyond my own costume. Sharing the pattern gives other builders a starting point, while each new build offers another chance to refine it.`,
